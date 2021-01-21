@@ -82,6 +82,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -116,6 +117,11 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>BBDDCiclismo.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\icons8-login-48.png" />
+    <None Include="Resources\fondocycling.jpg" />
+    <None Include="Resources\icons8-forgot-password-48.png" />
+    <None Include="Resources\icons8-member-skin-type-7-48.png" />
+    <None Include="Resources\logobici.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
