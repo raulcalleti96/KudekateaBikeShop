@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Menu = KudekateaBikeShop.Menu;
 
 namespace ProyectoFinal
 {
@@ -46,9 +47,8 @@ namespace ProyectoFinal
                     passwordTextBox.Text = "";
 
                     //abrimos la ventana
-                  //  Menu p = new Menu();
-                  //  p.ShowDialog();
-
+                    Menu menu = new Menu();
+                    menu.Show();
 
                 }
                 else
