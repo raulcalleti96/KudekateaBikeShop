@@ -29,6 +29,7 @@ namespace KudekateaBikeShop
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,6 +40,9 @@ namespace KudekateaBikeShop
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.acercadebtn = new System.Windows.Forms.Button();
             this.proovedoresbtn = new System.Windows.Forms.Button();
             this.clientesbtn = new System.Windows.Forms.Button();
@@ -78,6 +82,7 @@ namespace KudekateaBikeShop
             this.label3.Size = new System.Drawing.Size(119, 30);
             this.label3.TabIndex = 2;
             this.label3.Text = "COMPRA";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -141,6 +146,12 @@ namespace KudekateaBikeShop
             this.label10.TabIndex = 16;
             this.label10.Text = "PROCESOS";
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // acercadebtn
             // 
             this.acercadebtn.FlatAppearance.BorderSize = 0;
@@ -162,6 +173,7 @@ namespace KudekateaBikeShop
             this.proovedoresbtn.Size = new System.Drawing.Size(152, 143);
             this.proovedoresbtn.TabIndex = 13;
             this.proovedoresbtn.UseVisualStyleBackColor = true;
+            this.proovedoresbtn.Click += new System.EventHandler(this.proovedoresbtn_Click);
             // 
             // clientesbtn
             // 
@@ -173,6 +185,7 @@ namespace KudekateaBikeShop
             this.clientesbtn.Size = new System.Drawing.Size(152, 143);
             this.clientesbtn.TabIndex = 12;
             this.clientesbtn.UseVisualStyleBackColor = true;
+            this.clientesbtn.Click += new System.EventHandler(this.clientesbtn_Click);
             // 
             // empleadosbtn
             // 
@@ -184,6 +197,7 @@ namespace KudekateaBikeShop
             this.empleadosbtn.Size = new System.Drawing.Size(135, 141);
             this.empleadosbtn.TabIndex = 11;
             this.empleadosbtn.UseVisualStyleBackColor = true;
+            this.empleadosbtn.Click += new System.EventHandler(this.empleadosbtn_Click);
             // 
             // catalogobtn
             // 
@@ -195,6 +209,7 @@ namespace KudekateaBikeShop
             this.catalogobtn.Size = new System.Drawing.Size(152, 143);
             this.catalogobtn.TabIndex = 10;
             this.catalogobtn.UseVisualStyleBackColor = true;
+            this.catalogobtn.Click += new System.EventHandler(this.catalogobtn_Click);
             // 
             // comprabtn
             // 
@@ -206,6 +221,7 @@ namespace KudekateaBikeShop
             this.comprabtn.Size = new System.Drawing.Size(152, 143);
             this.comprabtn.TabIndex = 9;
             this.comprabtn.UseVisualStyleBackColor = true;
+            this.comprabtn.Click += new System.EventHandler(this.comprabtn_Click);
             // 
             // ventabtn
             // 
@@ -217,6 +233,7 @@ namespace KudekateaBikeShop
             this.ventabtn.Size = new System.Drawing.Size(152, 143);
             this.ventabtn.TabIndex = 8;
             this.ventabtn.UseVisualStyleBackColor = true;
+            this.ventabtn.Click += new System.EventHandler(this.ventabtn_Click);
             // 
             // Menu
             // 
@@ -243,6 +260,7 @@ namespace KudekateaBikeShop
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Menu_FormClosing);
             this.Load += new System.EventHandler(this.Menu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -267,5 +285,8 @@ namespace KudekateaBikeShop
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button ventabtn;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

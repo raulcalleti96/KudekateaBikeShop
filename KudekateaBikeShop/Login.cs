@@ -15,7 +15,7 @@ namespace ProyectoFinal
     public partial class Login : Form
     {
 
-        public static Login f;
+        public static Login ventanaLogin;
 
         public Login()
         {
@@ -42,7 +42,7 @@ namespace ProyectoFinal
                     //MessageBox.Show(passwordTextBox.Text, "Error");
 
                     //escondemos esta ventana y vaciamos los txt
-                    f.Hide();
+                    ventanaLogin.Hide();
                     usuarioTextBox.Text = "";
                     passwordTextBox.Text = "";
 
@@ -85,7 +85,7 @@ namespace ProyectoFinal
             usuarioTextBox.Text = "";
             passwordTextBox.Text = "";
 
-            f = this;
+            ventanaLogin = this;
 
         }
     }
