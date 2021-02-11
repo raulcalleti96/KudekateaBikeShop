@@ -88,5 +88,51 @@ namespace ProyectoFinal
             ventanaLogin = this;
 
         }
+
+        private void passwordTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                BBDDCiclismoDataSet.EmpleadosRow fila;//creamos una variable de tipo fila
+
+                if (empleadosBindingSource.Find("Usuario", usuarioTextBox.Text) != -1)//comprobamos que es distinto de no es correcto
+                {
+                    //hacemos que busque al usuario
+                    fila = (BBDDCiclismoDataSet.EmpleadosRow)bBDDCiclismoDataSet.Empleados.Rows[empleadosBindingSource.Find("Usuario", usuarioTextBox.Text)];
+
+                    if (fila.Password == passwordTextBox.Text)//comprbamos que la clave es correcta
+                    {
+                        KudekateaBikeShop.Properties.Settings.Default.Rol = fila.Rol;//guardamos el rol en la variable global
+                        KudekateaBikeShop.Properties.Settings.Default.Usuario = fila.Usuario;
+
+                        //MessageBox.Show(fila.Password, "Error");
+                        //MessageBox.Show(passwordTextBox.Text, "Error");
+
+                        //escondemos esta ventana y vaciamos los txt
+                        ventanaLogin.Hide();
+                        usuarioTextBox.Text = "";
+                        passwordTextBox.Text = "";
+
+                        //abrimos la ventana
+                        Menu menu = new Menu();
+                        menu.Show();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("La contraseña es incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else if (usuarioTextBox.Text.Equals("") | passwordTextBox.Text.Equals(""))
+                {
+                    MessageBox.Show("No puede haber campos vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("El usuario es incorrecto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            
+        }
+        }
     }
 }

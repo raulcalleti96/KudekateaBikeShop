@@ -22,6 +22,17 @@ namespace KudekateaBikeShop
             // TODO: esta línea de código carga datos en la tabla 'bBDDCiclismoDataSet.Empleados' Puede moverla o quitarla según sea necesario.
             this.empleadosTableAdapter.Fill(this.bBDDCiclismoDataSet.Empleados);
 
+            Rectangle screen = Screen.PrimaryScreen.WorkingArea;
+            int w = Width >= screen.Width ? screen.Width : (screen.Width + Width) / 2;
+            int h = Height >= screen.Height ? screen.Height : (screen.Height + Height) / 2;
+            this.Location = new Point((screen.Width - w) / 2, (screen.Height - h) / 2);
+            this.Size = new Size(w, h);
+
+            btnAceptar.Enabled = false;
+            btnCancelar.Enabled = false;
+
+            modoConsulta();
+
         }
 
         private void empleadosBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -30,10 +41,6 @@ namespace KudekateaBikeShop
             this.empleadosBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.bBDDCiclismoDataSet);
 
-            btnAceptar.Enabled = false;
-            btnCancelar.Enabled = false;
-
-            modoConsulta();
 
 
         }
@@ -43,7 +50,6 @@ namespace KudekateaBikeShop
             contextMenuStrip1.Enabled = true;
             menuStrip1.Enabled = true;
 
-            //cuadros de dialogo a desactivados
             nombreTextBox.Enabled = false;
             dNITextBox.Enabled = false;
             direccionTextBox.Enabled = false;
@@ -55,24 +61,20 @@ namespace KudekateaBikeShop
 
             btnInforme.Enabled = true;
 
-            //los botones de movimiento activados
             btnUltimo.Enabled = true;
             btnSiguiente.Enabled = true;
             btnAnterior.Enabled = true;
             btnPrimero.Enabled = true;
 
-            //buscar
             comboBox1.Enabled = true;
             buscarTextBox.Enabled = true;
             btnBuscar.Enabled = true;
 
-            //botones navegacion y acciones activos
             btnEditar.Enabled = true;
             btnAnadir.Enabled = true;
             btnBorrar.Enabled = true;
             btnGuardar.Enabled = true;
 
-            //boton aceptar y cancelar desactivados
             btnAceptar.Enabled = false;
             btnCancelar.Enabled = false;
         }
@@ -82,7 +84,6 @@ namespace KudekateaBikeShop
             contextMenuStrip1.Enabled = false;
             menuStrip1.Enabled = false;
 
-            //cuadros de dialogo a desactivados
             nombreTextBox.Enabled = true;
             dNITextBox.Enabled = true;
             direccionTextBox.Enabled = true;
@@ -94,24 +95,21 @@ namespace KudekateaBikeShop
 
             btnInforme.Enabled = false;
 
-            //los botones de movimiento activados
             btnUltimo.Enabled = false;
             btnSiguiente.Enabled = false;
             btnAnterior.Enabled = false;
             btnPrimero.Enabled = false;
 
-            //buscar
             comboBox1.Enabled = false;
             buscarTextBox.Enabled = false;
             btnBuscar.Enabled = false;
 
-            //botones navegacion y acciones activos
             btnEditar.Enabled = false;
             btnAnadir.Enabled = false;
             btnBorrar.Enabled = false;
             btnGuardar.Enabled = false;
 
-            //boton aceptar y cancelar desactivados
+           
             btnAceptar.Enabled = true;
             btnCancelar.Enabled = true;
         }
@@ -205,19 +203,19 @@ namespace KudekateaBikeShop
             }
             else
             {
-                //Limpiar el errorprovider
+      
                 errorProvider1.Clear();
 
                 empleadosBindingSource.EndEdit();
 
-                //ponemos el modo consulta
+               
                 modoConsulta();
             }
         }
 
         private void empleadosBindingSource_PositionChanged(object sender, EventArgs e)
         {
-            label2.Text = "Empleado " + (empleadosBindingSource.Position + 1) + " de " + empleadosBindingSource.Count;
+            label1.Text = "Empleado " + (empleadosBindingSource.Position + 1) + " de " + empleadosBindingSource.Count;
 
             if (empleadosBindingSource.Position == 0)
             {
@@ -241,7 +239,7 @@ namespace KudekateaBikeShop
                 btnUltimo.Enabled = true;
             }
 
-            //cuando este a 0 desbilite el boton y no cierra el programa
+           
             btnBorrar.Enabled = empleadosBindingSource.Count > 0;
         }
 
@@ -299,7 +297,7 @@ namespace KudekateaBikeShop
         {
             empleadosBindingSource.CancelEdit();
 
-            //Limpiar el errorprovider
+            
             errorProvider1.Clear();
 
             modoConsulta();
@@ -344,11 +342,11 @@ namespace KudekateaBikeShop
 
         private void btnInforme_Click(object sender, EventArgs e)
         {
-            /*            Boolean abierta = false;
+             Boolean abierta = false;
 
             foreach (Form fm in Application.OpenForms)
             {
-                if (fm.GetType() == typeof(EmpleadosInf))
+                if (fm.GetType() == typeof(InformeEmpleados))
                 {
                     if (fm.WindowState == FormWindowState.Minimized)
                     {
@@ -362,9 +360,9 @@ namespace KudekateaBikeShop
 
             if (!abierta)
             {
-                EmpleadosInf v2 = new EmpleadosInf();
+                InformeEmpleados v2 = new InformeEmpleados();
                 v2.Show();
-            }*/
+            }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -374,7 +372,7 @@ namespace KudekateaBikeShop
                 if (comboBox1.Text.Equals("Id"))
                 {
 
-                    //Buscar por id
+                 
                     if (empleadosBindingSource.Find("Id", buscarTextBox.Text) == -1)
                     {
                         MessageBox.Show("Error al encontrar el Id", "Id inexistente", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -389,7 +387,7 @@ namespace KudekateaBikeShop
                 if (comboBox1.Text.Equals("Nombre"))
                 {
 
-                    //Buscar por nombre
+                  
                     if (empleadosBindingSource.Find("Nombre", buscarTextBox.Text) == -1)
                     {
                         MessageBox.Show("Error al encontrar el nombre", "Nombre inexistente", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -404,7 +402,6 @@ namespace KudekateaBikeShop
                 if (comboBox1.Text.Equals("DNI"))
                 {
 
-                    //Buscar por nombre
                     if (empleadosBindingSource.Find("DNI", buscarTextBox.Text) == -1)
                     {
                         MessageBox.Show("Error al encontrar el DNI", "DNI inexistente", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -419,7 +416,7 @@ namespace KudekateaBikeShop
                 if (comboBox1.Text.Equals("Usuario"))
                 {
 
-                    //Buscar por nombre
+                   
                     if (empleadosBindingSource.Find("Usuario", buscarTextBox.Text) == -1)
                     {
                         MessageBox.Show("Error al encontrar el telefono", "telefono inexistente", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -436,6 +433,16 @@ namespace KudekateaBikeShop
             {
                 MessageBox.Show("Error al encontrar al empleado", "Empleado inexistente", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void idLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

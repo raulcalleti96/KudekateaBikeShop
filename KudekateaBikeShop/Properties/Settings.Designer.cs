@@ -57,5 +57,29 @@ namespace KudekateaBikeShop.Properties {
                 this["Usuario"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string numVenta {
+            get {
+                return ((string)(this["numVenta"]));
+            }
+            set {
+                this["numVenta"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string numCompra {
+            get {
+                return ((string)(this["numCompra"]));
+            }
+            set {
+                this["numCompra"] = value;
+            }
+        }
     }
 }

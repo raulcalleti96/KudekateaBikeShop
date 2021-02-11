@@ -35,6 +35,12 @@ namespace KudekateaBikeShop
 
         private void Compras_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'bBDDCiclismoDataSet.DetalleCompras' Puede moverla o quitarla según sea necesario.
+            this.detalleComprasTableAdapter.Fill(this.bBDDCiclismoDataSet.DetalleCompras);
+            // TODO: esta línea de código carga datos en la tabla 'bBDDCiclismoDataSet.Proveedor' Puede moverla o quitarla según sea necesario.
+            this.proveedorTableAdapter.Fill(this.bBDDCiclismoDataSet.Proveedor);
+            // TODO: esta línea de código carga datos en la tabla 'bBDDCiclismoDataSet.Compras' Puede moverla o quitarla según sea necesario.
+            this.comprasTableAdapter.Fill(this.bBDDCiclismoDataSet.Compras);
             // TODO: esta línea de código carga datos en la tabla 'bBDDCiclismoDataSet.Bicicletas' Puede moverla o quitarla según sea necesario.
             this.bicicletasTableAdapter.Fill(this.bBDDCiclismoDataSet.Bicicletas);
             // TODO: esta línea de código carga datos en la tabla 'bBDDCiclismoDataSet.Proveedor' Puede moverla o quitarla según sea necesario.
@@ -48,6 +54,12 @@ namespace KudekateaBikeShop
             // TODO: esta línea de código carga datos en la tabla 'bBDDCiclismoDataSet.Compras' Puede moverla o quitarla según sea necesario.
             this.comprasTableAdapter.Fill(this.bBDDCiclismoDataSet.Compras);
 
+            Rectangle screen = Screen.PrimaryScreen.WorkingArea;
+            int w = Width >= screen.Width ? screen.Width : (screen.Width + Width) / 2;
+            int h = Height >= screen.Height ? screen.Height : (screen.Height + Height) / 2;
+            this.Location = new Point((screen.Width - w) / 2, (screen.Height - h) / 2);
+            this.Size = new Size(w, h);
+
             consultaMaestro();
             consultaDetalle();
 
@@ -55,7 +67,7 @@ namespace KudekateaBikeShop
 
             detalleComprasDataGridView.Enabled = false;
 
-            nombre_proveedorTextBox.Visible = false;
+            nombre_proveedorLabel1.Visible = false;
 
             btnPrimeroLinea.Enabled = false;
             btnAnteriorLinea.Enabled = false;
@@ -102,7 +114,7 @@ namespace KudekateaBikeShop
 
             id_proveedorComboBox.Enabled = false;
             id_empleadoComboBox.Enabled = false;
-            nombre_proveedorTextBox.Enabled = false;
+            nombre_proveedorLabel1.Enabled = false;
             telefono_proveedorTextBox.Enabled = false;
             email_proveedorTextBox.Enabled = false;
 
@@ -129,7 +141,7 @@ namespace KudekateaBikeShop
 
             id_proveedorComboBox.Enabled = true;
             id_empleadoComboBox.Enabled = true;
-            nombre_proveedorTextBox.Enabled = true;
+            nombre_proveedorLabel1.Enabled = true;
             telefono_proveedorTextBox.Enabled = true;
             email_proveedorTextBox.Enabled = true;
            
@@ -152,7 +164,7 @@ namespace KudekateaBikeShop
         public void consultaDetalle()
         {
             nombre_bicicletaTextBox.Enabled = false;
-            categoriaTextBox1.Enabled = false;
+            categoriaComboBox.Enabled = false;
             fabricanteTextBox.Enabled = false;
             cantidad_compradaTextBox.Enabled = false;
             precio_compraTextBox.Enabled = false;
@@ -174,7 +186,7 @@ namespace KudekateaBikeShop
         public void edicionDetalle()
         {
             nombre_bicicletaTextBox.Enabled = true;
-            categoriaTextBox1.Enabled = true;
+            categoriaComboBox.Enabled = true;
             fabricanteTextBox.Enabled = true;
             cantidad_compradaTextBox.Enabled = true;
             precio_compraTextBox.Enabled = true;
@@ -242,6 +254,7 @@ namespace KudekateaBikeShop
         private void btnAnadir_Click(object sender, EventArgs e)
         {
             comprasBindingSource.AddNew();
+         
             edicionMaestro();
         }
 
@@ -252,13 +265,13 @@ namespace KudekateaBikeShop
             {
                 try
                 {
-                    //borramos las lineas del detalle
+                  
                     while (detalleComprasBindingSource.Count > 0)
                     {
                         detalleComprasBindingSource.RemoveCurrent();
                     }
 
-                    //borramos el maestro
+               
                     comprasBindingSource.RemoveCurrent();
                 }
                 catch (Exception)
@@ -304,7 +317,7 @@ namespace KudekateaBikeShop
 
                 try
                 {
-                    //hacer las validaciones
+              
                     errorProvider1.Clear();
 
                     comprasBindingSource.EndEdit();
@@ -384,20 +397,20 @@ namespace KudekateaBikeShop
 
         private void btnAceptarLinea_Click(object sender, EventArgs e)
         {
-            if (nombre_bicicletaTextBox.Text.Equals("") | categoriaTextBox1.Text.Equals("") | fabricanteTextBox.Text.Equals("") | cantidad_compradaTextBox.Text.Equals("") |
+            if (nombre_bicicletaTextBox.Text.Equals("") | categoriaComboBox.Text.Equals("") | fabricanteTextBox.Text.Equals("") | cantidad_compradaTextBox.Text.Equals("") |
                precio_compraTextBox.Text.Equals("") | descuentoTextBox.Text.Equals(""))
             {
                 if (nombre_bicicletaTextBox.Text == "")
                 {
-                    errorProvider1.SetError(nombre_bicicletaTextBox, "Debe introducir el nombre del videojuego");
+                    errorProvider1.SetError(nombre_bicicletaTextBox, "Debe introducir el nombre de la bicicleta");
                 }
-                if (categoriaTextBox1.Text == "")
+                if (categoriaComboBox.Text == "")
                 {
-                    errorProvider1.SetError(categoriaTextBox1, "Debe introducir la categoría del videojuego");
+                    errorProvider1.SetError(categoriaComboBox, "Debe seleccionar la categoría del bicicleta");
                 }
                 if (fabricanteTextBox.Text == "")
                 {
-                    errorProvider1.SetError(fabricanteTextBox, "Debe introducir el nombre del creador del videojuego");
+                    errorProvider1.SetError(fabricanteTextBox, "Debe introducir el nombre del creador del bicicleta");
                 }
                 if (cantidad_compradaTextBox.Text == "")
                 {
@@ -416,18 +429,19 @@ namespace KudekateaBikeShop
             {
                 try
                 {
+
                     errorProvider1.Clear();
 
                     detalleComprasBindingSource.EndEdit();
 
-                    //total de la linea
+                  
                     descuento();
 
                     consultaDetalle();
 
                     btnTerminar.Enabled = true;
 
-                    //refrescamos el grid para mostrar los datos
+                 
                     detalleComprasDataGridView.Refresh();
 
                 }
@@ -456,37 +470,7 @@ namespace KudekateaBikeShop
             consultaDetalle();
         }
 
-        private void id_proveedorComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            BBDDCiclismoDataSet.ProveedorRow filaCliente;
-
-            if (id_proveedorComboBox.SelectedIndex != -1)
-            {
-                filaCliente = bBDDCiclismoDataSet.Proveedor[id_proveedorComboBox.SelectedIndex];
-
-                //si algun campo esta vacio
-                if (filaCliente.IsNombreNull())
-                    nombre_proveedorTextBox.Text = "";
-                else
-                    nombre_proveedorTextBox.Text = filaCliente.Nombre;
-
-
-                if (filaCliente.IsTelefonoNull())
-                    telefono_proveedorTextBox.Text = "";
-                else
-                {
-                    telefono_proveedorTextBox.Text = filaCliente.Telefono;
-                }
-
-                if (filaCliente.IsEmailNull())
-                    email_proveedorTextBox.Text = "";
-                else
-                {
-                    email_proveedorTextBox.Text = filaCliente.Email;
-                }
-
-            }
-        }
+    
 
         private void btnTerminar_Click(object sender, EventArgs e)
         {
@@ -530,7 +514,7 @@ namespace KudekateaBikeShop
                 btnUltimo.Enabled = true;
             }
 
-            //cuando este a 0 desbilite el boton y no cierra el programa
+           
             btnBorrar.Enabled = comprasBindingSource.Count > 0;
         }
 
@@ -597,7 +581,7 @@ namespace KudekateaBikeShop
                 btnUltimoLinea.Enabled = true;
             }
 
-            //cuando este a 0 desbilite el boton y no cierra el programa
+           
             btnBorrarLinea.Enabled = detalleComprasBindingSource.Count > 0;
         }
 
@@ -619,15 +603,15 @@ namespace KudekateaBikeShop
 
         private void categoriaTextBox1_Validating(object sender, CancelEventArgs e)
         {
-            if (categoriaTextBox1.Text != "")
+            if (categoriaComboBox.Text != "")
             {
-                errorProvider1.SetError(categoriaTextBox1, "");
+                errorProvider1.SetError(categoriaComboBox, "");
             }
         }
 
         private void cantidad_compradaTextBox_Validating(object sender, CancelEventArgs e)
         {
-            //comprobamos que sea mayor a 0
+           
             float i;
             if (!float.TryParse(cantidad_compradaTextBox.Text, out i) | (i <= 0))
             {
@@ -644,7 +628,7 @@ namespace KudekateaBikeShop
 
         private void precio_compraTextBox_Validating(object sender, CancelEventArgs e)
         {
-            //comprobamos que sea mayor a 0
+            
             float i;
             if (!float.TryParse(precio_compraTextBox.Text, out i) | (i <= 0))
             {
@@ -661,7 +645,7 @@ namespace KudekateaBikeShop
 
         private void descuentoTextBox_Validating(object sender, CancelEventArgs e)
         {
-            //comprobamos que sea mayor a 0
+           
             int i;
             if (!int.TryParse(descuentoTextBox.Text, out i) | (i < 0))
             {
@@ -678,31 +662,10 @@ namespace KudekateaBikeShop
 
         private void btnInforme_Click(object sender, EventArgs e)
         {
-            /*            //guardamos el id en la variable global (creada en Proyecto > Propiedades > Configuracion)
-            Properties.Settings.Default.numCompra = id_compraLabel1.Text;
+            
+            
 
-            Boolean abierta = false;
-
-            foreach (Form fm in Application.OpenForms)
-            {
-                if (fm.GetType() == typeof(ComprasInf))
-                {
-                    if (fm.WindowState == FormWindowState.Minimized)
-                    {
-                        fm.WindowState = FormWindowState.Normal;
-                    }
-                    fm.BringToFront();
-                    abierta = true;
-                    break;
-                }
-            }
-
-            if (!abierta)
-            {
-                ComprasInf v2 = new ComprasInf();
-                v2.Show();
-            }*/
-        }
+         }
 
         private void Compras_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -726,6 +689,47 @@ namespace KudekateaBikeShop
             }
         }
 
+        private void label3_Click(object sender, EventArgs e)
+        {
 
+        }
+
+
+        private void id_proveedorComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            BBDDCiclismoDataSet.ProveedorRow filaCliente;
+
+            if (id_proveedorComboBox.SelectedIndex != -1)
+            {
+                filaCliente = bBDDCiclismoDataSet.Proveedor[id_proveedorComboBox.SelectedIndex];
+
+
+                if (filaCliente.IsNombreNull())
+                    nombre_proveedorLabel1.Text = "";
+                else
+                    nombre_proveedorLabel1.Text = filaCliente.Nombre;
+
+
+                if (filaCliente.IsTelefonoNull())
+                    telefono_proveedorTextBox.Text = "";
+                else
+                {
+                    telefono_proveedorTextBox.Text = filaCliente.Telefono;
+                }
+
+                if (filaCliente.IsEmailNull())
+                    email_proveedorTextBox.Text = "";
+                else
+                {
+                    email_proveedorTextBox.Text = filaCliente.Email;
+                }
+
+            }
+        }
+
+        private void nombre_proveedorLabel1_Validating(object sender, CancelEventArgs e)
+        {
+
+        }
     }
 }

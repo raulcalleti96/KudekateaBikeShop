@@ -162,6 +162,7 @@ namespace KudekateaBikeShop
             this.acercadebtn.Size = new System.Drawing.Size(88, 85);
             this.acercadebtn.TabIndex = 14;
             this.acercadebtn.UseVisualStyleBackColor = true;
+            this.acercadebtn.Click += new System.EventHandler(this.acercadebtn_Click);
             // 
             // proovedoresbtn
             // 

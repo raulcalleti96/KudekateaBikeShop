@@ -48,7 +48,6 @@ namespace KudekateaBikeShop
             contextMenuStrip1.Enabled = true;
             menuStrip1.Enabled = true;
 
-            //cuadros de dialogo a desactivados
             nombreTextBox.Enabled = false;
             categoriaComboBox.Enabled = false;
             fabricanteTextBox.Enabled = false;
@@ -57,7 +56,6 @@ namespace KudekateaBikeShop
             fotoPictureBox.Enabled = false;
             descripcionTextBox.Enabled = false;
 
-            //los botones de movimiento activados
             btnUltimo.Enabled = true;
             btnSiguiente.Enabled = true;
             btnAnterior.Enabled = true;
@@ -65,18 +63,15 @@ namespace KudekateaBikeShop
 
             btnInforme.Enabled = true;
 
-            //buscar
             comboBox1.Enabled = true;
             buscarTextBox.Enabled = true;
             btnBuscar.Enabled = true;
 
-            //botones navegacion y acciones activos
             btnEditar.Enabled = true;
             btnAnadir.Enabled = true;
             btnBorrar.Enabled = true;
             btnGuardar.Enabled = true;
 
-            //boton aceptar y cancelar desactivados
             btnAceptar.Enabled = false;
             btnCancelar.Enabled = false;
         }
@@ -86,7 +81,6 @@ namespace KudekateaBikeShop
             contextMenuStrip1.Enabled = false;
             menuStrip1.Enabled = false;
 
-            //cuadros de dialogo a desactivados
             nombreTextBox.Enabled = true;
             categoriaComboBox.Enabled = true;
             fabricanteTextBox.Enabled = true;
@@ -95,26 +89,24 @@ namespace KudekateaBikeShop
             fotoPictureBox.Enabled = true;
             descripcionTextBox.Enabled = true;
 
-            //los botones de movimiento activados
             btnUltimo.Enabled = false;
             btnSiguiente.Enabled = false;
             btnAnterior.Enabled = false;
             btnPrimero.Enabled = false;
 
-            //buscar
+ 
             comboBox1.Enabled = false;
             buscarTextBox.Enabled = false;
             btnBuscar.Enabled = false;
 
             btnInforme.Enabled = false;
 
-            //botones navegacion y acciones activos
             btnEditar.Enabled = false;
             btnAnadir.Enabled = false;
             btnBorrar.Enabled = false;
             btnGuardar.Enabled = false;
 
-            //boton aceptar y cancelar desactivados
+
             btnAceptar.Enabled = true;
             btnCancelar.Enabled = true;
         }
@@ -152,7 +144,7 @@ namespace KudekateaBikeShop
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            if ((MessageBox.Show("Desea borrar este videojuego?", "Eliminar videojuego", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)) == DialogResult.Yes)
+            if ((MessageBox.Show("¿Desea borrar esta bicicleta?", "Eliminar bicicleta", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)) == DialogResult.Yes)
             {
                 try
                 {
@@ -160,7 +152,7 @@ namespace KudekateaBikeShop
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Error al eliminar un videojuego inexistente", "Videojuego inexistente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error al eliminar una bicicleta inexistente", "bicicleta inexistente", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -188,7 +180,7 @@ namespace KudekateaBikeShop
             {
                 if (nombreTextBox.Text == "")
                 {
-                    errorProvider1.SetError(nombreTextBox, "Debe introducir el nombre del videojuego");
+                    errorProvider1.SetError(nombreTextBox, "Debe introducir el nombre de la bicicleta");
                 }
                 if (categoriaComboBox.Text == "")
                 {
@@ -196,7 +188,7 @@ namespace KudekateaBikeShop
                 }
                 if (fabricanteTextBox.Text == "")
                 {
-                    errorProvider1.SetError(fabricanteTextBox, "Debe introducir el creador");
+                    errorProvider1.SetError(fabricanteTextBox, "Debe introducir el fabricante");
                 }
                 if (precioTextBox.Text == "")
                 {
@@ -225,7 +217,7 @@ namespace KudekateaBikeShop
 
         private void bicicletasBindingSource_PositionChanged(object sender, EventArgs e)
         {
-            label2.Text = "Videojuego " + (bicicletasBindingSource.Position + 1) + " de " + bicicletasBindingSource.Count;
+            label2.Text = "bicicleta " + (bicicletasBindingSource.Position + 1) + " de " + bicicletasBindingSource.Count;
 
             if (bicicletasBindingSource.Position == 0)
             {
@@ -315,7 +307,7 @@ namespace KudekateaBikeShop
         {
             if (descripcionTextBox.Text.Length > 200)
             {
-                MessageBox.Show("Error en la descripción del producto", "Descripcion demasiado larga", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error en la descripción de la bicicleta", "Descripcion demasiado larga", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 descripcionTextBox.Text = "";
             }
 
@@ -364,11 +356,11 @@ namespace KudekateaBikeShop
 
         private void btnInforme_Click(object sender, EventArgs e)
         {
-            /*            Boolean abierta = false;
+            Boolean abierta = false;
 
             foreach (Form fm in Application.OpenForms)
             {
-                if (fm.GetType() == typeof(VideojuegosInf))
+                if (fm.GetType() == typeof(InformeCatalogo))
                 {
                     if (fm.WindowState == FormWindowState.Minimized)
                     {
@@ -382,9 +374,9 @@ namespace KudekateaBikeShop
 
             if (!abierta)
             {
-                VideojuegosInf v2 = new VideojuegosInf();
+                InformeCatalogo v2 = new InformeCatalogo();
                 v2.Show();
-            }*/
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -421,13 +413,13 @@ namespace KudekateaBikeShop
                     }
                 }
 
-                if (comboBox1.Text.Equals("Creador"))
+                if (comboBox1.Text.Equals("Fabricante"))
                 {
 
                     //Buscar por nombre
-                    if (bicicletasBindingSource.Find("Creador", buscarTextBox.Text) == -1)
+                    if (bicicletasBindingSource.Find("Fabricante", buscarTextBox.Text) == -1)
                     {
-                        MessageBox.Show("Error al encontrar el creador", "Creador inexistente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Error al encontrar el fabricante", "Fabricante inexistente", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         buscarTextBox.Text = "";
                     }
                     else
@@ -439,8 +431,13 @@ namespace KudekateaBikeShop
             }
             catch (Exception)
             {
-                MessageBox.Show("Error al encontrar al videojuego", "Videojuego inexistente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al encontrar al bicicleta", "Bicicleta inexistente", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void opcionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

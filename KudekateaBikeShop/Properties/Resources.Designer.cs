@@ -203,6 +203,16 @@ namespace KudekateaBikeShop.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_dominio_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-dominio-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_editar_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-editar-48", resourceCulture);
@@ -243,6 +253,16 @@ namespace KudekateaBikeShop.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_exportar_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-exportar-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_flecha_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-flecha-48", resourceCulture);
@@ -263,6 +283,26 @@ namespace KudekateaBikeShop.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_github_2_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-github-2-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_github_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-github-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_guardar_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-guardar-48", resourceCulture);
@@ -276,6 +316,36 @@ namespace KudekateaBikeShop.Properties {
         internal static System.Drawing.Bitmap icons8_izquierda_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-izquierda-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_leer_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-leer-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_licencia_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-licencia-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_linkedin_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-linkedin-30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -326,6 +396,16 @@ namespace KudekateaBikeShop.Properties {
         internal static System.Drawing.Bitmap icons8_retire_hombre_usuario_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-retire-hombre-usuario-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Imagen_no_disponible_svg {
+            get {
+                object obj = ResourceManager.GetObject("Imagen_no_disponible.svg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

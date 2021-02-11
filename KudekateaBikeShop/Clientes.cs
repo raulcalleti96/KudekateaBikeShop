@@ -34,7 +34,6 @@ namespace KudekateaBikeShop
             contextMenuStrip1.Enabled = true;
             menuStrip1.Enabled = true;
 
-            //cuadros de dialogo a desactivados
             nombreTextBox.Enabled = false;
             dNITextBox.Enabled = false;
             emailTextBox.Enabled = false;
@@ -46,24 +45,22 @@ namespace KudekateaBikeShop
 
             btnInforme.Enabled = true;
 
-            //los botones de movimiento activados
+   
             btnUltimo.Enabled = true;
             btnSiguiente.Enabled = true;
             btnAnterior.Enabled = true;
             btnPrimero.Enabled = true;
 
-            //buscar
+            
             comboBox1.Enabled = true;
             buscarTextBox.Enabled = true;
             btnBuscar.Enabled = true;
 
-            //botones navegacion y acciones activos
             btnEditar.Enabled = true;
             btnAnadir.Enabled = true;
             btnBorrar.Enabled = true;
             btnGuardar.Enabled = true;
 
-            //boton aceptar y cancelar desactivados
             btnAceptar.Enabled = false;
             btnCancelar.Enabled = false;
         }
@@ -73,7 +70,6 @@ namespace KudekateaBikeShop
             contextMenuStrip1.Enabled = false;
             menuStrip1.Enabled = false;
 
-            //cuadros de dialogo a activados
             nombreTextBox.Enabled = true;
             dNITextBox.Enabled = true;
             emailTextBox.Enabled = true;
@@ -85,24 +81,20 @@ namespace KudekateaBikeShop
 
             btnInforme.Enabled = false;
 
-            //los botones de movimiento activados
             btnUltimo.Enabled = false;
             btnSiguiente.Enabled = false;
             btnAnterior.Enabled = false;
             btnPrimero.Enabled = false;
 
-            //buscar
             comboBox1.Enabled = false;
             buscarTextBox.Enabled = false;
             btnBuscar.Enabled = false;
 
-            //botones navegacion y acciones activos
             btnEditar.Enabled = false;
             btnAnadir.Enabled = false;
             btnBorrar.Enabled = false;
             btnGuardar.Enabled = false;
 
-            //boton aceptar y cancelar desactivados
             btnAceptar.Enabled = true;
             btnCancelar.Enabled = true;
         }
@@ -140,7 +132,7 @@ namespace KudekateaBikeShop
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            if ((MessageBox.Show("Desea borrar este cliente?", "Eliminar cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)) == DialogResult.Yes)
+            if ((MessageBox.Show("¿Desea borrar este cliente?", "Eliminar cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)) == DialogResult.Yes)
             {
                 try
                 {
@@ -166,7 +158,6 @@ namespace KudekateaBikeShop
                 if (comboBox1.Text.Equals("Id"))
                 {
 
-                    //Buscar por id
                     if (clientesBindingSource.Find("Id", buscarTextBox.Text) == -1)
                     {
                         MessageBox.Show("Error al encontrar el Id", "Id inexistente", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -181,7 +172,6 @@ namespace KudekateaBikeShop
                 if (comboBox1.Text.Equals("Nombre"))
                 {
 
-                    //Buscar por nombre
                     if (clientesBindingSource.Find("Nombre", buscarTextBox.Text) == -1)
                     {
                         MessageBox.Show("Error al encontrar el nombre", "Nombre inexistente", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -196,7 +186,6 @@ namespace KudekateaBikeShop
                 if (comboBox1.Text.Equals("DNI"))
                 {
 
-                    //Buscar por nombre
                     if (clientesBindingSource.Find("DNI", buscarTextBox.Text) == -1)
                     {
                         MessageBox.Show("Error al encontrar el DNI", "DNI inexistente", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -211,7 +200,6 @@ namespace KudekateaBikeShop
                 if (comboBox1.Text.Equals("Telefono"))
                 {
 
-                    //Buscar por nombre
                     if (clientesBindingSource.Find("Telefono", buscarTextBox.Text) == -1)
                     {
                         MessageBox.Show("Error al encontrar el telefono", "telefono inexistente", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -267,12 +255,10 @@ namespace KudekateaBikeShop
             }
             else
             {
-                //Limpiar el errorprovider
                 errorProvider1.Clear();
 
                 clientesBindingSource.EndEdit();
 
-                //ponemos el modo consulta
                 modoConsulta();
             }
         }
@@ -281,7 +267,6 @@ namespace KudekateaBikeShop
         {
             clientesBindingSource.CancelEdit();
 
-            //Limpiar el errorprovider
             errorProvider1.Clear();
 
             modoConsulta();
@@ -408,18 +393,17 @@ namespace KudekateaBikeShop
                 btnUltimo.Enabled = true;
             }
 
-            //cuando este a 0 desbilite el boton y no cierra el programa
             btnBorrar.Enabled = clientesBindingSource.Count > 0;
         }
 
         private void btnInforme_Click(object sender, EventArgs e)
         {
 
-         /*   Boolean abierta = false;
+            Boolean abierta = false;
 
             foreach (Form fm in Application.OpenForms)
             {
-                if (fm.GetType() == typeof(ClientesInf))
+                if (fm.GetType() == typeof(InformeClientes))
                 {
                     if (fm.WindowState == FormWindowState.Minimized)
                     {
@@ -433,9 +417,9 @@ namespace KudekateaBikeShop
 
             if (!abierta)
             {
-                ClientesInf v2 = new ClientesInf();
+                InformeClientes v2 = new InformeClientes();
                 v2.Show();
-            }*/
+            }
         }
 
 

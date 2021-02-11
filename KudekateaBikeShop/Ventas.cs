@@ -49,7 +49,7 @@ namespace KudekateaBikeShop
             // TODO: esta línea de código carga datos en la tabla 'bBDDCiclismoDataSet.Venta' Puede moverla o quitarla según sea necesario.
             this.ventaTableAdapter.Fill(this.bBDDCiclismoDataSet.Venta);
 
-            detalleVentaDataGridView.Enabled = false;
+ 
 
             consultaMaestro();
             consultaDetalle();
@@ -77,7 +77,7 @@ namespace KudekateaBikeShop
             precio = float.Parse(precio_ventaTextBox.Text);
             descuento = float.Parse(descuentoTextBox.Text);
 
-            //calculamos el total del precio * cantidad
+         
             total = cantidad * precio;
 
             if (descuento == 0)
@@ -192,7 +192,6 @@ namespace KudekateaBikeShop
             btnAceptarLinea.Visible = true;
             btnCancelarLinea.Visible = true;
 
-            /////////////////
 
             contextMenuStrip1.Enabled = false;
             menuStrip1.Enabled = false;
@@ -221,7 +220,7 @@ namespace KudekateaBikeShop
             {
                 filaProducto = bBDDCiclismoDataSet.Bicicletas[id_bicicletaComboBox.SelectedIndex];
 
-                //si algun campo esta vacio
+            
                 if (filaProducto.IsCategoriaNull())
                     categoriaTextBox.Text = "";
                 else
@@ -315,13 +314,13 @@ namespace KudekateaBikeShop
             {
                 try
                 {
-                    //borramos las lineas del detalle
+                 
                     while (detalleVentaBindingSource.Count > 0)
                     {
                         detalleVentaBindingSource.RemoveCurrent();
                     }
 
-                    //borramos el maestro
+              
                     ventaBindingSource.RemoveCurrent();
                 }
                 catch (Exception)
@@ -374,8 +373,7 @@ namespace KudekateaBikeShop
 
                     btnTerminar.Enabled = true;
 
-                    //refrescamos el grid para mostrar los datos
-                    detalleVentaDataGridView.Refresh();
+               
                 }
                 catch (Exception)
                 {
@@ -424,14 +422,13 @@ namespace KudekateaBikeShop
             {
                 try
                 {
-                    //hacer las validaciones
                     errorProvider1.Clear();
 
                     ventaBindingSource.EndEdit();
 
                     consultaMaestro();
 
-                    nombre_clienteTextBox.Text = id_clienteComboBox.Text;//guardamos lo que haya en el combo en el label
+                    nombre_clienteTextBox.Text = id_clienteComboBox.Text;
 
                     contextMenuStrip1.Enabled = false;
                     menuStrip1.Enabled = false;
@@ -462,7 +459,7 @@ namespace KudekateaBikeShop
         {
             ventaBindingSource.CancelEdit();
 
-            //limpiamos el error
+  
             errorProvider1.Clear();
 
             consultaMaestro();
@@ -543,7 +540,7 @@ namespace KudekateaBikeShop
 
         private void ventaBindingSource_PositionChanged(object sender, EventArgs e)
         {
-            label1.Text = "Venta " + (ventaBindingSource.Position + 1) + " de " + ventaBindingSource.Count;
+            label1.Text = "Venta " + ( + 1) + " de " + ventaBindingSource.Count;
 
             if (ventaBindingSource.Position == 0)
             {
@@ -567,7 +564,7 @@ namespace KudekateaBikeShop
                 btnUltimo.Enabled = true;
             }
 
-            //cuando este a 0 desbilite el boton y no cierra el programa
+         
             btnBorrar.Enabled = ventaBindingSource.Count > 0;
         }
 
@@ -585,7 +582,7 @@ namespace KudekateaBikeShop
             {
                 MessageBox.Show("Error en el DNI. Debe contener 9 dígitos", "DNI erróneo", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                //le vacimaos el dni
+               
                 dNI_clienteTextBox.Text = "";
             }
             else
@@ -631,7 +628,7 @@ namespace KudekateaBikeShop
                 btnUltimoLinea.Enabled = true;
             }
 
-            //cuando este a 0 desbilite el boton y no cierra el programa
+   
             btnBorrarLinea.Enabled = detalleVentaBindingSource.Count > 0;
         }
 
@@ -661,7 +658,7 @@ namespace KudekateaBikeShop
 
         private void cantidad_vendidaTextBox_Validating(object sender, CancelEventArgs e)
         {
-            //comprobamos que sea mayor a 0
+       
             float i;
             if (!float.TryParse(cantidad_vendidaTextBox.Text, out i) | (i <= 0))
             {
@@ -678,7 +675,7 @@ namespace KudekateaBikeShop
 
         private void precio_ventaTextBox_Validating(object sender, CancelEventArgs e)
         {
-            //comprobamos que sea mayor a 0
+           
             float i;
             if (!float.TryParse(precio_ventaTextBox.Text, out i) | (i <= 0))
             {
@@ -700,7 +697,7 @@ namespace KudekateaBikeShop
 
         private void descuentoTextBox_Validating(object sender, CancelEventArgs e)
         {
-            //comprobamos que sea mayor a 0
+          
             int i;
             if (!int.TryParse(descuentoTextBox.Text, out i) | (i < 0))
             {
@@ -717,14 +714,14 @@ namespace KudekateaBikeShop
 
         private void btnInforme_Click(object sender, EventArgs e)
         {
-            //guardamos el id en la variable global (creada en Proyecto > Propiedades > Configuracion)
-          /*  Properties.Settings.Default.numVenta = id_ventaLabel1.Text;
+           
+           Properties.Settings.Default.numVenta = id_ventaLabel2.Text;
 
             Boolean abierta = false;
 
             foreach (Form fm in Application.OpenForms)
             {
-                if (fm.GetType() == typeof(VentasInf))
+                if (fm.GetType() == typeof(InformeVentas))
                 {
                     if (fm.WindowState == FormWindowState.Minimized)
                     {
@@ -738,9 +735,9 @@ namespace KudekateaBikeShop
 
             if (!abierta)
             {
-                VentasInf v2 = new VentasInf();
+                InformeVentas v2 = new InformeVentas();
                 v2.Show();
-            }*/
+            }
 
         }
 
@@ -764,6 +761,11 @@ namespace KudekateaBikeShop
                     }
                 }
             }
+        }
+
+        private void detalleVentaDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

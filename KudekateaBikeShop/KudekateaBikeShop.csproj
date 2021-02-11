@@ -48,10 +48,35 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1427.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1427.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1427.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1427.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1427.0\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1427.0\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -63,10 +88,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcercaDe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AcercaDe.Designer.cs">
+      <DependentUpon>AcercaDe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BBDDCiclismoDataSet1.cs">
+      <DependentUpon>BBDDCiclismoDataSet1.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="BBDDCiclismoDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BBDDCiclismoDataSet1.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Catalogo.cs">
       <SubType>Form</SubType>
@@ -82,15 +118,53 @@
     </Compile>
     <Compile Include="Compras.cs">
       <SubType>Form</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Compras.Designer.cs">
       <DependentUpon>Compras.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Empleados.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Empleados.Designer.cs">
       <DependentUpon>Empleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InformeCatalogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InformeCatalogo.Designer.cs">
+      <DependentUpon>InformeCatalogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InformeClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InformeClientes.Designer.cs">
+      <DependentUpon>InformeClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InformeCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InformeCompras.Designer.cs">
+      <DependentUpon>InformeCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InformeEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InformeEmpleados.Designer.cs">
+      <DependentUpon>InformeEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InformeProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InformeProveedores.Designer.cs">
+      <DependentUpon>InformeProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InformeVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InformeVentas.Designer.cs">
+      <DependentUpon>InformeVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -112,12 +186,16 @@
       <DependentUpon>Proveedores.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Ventas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AcercaDe.resx">
+      <DependentUpon>AcercaDe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Catalogo.resx">
       <DependentUpon>Catalogo.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,9 +204,34 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Compras.resx">
       <DependentUpon>Compras.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Empleados.resx">
       <DependentUpon>Empleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InformeCatalogo.rdlc" />
+    <EmbeddedResource Include="InformeCatalogo.resx">
+      <DependentUpon>InformeCatalogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InformeClientes.rdlc" />
+    <EmbeddedResource Include="InformeClientes.resx">
+      <DependentUpon>InformeClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InformeCompras.rdlc" />
+    <EmbeddedResource Include="InformeCompras.resx">
+      <DependentUpon>InformeCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InformeEmpleados.rdlc" />
+    <EmbeddedResource Include="InformeEmpleados.resx">
+      <DependentUpon>InformeEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InformeProveedor.rdlc" />
+    <EmbeddedResource Include="InformeProveedores.resx">
+      <DependentUpon>InformeProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InformeVentas.rdlc" />
+    <EmbeddedResource Include="InformeVentas.resx">
+      <DependentUpon>InformeVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -154,15 +257,19 @@
     </EmbeddedResource>
     <None Include="BBDDCiclismoDataSet1.xsc">
       <DependentUpon>BBDDCiclismoDataSet1.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="BBDDCiclismoDataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>BBDDCiclismoDataSet1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="BBDDCiclismoDataSet1.xss">
       <DependentUpon>BBDDCiclismoDataSet1.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -190,11 +297,32 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BBDDCiclismo.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="BBDDCiclismo_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>BBDDCiclismo.mdf</DependentUpon>
+    </Content>
+    <None Include="Resources\icons8-leer-64.png" />
+    <None Include="Resources\icons8-licencia-64.png" />
+    <None Include="Resources\icons8-github-2-48.png" />
+    <None Include="Resources\icons8-linkedin-30.png" />
+    <None Include="Resources\icons8-github-30.png" />
+    <None Include="Resources\icons8-dominio-30.png" />
+    <None Include="Resources\Imagen_no_disponible.svg.png" />
+    <None Include="Resources\icons8-exportar-48.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\icons8-marca-de-verificación-48.png" />
     <None Include="Resources\icons8-eliminar-481.png" />

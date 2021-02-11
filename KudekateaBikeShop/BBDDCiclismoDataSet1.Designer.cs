@@ -40,6 +40,10 @@ namespace KudekateaBikeShop {
         
         private VentaDataTable tableVenta;
         
+        private global::System.Data.DataRelation relationDetalleVenta_Venta;
+        
+        private global::System.Data.DataRelation relationCompras_DetalleCompras;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -362,6 +366,8 @@ namespace KudekateaBikeShop {
                     this.tableVenta.InitVars();
                 }
             }
+            this.relationDetalleVenta_Venta = this.Relations["DetalleVenta_Venta"];
+            this.relationCompras_DetalleCompras = this.Relations["Compras_DetalleCompras"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -388,6 +394,14 @@ namespace KudekateaBikeShop {
             base.Tables.Add(this.tableProveedor);
             this.tableVenta = new VentaDataTable();
             base.Tables.Add(this.tableVenta);
+            this.relationDetalleVenta_Venta = new global::System.Data.DataRelation("DetalleVenta_Venta", new global::System.Data.DataColumn[] {
+                        this.tableDetalleVenta.Id_ventaColumn}, new global::System.Data.DataColumn[] {
+                        this.tableVenta.Id_ventaColumn}, false);
+            this.Relations.Add(this.relationDetalleVenta_Venta);
+            this.relationCompras_DetalleCompras = new global::System.Data.DataRelation("Compras_DetalleCompras", new global::System.Data.DataColumn[] {
+                        this.tableCompras.Id_compraColumn}, new global::System.Data.DataColumn[] {
+                        this.tableDetalleCompras.Id_compraColumn}, false);
+            this.Relations.Add(this.relationCompras_DetalleCompras);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -674,10 +688,10 @@ namespace KudekateaBikeShop {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public BicicletasRow AddBicicletasRow(int Id, string Nombre, string Categoria, string Fabricante, int Stock, double Precio, byte[] Foto, string Descripcion) {
+            public BicicletasRow AddBicicletasRow(string Nombre, string Categoria, string Fabricante, int Stock, double Precio, byte[] Foto, string Descripcion) {
                 BicicletasRow rowBicicletasRow = ((BicicletasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id,
+                        null,
                         Nombre,
                         Categoria,
                         Fabricante,
@@ -745,6 +759,8 @@ namespace KudekateaBikeShop {
                 base.Columns.Add(this.columnDescripcion);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
+                this.columnId.AutoIncrement = true;
+                this.columnId.AutoIncrementSeed = 1;
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
                 this.columnNombre.MaxLength = 50;
@@ -1034,10 +1050,10 @@ namespace KudekateaBikeShop {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ClientesRow AddClientesRow(int Id, string Nombre, string DNI, string Email, string Telefono, string Direccion, string Provincia, string Codigo_postal) {
+            public ClientesRow AddClientesRow(string Nombre, string DNI, string Email, string Telefono, string Direccion, string Provincia, string Codigo_postal) {
                 ClientesRow rowClientesRow = ((ClientesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id,
+                        null,
                         Nombre,
                         DNI,
                         Email,
@@ -1105,6 +1121,8 @@ namespace KudekateaBikeShop {
                 base.Columns.Add(this.columnCodigo_postal);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
+                this.columnId.AutoIncrement = true;
+                this.columnId.AutoIncrementSeed = 1;
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
                 this.columnNombre.MaxLength = 50;
@@ -1387,10 +1405,10 @@ namespace KudekateaBikeShop {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ComprasRow AddComprasRow(int Id_compra, int Id_proveedor, int Id_empleado, string Nombre_proveedor, string Telefono_proveedor, string Email_proveedor, System.DateTime Fecha_compra) {
+            public ComprasRow AddComprasRow(int Id_proveedor, int Id_empleado, string Nombre_proveedor, string Telefono_proveedor, string Email_proveedor, System.DateTime Fecha_compra) {
                 ComprasRow rowComprasRow = ((ComprasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id_compra,
+                        null,
                         Id_proveedor,
                         Id_empleado,
                         Nombre_proveedor,
@@ -1454,6 +1472,8 @@ namespace KudekateaBikeShop {
                 base.Columns.Add(this.columnFecha_compra);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId_compra}, true));
+                this.columnId_compra.AutoIncrement = true;
+                this.columnId_compra.AutoIncrementSeed = 1;
                 this.columnId_compra.AllowDBNull = false;
                 this.columnId_compra.Unique = true;
                 this.columnId_proveedor.AllowDBNull = false;
@@ -1763,11 +1783,11 @@ namespace KudekateaBikeShop {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DetalleComprasRow AddDetalleComprasRow(int Id_compra, int Id_bicicleta, string Nombre_bicicleta, string Categoria, string Fabricante, int Cantidad_comprada, double Precio_compra, int Descuento, double Total_linea, double total) {
+            public DetalleComprasRow AddDetalleComprasRow(ComprasRow parentComprasRowByCompras_DetalleCompras, string Nombre_bicicleta, string Categoria, string Fabricante, int Cantidad_comprada, double Precio_compra, int Descuento, double Total_linea, double total) {
                 DetalleComprasRow rowDetalleComprasRow = ((DetalleComprasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id_compra,
-                        Id_bicicleta,
+                        null,
+                        null,
                         Nombre_bicicleta,
                         Categoria,
                         Fabricante,
@@ -1776,6 +1796,9 @@ namespace KudekateaBikeShop {
                         Descuento,
                         Total_linea,
                         total};
+                if ((parentComprasRowByCompras_DetalleCompras != null)) {
+                    columnValuesArray[0] = parentComprasRowByCompras_DetalleCompras[0];
+                }
                 rowDetalleComprasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDetalleComprasRow);
                 return rowDetalleComprasRow;
@@ -1845,6 +1868,8 @@ namespace KudekateaBikeShop {
                                 this.columnId_compra,
                                 this.columnId_bicicleta}, true));
                 this.columnId_compra.AllowDBNull = false;
+                this.columnId_bicicleta.AutoIncrement = true;
+                this.columnId_bicicleta.AutoIncrementSeed = 1;
                 this.columnId_bicicleta.AllowDBNull = false;
                 this.columnNombre_bicicleta.MaxLength = 50;
                 this.columnCategoria.MaxLength = 50;
@@ -2152,11 +2177,11 @@ namespace KudekateaBikeShop {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DetalleVentaRow AddDetalleVentaRow(int Id_venta, int Id_bicicleta, string Nombre_bicicleta, string Categoria, string Fabricante, int Cantidad_vendida, double Precio_venta, int Descuento, double Total_linea, double Total) {
+            public DetalleVentaRow AddDetalleVentaRow(int Id_venta, string Nombre_bicicleta, string Categoria, string Fabricante, int Cantidad_vendida, double Precio_venta, int Descuento, double Total_linea, double Total) {
                 DetalleVentaRow rowDetalleVentaRow = ((DetalleVentaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Id_venta,
-                        Id_bicicleta,
+                        null,
                         Nombre_bicicleta,
                         Categoria,
                         Fabricante,
@@ -2234,6 +2259,8 @@ namespace KudekateaBikeShop {
                                 this.columnId_venta,
                                 this.columnId_bicicleta}, true));
                 this.columnId_venta.AllowDBNull = false;
+                this.columnId_bicicleta.AutoIncrement = true;
+                this.columnId_bicicleta.AutoIncrementSeed = 1;
                 this.columnId_bicicleta.AllowDBNull = false;
                 this.columnNombre_bicicleta.MaxLength = 50;
                 this.columnCategoria.MaxLength = 50;
@@ -2531,10 +2558,10 @@ namespace KudekateaBikeShop {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public EmpleadosRow AddEmpleadosRow(int Id, string Nombre, string DNI, string Direccion, string Telefono, string Usuario, string Password, string Rol, byte[] Foto) {
+            public EmpleadosRow AddEmpleadosRow(string Nombre, string DNI, string Direccion, string Telefono, string Usuario, string Password, string Rol, byte[] Foto) {
                 EmpleadosRow rowEmpleadosRow = ((EmpleadosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id,
+                        null,
                         Nombre,
                         DNI,
                         Direccion,
@@ -2606,6 +2633,8 @@ namespace KudekateaBikeShop {
                 base.Columns.Add(this.columnFoto);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
+                this.columnId.AutoIncrement = true;
+                this.columnId.AutoIncrementSeed = 1;
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
                 this.columnNombre.MaxLength = 50;
@@ -2898,10 +2927,10 @@ namespace KudekateaBikeShop {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ProveedorRow AddProveedorRow(int Id, string Nombre, string Telefono, string Email, string Provincia, string Direccion, string Cod_postal, string Pais) {
+            public ProveedorRow AddProveedorRow(string Nombre, string Telefono, string Email, string Provincia, string Direccion, string Cod_postal, string Pais) {
                 ProveedorRow rowProveedorRow = ((ProveedorRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id,
+                        null,
                         Nombre,
                         Telefono,
                         Email,
@@ -2969,6 +2998,8 @@ namespace KudekateaBikeShop {
                 base.Columns.Add(this.columnPais);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
+                this.columnId.AutoIncrement = true;
+                this.columnId.AutoIncrementSeed = 1;
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
                 this.columnNombre.MaxLength = 50;
@@ -3251,10 +3282,10 @@ namespace KudekateaBikeShop {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public VentaRow AddVentaRow(int Id_venta, int Id_cliente, int Id_empleado, string Nombre_cliente, string DNI_cliente, string Email_cliente, System.DateTime Fecha_venta) {
+            public VentaRow AddVentaRow(int Id_cliente, int Id_empleado, string Nombre_cliente, string DNI_cliente, string Email_cliente, System.DateTime Fecha_venta) {
                 VentaRow rowVentaRow = ((VentaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id_venta,
+                        null,
                         Id_cliente,
                         Id_empleado,
                         Nombre_cliente,
@@ -3318,6 +3349,8 @@ namespace KudekateaBikeShop {
                 base.Columns.Add(this.columnFecha_venta);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId_venta}, true));
+                this.columnId_venta.AutoIncrement = true;
+                this.columnId_venta.AutoIncrementSeed = 1;
                 this.columnId_venta.AllowDBNull = false;
                 this.columnId_venta.Unique = true;
                 this.columnId_cliente.AllowDBNull = false;
@@ -4069,6 +4102,17 @@ namespace KudekateaBikeShop {
             public void SetFecha_compraNull() {
                 this[this.tableCompras.Fecha_compraColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public DetalleComprasRow[] GetDetalleComprasRows() {
+                if ((this.Table.ChildRelations["Compras_DetalleCompras"] == null)) {
+                    return new DetalleComprasRow[0];
+                }
+                else {
+                    return ((DetalleComprasRow[])(base.GetChildRows(this.Table.ChildRelations["Compras_DetalleCompras"])));
+                }
+            }
         }
         
         /// <summary>
@@ -4234,6 +4278,17 @@ namespace KudekateaBikeShop {
                 }
                 set {
                     this[this.tableDetalleCompras.totalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ComprasRow ComprasRow {
+                get {
+                    return ((ComprasRow)(this.GetParentRow(this.Table.ParentRelations["Compras_DetalleCompras"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Compras_DetalleCompras"]);
                 }
             }
             
@@ -4592,6 +4647,17 @@ namespace KudekateaBikeShop {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetTotalNull() {
                 this[this.tableDetalleVenta.TotalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public VentaRow[] GetVentaRows() {
+                if ((this.Table.ChildRelations["DetalleVenta_Venta"] == null)) {
+                    return new VentaRow[0];
+                }
+                else {
+                    return ((VentaRow[])(base.GetChildRows(this.Table.ChildRelations["DetalleVenta_Venta"])));
+                }
             }
         }
         
@@ -5180,6 +5246,17 @@ namespace KudekateaBikeShop {
                 }
                 set {
                     this[this.tableVenta.Fecha_ventaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public DetalleVentaRow DetalleVentaRow {
+                get {
+                    return ((DetalleVentaRow)(this.GetParentRow(this.Table.ParentRelations["DetalleVenta_Venta"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["DetalleVenta_Venta"]);
                 }
             }
             
@@ -10156,6 +10233,24 @@ SELECT Id_venta, Id_cliente, Id_empleado, Nombre_cliente, DNI_cliente, Email_cli
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateUpdatedRows(BBDDCiclismoDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._comprasTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Compras.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._comprasTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._detalleVentaTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.DetalleVenta.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._detalleVentaTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._bicicletasTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Bicicletas.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -10174,30 +10269,12 @@ SELECT Id_venta, Id_cliente, Id_empleado, Nombre_cliente, DNI_cliente, Email_cli
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._comprasTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Compras.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._comprasTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._detalleComprasTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.DetalleCompras.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._detalleComprasTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._detalleVentaTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.DetalleVenta.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._detalleVentaTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -10238,6 +10315,22 @@ SELECT Id_venta, Id_cliente, Id_empleado, Nombre_cliente, DNI_cliente, Email_cli
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateInsertedRows(BBDDCiclismoDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._comprasTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Compras.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._comprasTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._detalleVentaTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.DetalleVenta.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._detalleVentaTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._bicicletasTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Bicicletas.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -10254,27 +10347,11 @@ SELECT Id_venta, Id_cliente, Id_empleado, Nombre_cliente, DNI_cliente, Email_cli
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._comprasTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Compras.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._comprasTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._detalleComprasTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.DetalleCompras.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._detalleComprasTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._detalleVentaTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.DetalleVenta.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._detalleVentaTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -10336,27 +10413,11 @@ SELECT Id_venta, Id_cliente, Id_empleado, Nombre_cliente, DNI_cliente, Email_cli
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._detalleVentaTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.DetalleVenta.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._detalleVentaTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._detalleComprasTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.DetalleCompras.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._detalleComprasTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._comprasTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Compras.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._comprasTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -10373,6 +10434,22 @@ SELECT Id_venta, Id_cliente, Id_empleado, Nombre_cliente, DNI_cliente, Email_cli
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._bicicletasTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._detalleVentaTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.DetalleVenta.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._detalleVentaTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._comprasTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Compras.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._comprasTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

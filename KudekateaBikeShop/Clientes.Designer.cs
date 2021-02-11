@@ -38,12 +38,19 @@ namespace KudekateaBikeShop
             System.Windows.Forms.Label direccionLabel;
             System.Windows.Forms.Label provinciaLabel;
             System.Windows.Forms.Label codigo_postalLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clientes));
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.bBDDCiclismoDataSet = new KudekateaBikeShop.BBDDCiclismoDataSet();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tableAdapterManager = new KudekateaBikeShop.BBDDCiclismoDataSetTableAdapters.TableAdapterManager();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.añadirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.borrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.guardarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarTextBox = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -70,6 +77,8 @@ namespace KudekateaBikeShop
             this.btnUltimo = new System.Windows.Forms.Button();
             this.btnPrimero = new System.Windows.Forms.Button();
             this.btnSiguiente = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             idLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             dNILabel = new System.Windows.Forms.Label();
@@ -80,8 +89,91 @@ namespace KudekateaBikeShop
             codigo_postalLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bBDDCiclismoDataSet)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // idLabel
+            // 
+            idLabel.AutoSize = true;
+            idLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            idLabel.Location = new System.Drawing.Point(72, 252);
+            idLabel.Name = "idLabel";
+            idLabel.Size = new System.Drawing.Size(42, 28);
+            idLabel.TabIndex = 242;
+            idLabel.Text = "Id:";
+            // 
+            // nombreLabel
+            // 
+            nombreLabel.AutoSize = true;
+            nombreLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nombreLabel.Location = new System.Drawing.Point(74, 294);
+            nombreLabel.Name = "nombreLabel";
+            nombreLabel.Size = new System.Drawing.Size(114, 28);
+            nombreLabel.TabIndex = 245;
+            nombreLabel.Text = "Nombre:";
+            // 
+            // dNILabel
+            // 
+            dNILabel.AutoSize = true;
+            dNILabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dNILabel.Location = new System.Drawing.Point(115, 359);
+            dNILabel.Name = "dNILabel";
+            dNILabel.Size = new System.Drawing.Size(61, 28);
+            dNILabel.TabIndex = 247;
+            dNILabel.Text = "DNI:";
+            // 
+            // emailLabel
+            // 
+            emailLabel.AutoSize = true;
+            emailLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            emailLabel.Location = new System.Drawing.Point(94, 410);
+            emailLabel.Name = "emailLabel";
+            emailLabel.Size = new System.Drawing.Size(82, 28);
+            emailLabel.TabIndex = 249;
+            emailLabel.Text = "Email:";
+            // 
+            // telefonoLabel
+            // 
+            telefonoLabel.AutoSize = true;
+            telefonoLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            telefonoLabel.Location = new System.Drawing.Point(60, 468);
+            telefonoLabel.Name = "telefonoLabel";
+            telefonoLabel.Size = new System.Drawing.Size(116, 28);
+            telefonoLabel.TabIndex = 251;
+            telefonoLabel.Text = "Telefono:";
+            // 
+            // direccionLabel
+            // 
+            direccionLabel.AutoSize = true;
+            direccionLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            direccionLabel.Location = new System.Drawing.Point(424, 298);
+            direccionLabel.Name = "direccionLabel";
+            direccionLabel.Size = new System.Drawing.Size(130, 28);
+            direccionLabel.TabIndex = 253;
+            direccionLabel.Text = "Direccion:";
+            // 
+            // provinciaLabel
+            // 
+            provinciaLabel.AutoSize = true;
+            provinciaLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            provinciaLabel.Location = new System.Drawing.Point(429, 362);
+            provinciaLabel.Name = "provinciaLabel";
+            provinciaLabel.Size = new System.Drawing.Size(125, 28);
+            provinciaLabel.TabIndex = 255;
+            provinciaLabel.Text = "Provincia:";
+            // 
+            // codigo_postalLabel
+            // 
+            codigo_postalLabel.AutoSize = true;
+            codigo_postalLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            codigo_postalLabel.Location = new System.Drawing.Point(370, 414);
+            codigo_postalLabel.Name = "codigo_postalLabel";
+            codigo_postalLabel.Size = new System.Drawing.Size(184, 28);
+            codigo_postalLabel.TabIndex = 257;
+            codigo_postalLabel.Text = "Codigo postal:";
             // 
             // errorProvider1
             // 
@@ -108,27 +200,87 @@ namespace KudekateaBikeShop
             this.tableAdapterManager.BicicletasTableAdapter = null;
             this.tableAdapterManager.ClientesTableAdapter = null;
             this.tableAdapterManager.ComprasTableAdapter = null;
+            this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.DetalleComprasTableAdapter = null;
             this.tableAdapterManager.DetalleVentaTableAdapter = null;
+            this.tableAdapterManager.EmpleadosTableAdapter = null;
             this.tableAdapterManager.ProveedorTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = KudekateaBikeShop.BBDDCiclismoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.VentaTableAdapter = null;
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(936, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(948, 33);
             this.menuStrip1.TabIndex = 242;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // menuToolStripMenuItem
+            // 
+            this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.añadirToolStripMenuItem,
+            this.editarToolStripMenuItem,
+            this.borrarToolStripMenuItem,
+            this.guardarToolStripMenuItem,
+            this.informeToolStripMenuItem});
+            this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(73, 29);
+            this.menuToolStripMenuItem.Text = "Menu";
+            // 
+            // añadirToolStripMenuItem
+            // 
+            this.añadirToolStripMenuItem.Image = global::KudekateaBikeShop.Properties.Resources.icons8_añadir_usuario_masculino_48;
+            this.añadirToolStripMenuItem.Name = "añadirToolStripMenuItem";
+            this.añadirToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.A)));
+            this.añadirToolStripMenuItem.Size = new System.Drawing.Size(235, 34);
+            this.añadirToolStripMenuItem.Text = "Añadir";
+            this.añadirToolStripMenuItem.Click += new System.EventHandler(this.btnAnadir_Click);
+            // 
+            // editarToolStripMenuItem
+            // 
+            this.editarToolStripMenuItem.Image = global::KudekateaBikeShop.Properties.Resources.icons8_editar_48;
+            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            this.editarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.E)));
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(235, 34);
+            this.editarToolStripMenuItem.Text = "Editar";
+            this.editarToolStripMenuItem.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // borrarToolStripMenuItem
+            // 
+            this.borrarToolStripMenuItem.Image = global::KudekateaBikeShop.Properties.Resources.icons8_eliminar_48;
+            this.borrarToolStripMenuItem.Name = "borrarToolStripMenuItem";
+            this.borrarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.B)));
+            this.borrarToolStripMenuItem.Size = new System.Drawing.Size(235, 34);
+            this.borrarToolStripMenuItem.Text = "Borrar";
+            this.borrarToolStripMenuItem.Click += new System.EventHandler(this.btnBorrar_Click);
+            // 
+            // guardarToolStripMenuItem
+            // 
+            this.guardarToolStripMenuItem.Image = global::KudekateaBikeShop.Properties.Resources.icons8_guardar_48;
+            this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
+            this.guardarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.G)));
+            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(235, 34);
+            this.guardarToolStripMenuItem.Text = "Guardar";
+            this.guardarToolStripMenuItem.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // informeToolStripMenuItem
+            // 
+            this.informeToolStripMenuItem.Image = global::KudekateaBikeShop.Properties.Resources.icons8_reporte_de_negocios_48;
+            this.informeToolStripMenuItem.Name = "informeToolStripMenuItem";
+            this.informeToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.I)));
+            this.informeToolStripMenuItem.Size = new System.Drawing.Size(235, 34);
+            this.informeToolStripMenuItem.Text = "Informe";
+            this.informeToolStripMenuItem.Click += new System.EventHandler(this.btnInforme_Click);
             // 
             // buscarTextBox
             // 
             this.buscarTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buscarTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
-            this.buscarTextBox.Location = new System.Drawing.Point(279, 184);
+            this.buscarTextBox.Location = new System.Drawing.Point(270, 185);
             this.buscarTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buscarTextBox.Name = "buscarTextBox";
             this.buscarTextBox.Size = new System.Drawing.Size(399, 44);
@@ -143,8 +295,9 @@ namespace KudekateaBikeShop
             this.comboBox1.Items.AddRange(new object[] {
             "Id",
             "Nombre",
-            "Creador"});
-            this.comboBox1.Location = new System.Drawing.Point(78, 180);
+            "DNI",
+            "Telefono"});
+            this.comboBox1.Location = new System.Drawing.Point(74, 185);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(180, 45);
@@ -155,7 +308,7 @@ namespace KudekateaBikeShop
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(73, 147);
+            this.label2.Location = new System.Drawing.Point(69, 144);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(119, 28);
@@ -175,7 +328,7 @@ namespace KudekateaBikeShop
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(308, 94);
+            this.label1.Location = new System.Drawing.Point(435, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 20);
             this.label1.TabIndex = 234;
@@ -191,147 +344,75 @@ namespace KudekateaBikeShop
             // 
             this.clientesTableAdapter.ClearBeforeFill = true;
             // 
-            // idLabel
-            // 
-            idLabel.AutoSize = true;
-            idLabel.Location = new System.Drawing.Point(97, 252);
-            idLabel.Name = "idLabel";
-            idLabel.Size = new System.Drawing.Size(27, 20);
-            idLabel.TabIndex = 242;
-            idLabel.Text = "Id:";
-            // 
             // idLabel1
             // 
             this.idLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "Id", true));
-            this.idLabel1.Location = new System.Drawing.Point(130, 252);
+            this.idLabel1.Location = new System.Drawing.Point(116, 257);
             this.idLabel1.Name = "idLabel1";
             this.idLabel1.Size = new System.Drawing.Size(100, 23);
             this.idLabel1.TabIndex = 243;
             this.idLabel1.Text = "label3";
-            // 
-            // nombreLabel
-            // 
-            nombreLabel.AutoSize = true;
-            nombreLabel.Location = new System.Drawing.Point(83, 304);
-            nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new System.Drawing.Size(69, 20);
-            nombreLabel.TabIndex = 245;
-            nombreLabel.Text = "Nombre:";
             // 
             // nombreTextBox
             // 
             this.nombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "Nombre", true));
             this.nombreTextBox.Location = new System.Drawing.Point(199, 301);
             this.nombreTextBox.Name = "nombreTextBox";
-            this.nombreTextBox.Size = new System.Drawing.Size(100, 26);
+            this.nombreTextBox.Size = new System.Drawing.Size(142, 26);
             this.nombreTextBox.TabIndex = 246;
             this.nombreTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.nombreTextBox_Validating);
-            // 
-            // dNILabel
-            // 
-            dNILabel.AutoSize = true;
-            dNILabel.Location = new System.Drawing.Point(83, 336);
-            dNILabel.Name = "dNILabel";
-            dNILabel.Size = new System.Drawing.Size(41, 20);
-            dNILabel.TabIndex = 247;
-            dNILabel.Text = "DNI:";
             // 
             // dNITextBox
             // 
             this.dNITextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "DNI", true));
-            this.dNITextBox.Location = new System.Drawing.Point(199, 333);
+            this.dNITextBox.Location = new System.Drawing.Point(199, 359);
             this.dNITextBox.Name = "dNITextBox";
-            this.dNITextBox.Size = new System.Drawing.Size(100, 26);
+            this.dNITextBox.Size = new System.Drawing.Size(142, 26);
             this.dNITextBox.TabIndex = 248;
             this.dNITextBox.Validating += new System.ComponentModel.CancelEventHandler(this.dNITextBox_Validating);
-            // 
-            // emailLabel
-            // 
-            emailLabel.AutoSize = true;
-            emailLabel.Location = new System.Drawing.Point(83, 368);
-            emailLabel.Name = "emailLabel";
-            emailLabel.Size = new System.Drawing.Size(52, 20);
-            emailLabel.TabIndex = 249;
-            emailLabel.Text = "Email:";
             // 
             // emailTextBox
             // 
             this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "Email", true));
-            this.emailTextBox.Location = new System.Drawing.Point(199, 365);
+            this.emailTextBox.Location = new System.Drawing.Point(199, 414);
             this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(100, 26);
+            this.emailTextBox.Size = new System.Drawing.Size(142, 26);
             this.emailTextBox.TabIndex = 250;
             this.emailTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.emailTextBox_Validating);
-            // 
-            // telefonoLabel
-            // 
-            telefonoLabel.AutoSize = true;
-            telefonoLabel.Location = new System.Drawing.Point(83, 400);
-            telefonoLabel.Name = "telefonoLabel";
-            telefonoLabel.Size = new System.Drawing.Size(75, 20);
-            telefonoLabel.TabIndex = 251;
-            telefonoLabel.Text = "Telefono:";
             // 
             // telefonoTextBox
             // 
             this.telefonoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "Telefono", true));
-            this.telefonoTextBox.Location = new System.Drawing.Point(199, 397);
+            this.telefonoTextBox.Location = new System.Drawing.Point(199, 476);
             this.telefonoTextBox.Name = "telefonoTextBox";
-            this.telefonoTextBox.Size = new System.Drawing.Size(100, 26);
+            this.telefonoTextBox.Size = new System.Drawing.Size(142, 26);
             this.telefonoTextBox.TabIndex = 252;
             this.telefonoTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.telefonoTextBox_Validating);
-            // 
-            // direccionLabel
-            // 
-            direccionLabel.AutoSize = true;
-            direccionLabel.Location = new System.Drawing.Point(345, 339);
-            direccionLabel.Name = "direccionLabel";
-            direccionLabel.Size = new System.Drawing.Size(79, 20);
-            direccionLabel.TabIndex = 253;
-            direccionLabel.Text = "Direccion:";
             // 
             // direccionTextBox
             // 
             this.direccionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "Direccion", true));
-            this.direccionTextBox.Location = new System.Drawing.Point(461, 336);
+            this.direccionTextBox.Location = new System.Drawing.Point(573, 298);
             this.direccionTextBox.Name = "direccionTextBox";
-            this.direccionTextBox.Size = new System.Drawing.Size(100, 26);
+            this.direccionTextBox.Size = new System.Drawing.Size(149, 26);
             this.direccionTextBox.TabIndex = 254;
             this.direccionTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.direccionTextBox_Validating);
-            // 
-            // provinciaLabel
-            // 
-            provinciaLabel.AutoSize = true;
-            provinciaLabel.Location = new System.Drawing.Point(345, 371);
-            provinciaLabel.Name = "provinciaLabel";
-            provinciaLabel.Size = new System.Drawing.Size(76, 20);
-            provinciaLabel.TabIndex = 255;
-            provinciaLabel.Text = "Provincia:";
             // 
             // provinciaTextBox
             // 
             this.provinciaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "Provincia", true));
-            this.provinciaTextBox.Location = new System.Drawing.Point(461, 368);
+            this.provinciaTextBox.Location = new System.Drawing.Point(576, 362);
             this.provinciaTextBox.Name = "provinciaTextBox";
-            this.provinciaTextBox.Size = new System.Drawing.Size(100, 26);
+            this.provinciaTextBox.Size = new System.Drawing.Size(146, 26);
             this.provinciaTextBox.TabIndex = 256;
             this.provinciaTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.provinciaTextBox_Validating);
-            // 
-            // codigo_postalLabel
-            // 
-            codigo_postalLabel.AutoSize = true;
-            codigo_postalLabel.Location = new System.Drawing.Point(345, 403);
-            codigo_postalLabel.Name = "codigo_postalLabel";
-            codigo_postalLabel.Size = new System.Drawing.Size(110, 20);
-            codigo_postalLabel.TabIndex = 257;
-            codigo_postalLabel.Text = "Codigo postal:";
             // 
             // codigo_postalTextBox
             // 
             this.codigo_postalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "Codigo_postal", true));
-            this.codigo_postalTextBox.Location = new System.Drawing.Point(461, 400);
+            this.codigo_postalTextBox.Location = new System.Drawing.Point(576, 414);
             this.codigo_postalTextBox.Name = "codigo_postalTextBox";
-            this.codigo_postalTextBox.Size = new System.Drawing.Size(100, 26);
+            this.codigo_postalTextBox.Size = new System.Drawing.Size(146, 26);
             this.codigo_postalTextBox.TabIndex = 258;
             this.codigo_postalTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.codigo_postalTextBox_Validating);
             // 
@@ -340,7 +421,7 @@ namespace KudekateaBikeShop
             this.btnGuardar.FlatAppearance.BorderSize = 0;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Image = global::KudekateaBikeShop.Properties.Resources.icons8_guardar_48;
-            this.btnGuardar.Location = new System.Drawing.Point(851, 78);
+            this.btnGuardar.Location = new System.Drawing.Point(21, 360);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 58);
             this.btnGuardar.TabIndex = 238;
@@ -352,7 +433,7 @@ namespace KudekateaBikeShop
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Image = global::KudekateaBikeShop.Properties.Resources.icons8_eliminar_481;
-            this.btnCancelar.Location = new System.Drawing.Point(677, 386);
+            this.btnCancelar.Location = new System.Drawing.Point(25, 531);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 48);
             this.btnCancelar.TabIndex = 237;
@@ -364,9 +445,9 @@ namespace KudekateaBikeShop
             this.btnAceptar.FlatAppearance.BorderSize = 0;
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Image = global::KudekateaBikeShop.Properties.Resources.icons8_marca_de_verificación_48;
-            this.btnAceptar.Location = new System.Drawing.Point(677, 313);
+            this.btnAceptar.Location = new System.Drawing.Point(33, 441);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 46);
+            this.btnAceptar.Size = new System.Drawing.Size(63, 59);
             this.btnAceptar.TabIndex = 236;
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
@@ -376,7 +457,7 @@ namespace KudekateaBikeShop
             this.btnBorrar.FlatAppearance.BorderSize = 0;
             this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrar.Image = global::KudekateaBikeShop.Properties.Resources.icons8_retire_hombre_usuario_48;
-            this.btnBorrar.Location = new System.Drawing.Point(743, 68);
+            this.btnBorrar.Location = new System.Drawing.Point(21, 263);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(75, 72);
             this.btnBorrar.TabIndex = 233;
@@ -388,7 +469,7 @@ namespace KudekateaBikeShop
             this.btnInforme.FlatAppearance.BorderSize = 0;
             this.btnInforme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInforme.Image = global::KudekateaBikeShop.Properties.Resources.icons8_reporte_de_negocios_48;
-            this.btnInforme.Location = new System.Drawing.Point(29, 74);
+            this.btnInforme.Location = new System.Drawing.Point(25, 24);
             this.btnInforme.Name = "btnInforme";
             this.btnInforme.Size = new System.Drawing.Size(75, 52);
             this.btnInforme.TabIndex = 232;
@@ -400,7 +481,7 @@ namespace KudekateaBikeShop
             this.btnAnadir.FlatAppearance.BorderSize = 0;
             this.btnAnadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnadir.Image = global::KudekateaBikeShop.Properties.Resources.icons8_añadir_usuario_masculino_48;
-            this.btnAnadir.Location = new System.Drawing.Point(579, 68);
+            this.btnAnadir.Location = new System.Drawing.Point(25, 103);
             this.btnAnadir.Name = "btnAnadir";
             this.btnAnadir.Size = new System.Drawing.Size(81, 73);
             this.btnAnadir.TabIndex = 231;
@@ -412,9 +493,9 @@ namespace KudekateaBikeShop
             this.btnEditar.FlatAppearance.BorderSize = 0;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Image = global::KudekateaBikeShop.Properties.Resources.icons8_editar_48;
-            this.btnEditar.Location = new System.Drawing.Point(656, 70);
+            this.btnEditar.Location = new System.Drawing.Point(25, 182);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(81, 68);
+            this.btnEditar.Size = new System.Drawing.Size(71, 68);
             this.btnEditar.TabIndex = 230;
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -424,9 +505,9 @@ namespace KudekateaBikeShop
             this.btnAnterior.FlatAppearance.BorderSize = 0;
             this.btnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnterior.Image = global::KudekateaBikeShop.Properties.Resources.icons8_izquierda_48;
-            this.btnAnterior.Location = new System.Drawing.Point(217, 78);
+            this.btnAnterior.Location = new System.Drawing.Point(302, 5);
             this.btnAnterior.Name = "btnAnterior";
-            this.btnAnterior.Size = new System.Drawing.Size(69, 53);
+            this.btnAnterior.Size = new System.Drawing.Size(88, 79);
             this.btnAnterior.TabIndex = 229;
             this.btnAnterior.UseVisualStyleBackColor = true;
             this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
@@ -436,9 +517,9 @@ namespace KudekateaBikeShop
             this.btnUltimo.FlatAppearance.BorderSize = 0;
             this.btnUltimo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUltimo.Image = global::KudekateaBikeShop.Properties.Resources.icons8_doble_derecha_48;
-            this.btnUltimo.Location = new System.Drawing.Point(476, 76);
+            this.btnUltimo.Location = new System.Drawing.Point(666, 8);
             this.btnUltimo.Name = "btnUltimo";
-            this.btnUltimo.Size = new System.Drawing.Size(65, 53);
+            this.btnUltimo.Size = new System.Drawing.Size(86, 69);
             this.btnUltimo.TabIndex = 228;
             this.btnUltimo.UseVisualStyleBackColor = true;
             this.btnUltimo.Click += new System.EventHandler(this.btnUltimo_Click);
@@ -448,9 +529,9 @@ namespace KudekateaBikeShop
             this.btnPrimero.FlatAppearance.BorderSize = 0;
             this.btnPrimero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrimero.Image = global::KudekateaBikeShop.Properties.Resources.icons8_doble_izquierda_48;
-            this.btnPrimero.Location = new System.Drawing.Point(122, 78);
+            this.btnPrimero.Location = new System.Drawing.Point(177, 11);
             this.btnPrimero.Name = "btnPrimero";
-            this.btnPrimero.Size = new System.Drawing.Size(71, 48);
+            this.btnPrimero.Size = new System.Drawing.Size(77, 66);
             this.btnPrimero.TabIndex = 227;
             this.btnPrimero.UseVisualStyleBackColor = true;
             this.btnPrimero.Click += new System.EventHandler(this.btnPrimero_Click);
@@ -460,18 +541,48 @@ namespace KudekateaBikeShop
             this.btnSiguiente.FlatAppearance.BorderSize = 0;
             this.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSiguiente.Image = global::KudekateaBikeShop.Properties.Resources.icons8_flecha_48;
-            this.btnSiguiente.Location = new System.Drawing.Point(408, 76);
+            this.btnSiguiente.Location = new System.Drawing.Point(547, 11);
             this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(62, 52);
+            this.btnSiguiente.Size = new System.Drawing.Size(90, 63);
             this.btnSiguiente.TabIndex = 226;
             this.btnSiguiente.UseVisualStyleBackColor = true;
             this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Salmon;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.btnAnterior);
+            this.panel1.Controls.Add(this.btnUltimo);
+            this.panel1.Controls.Add(this.btnPrimero);
+            this.panel1.Controls.Add(this.btnSiguiente);
+            this.panel1.Location = new System.Drawing.Point(0, 27);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(833, 114);
+            this.panel1.TabIndex = 259;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Salmon;
+            this.panel2.Controls.Add(this.btnGuardar);
+            this.panel2.Controls.Add(this.btnAceptar);
+            this.panel2.Controls.Add(this.btnBorrar);
+            this.panel2.Controls.Add(this.btnInforme);
+            this.panel2.Controls.Add(this.btnAnadir);
+            this.panel2.Controls.Add(this.btnEditar);
+            this.panel2.Controls.Add(this.btnCancelar);
+            this.panel2.Location = new System.Drawing.Point(830, 27);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(117, 600);
+            this.panel2.TabIndex = 260;
             // 
             // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(936, 472);
+            this.ClientSize = new System.Drawing.Size(948, 627);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(nombreLabel);
             this.Controls.Add(this.nombreTextBox);
             this.Controls.Add(dNILabel);
@@ -492,26 +603,21 @@ namespace KudekateaBikeShop
             this.Controls.Add(this.buscarTextBox);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnBorrar);
-            this.Controls.Add(this.btnInforme);
-            this.Controls.Add(this.btnAnadir);
-            this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.btnAnterior);
-            this.Controls.Add(this.btnUltimo);
-            this.Controls.Add(this.btnPrimero);
-            this.Controls.Add(this.btnSiguiente);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Clientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Clientes_FormClosing);
             this.Load += new System.EventHandler(this.Clientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bBDDCiclismoDataSet)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -551,5 +657,13 @@ namespace KudekateaBikeShop
         private System.Windows.Forms.TextBox provinciaTextBox;
         private System.Windows.Forms.TextBox codigo_postalTextBox;
         private System.Windows.Forms.Label idLabel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem añadirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem borrarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem guardarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem informeToolStripMenuItem;
     }
 }

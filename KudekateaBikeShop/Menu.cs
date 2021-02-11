@@ -209,5 +209,32 @@ namespace KudekateaBikeShop
                 v2.Show();
             }
         }
+
+        private void acercadebtn_Click(object sender, EventArgs e)
+        {
+            Boolean abierta = false;
+
+            foreach (Form fm in Application.OpenForms)
+            {
+                if (fm.GetType() == typeof(AcercaDe))
+                {
+                    if (fm.WindowState == FormWindowState.Minimized)
+                    {
+                        fm.WindowState = FormWindowState.Normal;
+                    }
+                    fm.BringToFront();
+                    abierta = true;
+                    break;
+                }
+            }
+
+            if (!abierta)
+            {
+                AcercaDe v2 = new AcercaDe();
+                v2.Show();
+            }
+        }
+
+ 
     }
 }
