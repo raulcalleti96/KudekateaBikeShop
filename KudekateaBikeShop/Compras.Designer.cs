@@ -94,16 +94,6 @@ namespace KudekateaBikeShop
             this.btnAnadirLinea = new System.Windows.Forms.Button();
             this.btnEditarLinea = new System.Windows.Forms.Button();
             this.btnBorrarLinea = new System.Windows.Forms.Button();
-            this.btnBorrar = new System.Windows.Forms.Button();
-            this.btnAnadir = new System.Windows.Forms.Button();
-            this.btnSiguiente = new System.Windows.Forms.Button();
-            this.btnPrimero = new System.Windows.Forms.Button();
-            this.btnUltimo = new System.Windows.Forms.Button();
-            this.btnAnterior = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.btnEditar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -137,6 +127,17 @@ namespace KudekateaBikeShop
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnAnterior = new System.Windows.Forms.Button();
+            this.btnUltimo = new System.Windows.Forms.Button();
+            this.btnPrimero = new System.Windows.Forms.Button();
+            this.btnSiguiente = new System.Windows.Forms.Button();
+            this.btnAnadir = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnBorrar = new System.Windows.Forms.Button();
+            this.ayudatoolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             fecha_compraLabel = new System.Windows.Forms.Label();
             id_compraLabel = new System.Windows.Forms.Label();
             id_empleadoLabel = new System.Windows.Forms.Label();
@@ -165,11 +166,10 @@ namespace KudekateaBikeShop
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ventaBindingSource)).BeginInit();
             this.panel4.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.detalleComprasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleComprasDataGridView)).BeginInit();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // fecha_compraLabel
@@ -361,7 +361,7 @@ namespace KudekateaBikeShop
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(72, 173);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(948, 252);
+            this.groupBox1.Size = new System.Drawing.Size(776, 153);
             this.groupBox1.TabIndex = 86;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Proovedor";
@@ -428,7 +428,7 @@ namespace KudekateaBikeShop
             this.menuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1053, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(1125, 33);
             this.menuStrip1.TabIndex = 130;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -439,7 +439,8 @@ namespace KudekateaBikeShop
             this.editarToolStripMenuItem,
             this.borrarToolStripMenuItem,
             this.guardarToolStripMenuItem,
-            this.informeToolStripMenuItem});
+            this.informeToolStripMenuItem,
+            this.ayudatoolStripMenuItem1});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             this.menuToolStripMenuItem.Size = new System.Drawing.Size(73, 29);
             this.menuToolStripMenuItem.Text = "Menu";
@@ -448,7 +449,7 @@ namespace KudekateaBikeShop
             // 
             this.añadirToolStripMenuItem.Image = global::KudekateaBikeShop.Properties.Resources.icons8_añadir_usuario_masculino_48;
             this.añadirToolStripMenuItem.Name = "añadirToolStripMenuItem";
-            this.añadirToolStripMenuItem.Size = new System.Drawing.Size(177, 34);
+            this.añadirToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.añadirToolStripMenuItem.Text = "Añadir";
             this.añadirToolStripMenuItem.Click += new System.EventHandler(this.btnAnadir_Click);
             // 
@@ -456,7 +457,7 @@ namespace KudekateaBikeShop
             // 
             this.editarToolStripMenuItem.Image = global::KudekateaBikeShop.Properties.Resources.icons8_editar_48;
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(177, 34);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.editarToolStripMenuItem.Text = "Editar";
             this.editarToolStripMenuItem.Click += new System.EventHandler(this.btnEditar_Click);
             // 
@@ -464,7 +465,7 @@ namespace KudekateaBikeShop
             // 
             this.borrarToolStripMenuItem.Image = global::KudekateaBikeShop.Properties.Resources.icons8_eliminar_48;
             this.borrarToolStripMenuItem.Name = "borrarToolStripMenuItem";
-            this.borrarToolStripMenuItem.Size = new System.Drawing.Size(177, 34);
+            this.borrarToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.borrarToolStripMenuItem.Text = "Borrar";
             this.borrarToolStripMenuItem.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
@@ -472,7 +473,7 @@ namespace KudekateaBikeShop
             // 
             this.guardarToolStripMenuItem.Image = global::KudekateaBikeShop.Properties.Resources.icons8_guardar_48;
             this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
-            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(177, 34);
+            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.guardarToolStripMenuItem.Text = "Guardar";
             this.guardarToolStripMenuItem.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
@@ -480,7 +481,7 @@ namespace KudekateaBikeShop
             // 
             this.informeToolStripMenuItem.Image = global::KudekateaBikeShop.Properties.Resources.icons8_reporte_de_negocios_48;
             this.informeToolStripMenuItem.Name = "informeToolStripMenuItem";
-            this.informeToolStripMenuItem.Size = new System.Drawing.Size(177, 34);
+            this.informeToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.informeToolStripMenuItem.Text = "Informe";
             this.informeToolStripMenuItem.Click += new System.EventHandler(this.btnInforme_Click);
             // 
@@ -494,10 +495,11 @@ namespace KudekateaBikeShop
             this.panel5.Controls.Add(this.btnTerminar);
             this.panel5.Controls.Add(this.btnCancelarLinea);
             this.panel5.Controls.Add(this.btnAceptarLinea);
-            this.panel5.Location = new System.Drawing.Point(893, 365);
+            this.panel5.Location = new System.Drawing.Point(989, 359);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(127, 282);
+            this.panel5.Size = new System.Drawing.Size(124, 288);
             this.panel5.TabIndex = 135;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // btnTerminar
             // 
@@ -507,7 +509,7 @@ namespace KudekateaBikeShop
             this.btnTerminar.FlatAppearance.BorderSize = 0;
             this.btnTerminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTerminar.Image = ((System.Drawing.Image)(resources.GetObject("btnTerminar.Image")));
-            this.btnTerminar.Location = new System.Drawing.Point(45, 1);
+            this.btnTerminar.Location = new System.Drawing.Point(44, 4);
             this.btnTerminar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnTerminar.Name = "btnTerminar";
             this.btnTerminar.Size = new System.Drawing.Size(58, 68);
@@ -634,14 +636,14 @@ namespace KudekateaBikeShop
             this.panel4.Controls.Add(this.btnBorrarLinea);
             this.panel4.Location = new System.Drawing.Point(0, 359);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(899, 68);
+            this.panel4.Size = new System.Drawing.Size(994, 68);
             this.panel4.TabIndex = 134;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(239, 21);
+            this.label2.Location = new System.Drawing.Point(266, 23);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 19);
             this.label2.TabIndex = 81;
@@ -652,7 +654,7 @@ namespace KudekateaBikeShop
             this.btnAnteriorLinea.FlatAppearance.BorderSize = 0;
             this.btnAnteriorLinea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnteriorLinea.Image = global::KudekateaBikeShop.Properties.Resources.icons8_izquierda_48;
-            this.btnAnteriorLinea.Location = new System.Drawing.Point(135, 9);
+            this.btnAnteriorLinea.Location = new System.Drawing.Point(155, 8);
             this.btnAnteriorLinea.Name = "btnAnteriorLinea";
             this.btnAnteriorLinea.Size = new System.Drawing.Size(69, 50);
             this.btnAnteriorLinea.TabIndex = 76;
@@ -664,7 +666,7 @@ namespace KudekateaBikeShop
             this.btnUltimoLinea.FlatAppearance.BorderSize = 0;
             this.btnUltimoLinea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUltimoLinea.Image = global::KudekateaBikeShop.Properties.Resources.icons8_doble_derecha_48;
-            this.btnUltimoLinea.Location = new System.Drawing.Point(394, 7);
+            this.btnUltimoLinea.Location = new System.Drawing.Point(529, 8);
             this.btnUltimoLinea.Name = "btnUltimoLinea";
             this.btnUltimoLinea.Size = new System.Drawing.Size(65, 50);
             this.btnUltimoLinea.TabIndex = 75;
@@ -688,7 +690,7 @@ namespace KudekateaBikeShop
             this.btnSiguienteLinea.FlatAppearance.BorderSize = 0;
             this.btnSiguienteLinea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSiguienteLinea.Image = global::KudekateaBikeShop.Properties.Resources.icons8_flecha_48;
-            this.btnSiguienteLinea.Location = new System.Drawing.Point(326, 7);
+            this.btnSiguienteLinea.Location = new System.Drawing.Point(387, 8);
             this.btnSiguienteLinea.Name = "btnSiguienteLinea";
             this.btnSiguienteLinea.Size = new System.Drawing.Size(62, 49);
             this.btnSiguienteLinea.TabIndex = 73;
@@ -700,7 +702,7 @@ namespace KudekateaBikeShop
             this.btnAnadirLinea.FlatAppearance.BorderSize = 0;
             this.btnAnadirLinea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnadirLinea.Image = global::KudekateaBikeShop.Properties.Resources.icons8_añadir_48;
-            this.btnAnadirLinea.Location = new System.Drawing.Point(516, 3);
+            this.btnAnadirLinea.Location = new System.Drawing.Point(626, 4);
             this.btnAnadirLinea.Name = "btnAnadirLinea";
             this.btnAnadirLinea.Size = new System.Drawing.Size(77, 63);
             this.btnAnadirLinea.TabIndex = 78;
@@ -712,7 +714,7 @@ namespace KudekateaBikeShop
             this.btnEditarLinea.FlatAppearance.BorderSize = 0;
             this.btnEditarLinea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarLinea.Image = global::KudekateaBikeShop.Properties.Resources.icons8_editar_48;
-            this.btnEditarLinea.Location = new System.Drawing.Point(615, 6);
+            this.btnEditarLinea.Location = new System.Drawing.Point(773, 7);
             this.btnEditarLinea.Name = "btnEditarLinea";
             this.btnEditarLinea.Size = new System.Drawing.Size(75, 60);
             this.btnEditarLinea.TabIndex = 77;
@@ -724,129 +726,12 @@ namespace KudekateaBikeShop
             this.btnBorrarLinea.FlatAppearance.BorderSize = 0;
             this.btnBorrarLinea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrarLinea.Image = global::KudekateaBikeShop.Properties.Resources.icons8_eliminar_48__1_;
-            this.btnBorrarLinea.Location = new System.Drawing.Point(696, 6);
+            this.btnBorrarLinea.Location = new System.Drawing.Point(884, 2);
             this.btnBorrarLinea.Name = "btnBorrarLinea";
             this.btnBorrarLinea.Size = new System.Drawing.Size(81, 62);
             this.btnBorrarLinea.TabIndex = 79;
             this.btnBorrarLinea.UseVisualStyleBackColor = true;
             this.btnBorrarLinea.Click += new System.EventHandler(this.btnBorrarLinea_Click);
-            // 
-            // btnBorrar
-            // 
-            this.btnBorrar.FlatAppearance.BorderSize = 0;
-            this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBorrar.Image = global::KudekateaBikeShop.Properties.Resources.icons8_retire_hombre_usuario_48;
-            this.btnBorrar.Location = new System.Drawing.Point(792, 2);
-            this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(87, 86);
-            this.btnBorrar.TabIndex = 72;
-            this.btnBorrar.UseVisualStyleBackColor = true;
-            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
-            // 
-            // btnAnadir
-            // 
-            this.btnAnadir.FlatAppearance.BorderSize = 0;
-            this.btnAnadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnadir.Image = global::KudekateaBikeShop.Properties.Resources.icons8_añadir_usuario_masculino_48;
-            this.btnAnadir.Location = new System.Drawing.Point(576, 4);
-            this.btnAnadir.Name = "btnAnadir";
-            this.btnAnadir.Size = new System.Drawing.Size(94, 85);
-            this.btnAnadir.TabIndex = 69;
-            this.btnAnadir.UseVisualStyleBackColor = true;
-            this.btnAnadir.Click += new System.EventHandler(this.btnAnadir_Click);
-            // 
-            // btnSiguiente
-            // 
-            this.btnSiguiente.FlatAppearance.BorderSize = 0;
-            this.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSiguiente.Image = global::KudekateaBikeShop.Properties.Resources.icons8_flecha_48;
-            this.btnSiguiente.Location = new System.Drawing.Point(403, 4);
-            this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(77, 70);
-            this.btnSiguiente.TabIndex = 64;
-            this.btnSiguiente.UseVisualStyleBackColor = true;
-            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
-            // 
-            // btnPrimero
-            // 
-            this.btnPrimero.FlatAppearance.BorderSize = 0;
-            this.btnPrimero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrimero.Image = global::KudekateaBikeShop.Properties.Resources.icons8_doble_izquierda_48;
-            this.btnPrimero.Location = new System.Drawing.Point(132, 2);
-            this.btnPrimero.Name = "btnPrimero";
-            this.btnPrimero.Size = new System.Drawing.Size(91, 62);
-            this.btnPrimero.TabIndex = 65;
-            this.btnPrimero.UseVisualStyleBackColor = true;
-            this.btnPrimero.Click += new System.EventHandler(this.btnPrimero_Click);
-            // 
-            // btnUltimo
-            // 
-            this.btnUltimo.FlatAppearance.BorderSize = 0;
-            this.btnUltimo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUltimo.Image = global::KudekateaBikeShop.Properties.Resources.icons8_doble_derecha_48;
-            this.btnUltimo.Location = new System.Drawing.Point(486, 0);
-            this.btnUltimo.Name = "btnUltimo";
-            this.btnUltimo.Size = new System.Drawing.Size(84, 74);
-            this.btnUltimo.TabIndex = 66;
-            this.btnUltimo.UseVisualStyleBackColor = true;
-            this.btnUltimo.Click += new System.EventHandler(this.btnUltimo_Click);
-            // 
-            // btnAnterior
-            // 
-            this.btnAnterior.FlatAppearance.BorderSize = 0;
-            this.btnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnterior.Image = global::KudekateaBikeShop.Properties.Resources.icons8_izquierda_48;
-            this.btnAnterior.Location = new System.Drawing.Point(229, 2);
-            this.btnAnterior.Name = "btnAnterior";
-            this.btnAnterior.Size = new System.Drawing.Size(87, 72);
-            this.btnAnterior.TabIndex = 67;
-            this.btnAnterior.UseVisualStyleBackColor = true;
-            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(332, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 19);
-            this.label1.TabIndex = 80;
-            this.label1.Text = "Compra";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Salmon;
-            this.panel1.Controls.Add(this.panel6);
-            this.panel1.Location = new System.Drawing.Point(0, 35);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(917, 96);
-            this.panel1.TabIndex = 132;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.label1);
-            this.panel6.Controls.Add(this.btnAnterior);
-            this.panel6.Controls.Add(this.btnUltimo);
-            this.panel6.Controls.Add(this.btnPrimero);
-            this.panel6.Controls.Add(this.btnSiguiente);
-            this.panel6.Controls.Add(this.btnAnadir);
-            this.panel6.Controls.Add(this.btnEditar);
-            this.panel6.Controls.Add(this.btnBorrar);
-            this.panel6.Location = new System.Drawing.Point(1, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(916, 96);
-            this.panel6.TabIndex = 81;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.FlatAppearance.BorderSize = 0;
-            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Image = global::KudekateaBikeShop.Properties.Resources.icons8_editar_48;
-            this.btnEditar.Location = new System.Drawing.Point(685, 3);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(101, 85);
-            this.btnEditar.TabIndex = 68;
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnGuardar
             // 
@@ -891,7 +776,7 @@ namespace KudekateaBikeShop
             this.panel2.Controls.Add(this.btnCancelar);
             this.panel2.Controls.Add(this.btnAceptar);
             this.panel2.Controls.Add(this.btnGuardar);
-            this.panel2.Location = new System.Drawing.Point(893, 36);
+            this.panel2.Location = new System.Drawing.Point(989, 35);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(125, 327);
             this.panel2.TabIndex = 133;
@@ -918,7 +803,7 @@ namespace KudekateaBikeShop
             // id_compraLabel3
             // 
             this.id_compraLabel3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.comprasBindingSource, "Id_compra", true));
-            this.id_compraLabel3.Location = new System.Drawing.Point(445, 147);
+            this.id_compraLabel3.Location = new System.Drawing.Point(426, 144);
             this.id_compraLabel3.Name = "id_compraLabel3";
             this.id_compraLabel3.Size = new System.Drawing.Size(100, 23);
             this.id_compraLabel3.TabIndex = 138;
@@ -926,7 +811,6 @@ namespace KudekateaBikeShop
             // 
             // id_empleadoComboBox
             // 
-            this.id_empleadoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.comprasBindingSource, "Id_empleado", true));
             this.id_empleadoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.comprasBindingSource, "Id_empleado", true));
             this.id_empleadoComboBox.DataSource = this.empleadosBindingSource;
             this.id_empleadoComboBox.DisplayMember = "Nombre";
@@ -958,7 +842,7 @@ namespace KudekateaBikeShop
             // totalLabel1
             // 
             this.totalLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.detalleComprasBindingSource, "total", true));
-            this.totalLabel1.Location = new System.Drawing.Point(748, 624);
+            this.totalLabel1.Location = new System.Drawing.Point(865, 624);
             this.totalLabel1.Name = "totalLabel1";
             this.totalLabel1.Size = new System.Drawing.Size(100, 23);
             this.totalLabel1.TabIndex = 150;
@@ -995,7 +879,6 @@ namespace KudekateaBikeShop
             this.categoriaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.detalleComprasBindingSource, "Categoria", true));
             this.categoriaComboBox.FormattingEnabled = true;
             this.categoriaComboBox.Items.AddRange(new object[] {
-            "",
             "Carretera",
             "BMX",
             "Electrica"});
@@ -1056,11 +939,11 @@ namespace KudekateaBikeShop
             this.dataGridViewTextBoxColumn16,
             this.dataGridViewTextBoxColumn17});
             this.detalleComprasDataGridView.DataSource = this.detalleComprasBindingSource;
-            this.detalleComprasDataGridView.Location = new System.Drawing.Point(4, 743);
+            this.detalleComprasDataGridView.Location = new System.Drawing.Point(0, 650);
             this.detalleComprasDataGridView.Name = "detalleComprasDataGridView";
             this.detalleComprasDataGridView.RowHeadersWidth = 62;
             this.detalleComprasDataGridView.RowTemplate.Height = 28;
-            this.detalleComprasDataGridView.Size = new System.Drawing.Size(10, 10);
+            this.detalleComprasDataGridView.Size = new System.Drawing.Size(1113, 127);
             this.detalleComprasDataGridView.TabIndex = 158;
             // 
             // dataGridViewTextBoxColumn8
@@ -1143,6 +1026,128 @@ namespace KudekateaBikeShop
             this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
             this.dataGridViewTextBoxColumn17.Width = 150;
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "./Kudekatea.chm";
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.Salmon;
+            this.panel6.Controls.Add(this.label1);
+            this.panel6.Controls.Add(this.btnAnterior);
+            this.panel6.Controls.Add(this.btnUltimo);
+            this.panel6.Controls.Add(this.btnPrimero);
+            this.panel6.Controls.Add(this.btnSiguiente);
+            this.panel6.Controls.Add(this.btnAnadir);
+            this.panel6.Controls.Add(this.btnEditar);
+            this.panel6.Controls.Add(this.btnBorrar);
+            this.panel6.Location = new System.Drawing.Point(1, 35);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(993, 96);
+            this.panel6.TabIndex = 81;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(238, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 19);
+            this.label1.TabIndex = 80;
+            this.label1.Text = "Compra";
+            // 
+            // btnAnterior
+            // 
+            this.btnAnterior.FlatAppearance.BorderSize = 0;
+            this.btnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnterior.Image = global::KudekateaBikeShop.Properties.Resources.icons8_izquierda_48;
+            this.btnAnterior.Location = new System.Drawing.Point(136, 10);
+            this.btnAnterior.Name = "btnAnterior";
+            this.btnAnterior.Size = new System.Drawing.Size(87, 72);
+            this.btnAnterior.TabIndex = 67;
+            this.btnAnterior.UseVisualStyleBackColor = true;
+            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
+            // 
+            // btnUltimo
+            // 
+            this.btnUltimo.FlatAppearance.BorderSize = 0;
+            this.btnUltimo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUltimo.Image = global::KudekateaBikeShop.Properties.Resources.icons8_doble_derecha_48;
+            this.btnUltimo.Location = new System.Drawing.Point(486, 4);
+            this.btnUltimo.Name = "btnUltimo";
+            this.btnUltimo.Size = new System.Drawing.Size(84, 74);
+            this.btnUltimo.TabIndex = 66;
+            this.btnUltimo.UseVisualStyleBackColor = true;
+            this.btnUltimo.Click += new System.EventHandler(this.btnUltimo_Click);
+            // 
+            // btnPrimero
+            // 
+            this.btnPrimero.FlatAppearance.BorderSize = 0;
+            this.btnPrimero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrimero.Image = global::KudekateaBikeShop.Properties.Resources.icons8_doble_izquierda_48;
+            this.btnPrimero.Location = new System.Drawing.Point(39, 14);
+            this.btnPrimero.Name = "btnPrimero";
+            this.btnPrimero.Size = new System.Drawing.Size(91, 62);
+            this.btnPrimero.TabIndex = 65;
+            this.btnPrimero.UseVisualStyleBackColor = true;
+            this.btnPrimero.Click += new System.EventHandler(this.btnPrimero_Click);
+            // 
+            // btnSiguiente
+            // 
+            this.btnSiguiente.FlatAppearance.BorderSize = 0;
+            this.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSiguiente.Image = global::KudekateaBikeShop.Properties.Resources.icons8_flecha_48;
+            this.btnSiguiente.Location = new System.Drawing.Point(386, 10);
+            this.btnSiguiente.Name = "btnSiguiente";
+            this.btnSiguiente.Size = new System.Drawing.Size(77, 70);
+            this.btnSiguiente.TabIndex = 64;
+            this.btnSiguiente.UseVisualStyleBackColor = true;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
+            // 
+            // btnAnadir
+            // 
+            this.btnAnadir.FlatAppearance.BorderSize = 0;
+            this.btnAnadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnadir.Image = global::KudekateaBikeShop.Properties.Resources.icons8_añadir_usuario_masculino_48;
+            this.btnAnadir.Location = new System.Drawing.Point(586, 4);
+            this.btnAnadir.Name = "btnAnadir";
+            this.btnAnadir.Size = new System.Drawing.Size(94, 85);
+            this.btnAnadir.TabIndex = 69;
+            this.btnAnadir.UseVisualStyleBackColor = true;
+            this.btnAnadir.Click += new System.EventHandler(this.btnAnadir_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.FlatAppearance.BorderSize = 0;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Image = global::KudekateaBikeShop.Properties.Resources.icons8_editar_48;
+            this.btnEditar.Location = new System.Drawing.Point(746, 2);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(101, 85);
+            this.btnEditar.TabIndex = 68;
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.FlatAppearance.BorderSize = 0;
+            this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBorrar.Image = global::KudekateaBikeShop.Properties.Resources.icons8_retire_hombre_usuario_48;
+            this.btnBorrar.Location = new System.Drawing.Point(855, 7);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(87, 86);
+            this.btnBorrar.TabIndex = 72;
+            this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
+            // 
+            // ayudatoolStripMenuItem1
+            // 
+            this.ayudatoolStripMenuItem1.Image = global::KudekateaBikeShop.Properties.Resources.icons8_ayuda_48;
+            this.ayudatoolStripMenuItem1.Name = "ayudatoolStripMenuItem1";
+            this.ayudatoolStripMenuItem1.ShortcutKeys = System.Windows.Forms.Keys.F11;
+            this.ayudatoolStripMenuItem1.Size = new System.Drawing.Size(270, 34);
+            this.ayudatoolStripMenuItem1.Text = "Ayuda";
+            this.ayudatoolStripMenuItem1.Click += new System.EventHandler(this.ayudatoolStripMenuItem1_Click);
+            // 
             // Compras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -1151,7 +1156,8 @@ namespace KudekateaBikeShop
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ClientSize = new System.Drawing.Size(1079, 650);
+            this.ClientSize = new System.Drawing.Size(1125, 780);
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.detalleComprasDataGridView);
             this.Controls.Add(descuentoLabel);
             this.Controls.Add(this.descuentoTextBox);
@@ -1181,12 +1187,14 @@ namespace KudekateaBikeShop
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.helpProvider1.SetHelpKeyword(this, "11");
+            this.helpProvider1.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.TopicId);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Compras";
+            this.helpProvider1.SetShowHelp(this, true);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Compras";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Compras_FormClosing);
@@ -1206,12 +1214,11 @@ namespace KudekateaBikeShop
             ((System.ComponentModel.ISupportInitialize)(this.ventaBindingSource)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.detalleComprasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleComprasDataGridView)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1254,15 +1261,6 @@ namespace KudekateaBikeShop
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnAnterior;
-        private System.Windows.Forms.Button btnUltimo;
-        private System.Windows.Forms.Button btnPrimero;
-        private System.Windows.Forms.Button btnSiguiente;
-        private System.Windows.Forms.Button btnAnadir;
-        private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Button btnBorrar;
         private BBDDCiclismoDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private BBDDCiclismoDataSetTableAdapters.EmpleadosTableAdapter empleadosTableAdapter;
         private BBDDCiclismoDataSetTableAdapters.VentaTableAdapter ventaTableAdapter;
@@ -1274,7 +1272,6 @@ namespace KudekateaBikeShop
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.BindingSource comprasBindingSource;
         private BBDDCiclismoDataSetTableAdapters.ComprasTableAdapter comprasTableAdapter;
         private System.Windows.Forms.ComboBox id_empleadoComboBox;
@@ -1309,5 +1306,16 @@ namespace KudekateaBikeShop
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
         public System.Windows.Forms.DataGridView detalleComprasDataGridView;
+        private System.Windows.Forms.HelpProvider helpProvider1;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnAnterior;
+        private System.Windows.Forms.Button btnUltimo;
+        private System.Windows.Forms.Button btnPrimero;
+        private System.Windows.Forms.Button btnSiguiente;
+        private System.Windows.Forms.Button btnAnadir;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnBorrar;
+        private System.Windows.Forms.ToolStripMenuItem ayudatoolStripMenuItem1;
     }
 }

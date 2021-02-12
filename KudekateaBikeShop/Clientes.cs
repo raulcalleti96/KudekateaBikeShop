@@ -147,6 +147,7 @@ namespace KudekateaBikeShop
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+           
             clientesTableAdapter.Update(bBDDCiclismoDataSet);
             MessageBox.Show("Datos guardados correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -355,7 +356,7 @@ namespace KudekateaBikeShop
                     try
                     {
                         clientesBindingSource.EndEdit();
-                        tableAdapterManager.UpdateAll(bBDDCiclismoDataSet);
+                        clientesTableAdapter.Update(bBDDCiclismoDataSet);
                         bBDDCiclismoDataSet.AcceptChanges();
                         MessageBox.Show("Los cambios han sido guardados", "Guardar cambios", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -369,7 +370,7 @@ namespace KudekateaBikeShop
 
         private void clientesBindingSource_PositionChanged(object sender, EventArgs e)
         {
-            label2.Text = "Cliente " + (clientesBindingSource.Position + 1) + " de " + clientesBindingSource.Count;
+            label1.Text = "Cliente " + (clientesBindingSource.Position + 1) + " de " + clientesBindingSource.Count;
 
             if (clientesBindingSource.Position == 0)
             {
@@ -422,6 +423,9 @@ namespace KudekateaBikeShop
             }
         }
 
-
+        private void ayudatoolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, helpProvider1.HelpNamespace);
+        }
     }
 }

@@ -217,7 +217,7 @@ namespace KudekateaBikeShop
 
         private void bicicletasBindingSource_PositionChanged(object sender, EventArgs e)
         {
-            label2.Text = "bicicleta " + (bicicletasBindingSource.Position + 1) + " de " + bicicletasBindingSource.Count;
+            label1.Text = "bicicleta " + (bicicletasBindingSource.Position + 1) + " de " + bicicletasBindingSource.Count;
 
             if (bicicletasBindingSource.Position == 0)
             {
@@ -438,6 +438,16 @@ namespace KudekateaBikeShop
         private void opcionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void descripcionLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ayudatoolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, helpProvider1.HelpNamespace);
         }
     }
 }

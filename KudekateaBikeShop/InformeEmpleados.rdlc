@@ -595,7 +595,18 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>INFORME DEL CATALOGO DE BICICLETAS</Value>
+                  <Value>INFORME DE EMPLEADOS</Value>
+                  <Style>
+                    <FontSize>18pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value />
                   <Style>
                     <FontSize>18pt</FontSize>
                   </Style>

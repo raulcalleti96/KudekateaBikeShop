@@ -94,14 +94,20 @@
     <Compile Include="AcercaDe.Designer.cs">
       <DependentUpon>AcercaDe.cs</DependentUpon>
     </Compile>
-    <Compile Include="BBDDCiclismoDataSet1.cs">
-      <DependentUpon>BBDDCiclismoDataSet1.xsd</DependentUpon>
+    <Compile Include="BBDDCiclismoDataSet.cs">
+      <DependentUpon>BBDDCiclismoDataSet.xsd</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="BBDDCiclismoDataSet1.Designer.cs">
+    <Compile Include="BBDDCiclismoDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BBDDCiclismoDataSet1.xsd</DependentUpon>
+      <DependentUpon>BBDDCiclismoDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="BBDDCiclismoDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BBDDCiclismoDataSet11.xsd</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Catalogo.cs">
@@ -255,18 +261,32 @@
     <EmbeddedResource Include="Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="BBDDCiclismoDataSet1.xsc">
-      <DependentUpon>BBDDCiclismoDataSet1.xsd</DependentUpon>
+    <None Include="BBDDCiclismoDataSet.xsc">
+      <DependentUpon>BBDDCiclismoDataSet.xsd</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="BBDDCiclismoDataSet1.xsd">
+    <None Include="BBDDCiclismoDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BBDDCiclismoDataSet1.Designer.cs</LastGenOutput>
+      <LastGenOutput>BBDDCiclismoDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="BBDDCiclismoDataSet1.xss">
-      <DependentUpon>BBDDCiclismoDataSet1.xsd</DependentUpon>
+    <None Include="BBDDCiclismoDataSet.xss">
+      <DependentUpon>BBDDCiclismoDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="BBDDCiclismoDataSet11.xsc">
+      <DependentUpon>BBDDCiclismoDataSet11.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="BBDDCiclismoDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BBDDCiclismoDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="BBDDCiclismoDataSet11.xss">
+      <DependentUpon>BBDDCiclismoDataSet11.xsd</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
@@ -311,6 +331,7 @@
     <None Include="Resources\icons8-dominio-30.png" />
     <None Include="Resources\Imagen_no_disponible.svg.png" />
     <None Include="Resources\icons8-exportar-48.png" />
+    <None Include="Resources\icons8-ayuda-48.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

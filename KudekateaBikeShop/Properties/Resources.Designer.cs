@@ -183,6 +183,16 @@ namespace KudekateaBikeShop.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_ayuda_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-ayuda-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_doble_derecha_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-doble-derecha-48", resourceCulture);

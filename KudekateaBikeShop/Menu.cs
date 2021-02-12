@@ -31,7 +31,7 @@ namespace KudekateaBikeShop
             {
                 //habilitar y deshabilitar controles
                 empleadosbtn.Visible = false;
-                comprabtn.Visible = false;
+                ventabtn.Visible = false;
                 proovedoresbtn.Visible = false;
 
                 label4.Visible = false;

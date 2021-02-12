@@ -28,28 +28,18 @@ namespace KudekateaBikeShop
 
         private void Ventas_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'bBDDCiclismoDataSet.DetalleCompras' Puede moverla o quitarla según sea necesario.
-            this.detalleComprasTableAdapter.Fill(this.bBDDCiclismoDataSet.DetalleCompras);
+            // TODO: esta línea de código carga datos en la tabla 'bBDDCiclismoDataSet.DetalleVenta' Puede moverla o quitarla según sea necesario.
+            this.detalleVentaTableAdapter.Fill(this.bBDDCiclismoDataSet.DetalleVenta);       
             // TODO: esta línea de código carga datos en la tabla 'bBDDCiclismoDataSet.Bicicletas' Puede moverla o quitarla según sea necesario.
             this.bicicletasTableAdapter.Fill(this.bBDDCiclismoDataSet.Bicicletas);
             // TODO: esta línea de código carga datos en la tabla 'bBDDCiclismoDataSet.Empleados' Puede moverla o quitarla según sea necesario.
             this.empleadosTableAdapter.Fill(this.bBDDCiclismoDataSet.Empleados);
             // TODO: esta línea de código carga datos en la tabla 'bBDDCiclismoDataSet.Clientes' Puede moverla o quitarla según sea necesario.
             this.clientesTableAdapter.Fill(this.bBDDCiclismoDataSet.Clientes);
-            // TODO: esta línea de código carga datos en la tabla 'bBDDCiclismoDataSet.DetalleVenta' Puede moverla o quitarla según sea necesario.
-            this.detalleVentaTableAdapter.Fill(this.bBDDCiclismoDataSet.DetalleVenta);
-            // TODO: esta línea de código carga datos en la tabla 'bBDDCiclismoDataSet.DetalleVenta' Puede moverla o quitarla según sea necesario.
-            this.detalleVentaTableAdapter.Fill(this.bBDDCiclismoDataSet.DetalleVenta);
-            // TODO: esta línea de código carga datos en la tabla 'bBDDCiclismoDataSet.DetalleVenta' Puede moverla o quitarla según sea necesario.
-            this.detalleVentaTableAdapter.Fill(this.bBDDCiclismoDataSet.DetalleVenta);
             // TODO: esta línea de código carga datos en la tabla 'bBDDCiclismoDataSet.DetalleCompras' Puede moverla o quitarla según sea necesario.
-            this.detalleComprasTableAdapter.Fill(this.bBDDCiclismoDataSet.DetalleCompras);
-            // TODO: esta línea de código carga datos en la tabla 'bBDDCiclismoDataSet.DetalleCompras' Puede moverla o quitarla según sea necesario.
-            this.detalleComprasTableAdapter.Fill(this.bBDDCiclismoDataSet.DetalleCompras);
-            // TODO: esta línea de código carga datos en la tabla 'bBDDCiclismoDataSet.Venta' Puede moverla o quitarla según sea necesario.
             this.ventaTableAdapter.Fill(this.bBDDCiclismoDataSet.Venta);
 
- 
+
 
             consultaMaestro();
             consultaDetalle();
@@ -77,7 +67,7 @@ namespace KudekateaBikeShop
             precio = float.Parse(precio_ventaTextBox.Text);
             descuento = float.Parse(descuentoTextBox.Text);
 
-         
+
             total = cantidad * precio;
 
             if (descuento == 0)
@@ -128,6 +118,7 @@ namespace KudekateaBikeShop
 
             btnInforme.Enabled = false;
 
+
             id_clienteComboBox.Enabled = true;
             id_empleadoComboBox.Enabled = true;
             dNI_clienteTextBox.Enabled = true;
@@ -151,7 +142,7 @@ namespace KudekateaBikeShop
         public void consultaDetalle()
         {
             id_bicicletaComboBox.Enabled = false;
-            categoriaTextBox.Enabled = false;
+            categoriaComboBox.Enabled = false;
             fabricanteTextBox.Enabled = false;
             cantidad_vendidaTextBox.Enabled = false;
             precio_ventaTextBox.Enabled = false;
@@ -173,7 +164,7 @@ namespace KudekateaBikeShop
         public void edicionDetalle()
         {
             id_bicicletaComboBox.Enabled = true;
-            categoriaTextBox.Enabled = true;
+            categoriaComboBox.Enabled = true;
             fabricanteTextBox.Enabled = true;
             cantidad_vendidaTextBox.Enabled = true;
             precio_ventaTextBox.Enabled = true;
@@ -212,70 +203,9 @@ namespace KudekateaBikeShop
         }
 
 
-        private void id_bicicletaComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        { 
-            BBDDCiclismoDataSet.BicicletasRow filaProducto;
-
-            if (id_bicicletaComboBox.SelectedIndex != -1)
-            {
-                filaProducto = bBDDCiclismoDataSet.Bicicletas[id_bicicletaComboBox.SelectedIndex];
-
-            
-                if (filaProducto.IsCategoriaNull())
-                    categoriaTextBox.Text = "";
-                else
-                    categoriaTextBox.Text = filaProducto.Categoria;
-
-                if (filaProducto.IsNombreNull())
-                {
-                    nombre_bicicletaTextBox.Text = "";
-                }
-                else
-                {
-                    nombre_bicicletaTextBox.Text = filaProducto.Nombre;
-                }
-
-                if (filaProducto.IsFabricanteNull())
-                    fabricanteTextBox.Text = "";
-                else
-                {
-                    fabricanteTextBox.Text = filaProducto.Fabricante;
-                }
-
-                if (filaProducto.IsPrecioNull())
-                    precio_ventaTextBox.Text = "";
-                else
-                {
-                    precio_ventaTextBox.Text = filaProducto.Precio.ToString();
-                }
-
-            }
-        }
-
-        private void id_clienteComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            BBDDCiclismoDataSet.ClientesRow filaCliente;
-
-            if (id_clienteComboBox.SelectedIndex != -1)
-            {
-                filaCliente = bBDDCiclismoDataSet.Clientes[id_clienteComboBox.SelectedIndex];
-
-                //si algun campo esta vacio
-                if (filaCliente.IsDNINull())
-                    dNI_clienteTextBox.Text = "";
-                else
-                    dNI_clienteTextBox.Text = filaCliente.DNI;
 
 
-                if (filaCliente.IsEmailNull())
-                    email_clienteTextBox.Text = "";
-                else
-                {
-                    email_clienteTextBox.Text = filaCliente.Email;
-                }
 
-            }
-        }
 
         private void btnPrimero_Click(object sender, EventArgs e)
         {
@@ -300,11 +230,12 @@ namespace KudekateaBikeShop
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.ventaBindingSource.EndEdit();
-            this.detalleVentaBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bBDDCiclismoDataSet);
 
+            detalleVentaBindingSource.EndEdit();
+            ventaBindingSource.EndEdit();
+            detalleVentaTableAdapter.Update(bBDDCiclismoDataSet);
+            ventaTableAdapter.Update(bBDDCiclismoDataSet);
+            bBDDCiclismoDataSet.AcceptChanges();
             MessageBox.Show("Se han guardado los cambios correctamente", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -314,13 +245,13 @@ namespace KudekateaBikeShop
             {
                 try
                 {
-                 
+
                     while (detalleVentaBindingSource.Count > 0)
                     {
                         detalleVentaBindingSource.RemoveCurrent();
                     }
 
-              
+
                     ventaBindingSource.RemoveCurrent();
                 }
                 catch (Exception)
@@ -332,16 +263,16 @@ namespace KudekateaBikeShop
 
         private void btnAceptarLinea_Click(object sender, EventArgs e)
         {
-            if (id_bicicletaComboBox.Text.Equals("") | categoriaTextBox.Text.Equals("") | fabricanteTextBox.Text.Equals("") | cantidad_vendidaTextBox.Text.Equals("") |
+            if (id_bicicletaComboBox.Text.Equals("") | categoriaComboBox.Text.Equals("") | fabricanteTextBox.Text.Equals("") | cantidad_vendidaTextBox.Text.Equals("") |
               precio_ventaTextBox.Text.Equals("") | descuentoTextBox.Text.Equals(""))
             {
                 if (id_bicicletaComboBox.Text == "")
                 {
                     errorProvider1.SetError(id_bicicletaComboBox, "Debe introducir el nombre del videojuego");
                 }
-                if (categoriaTextBox.Text == "")
+                if (categoriaComboBox.Text == "")
                 {
-                    errorProvider1.SetError(categoriaTextBox, "Debe introducir la categoría del videojuego");
+                    errorProvider1.SetError(categoriaComboBox, "Debe introducir la categoría del videojuego");
                 }
                 if (fabricanteTextBox.Text == "")
                 {
@@ -373,12 +304,13 @@ namespace KudekateaBikeShop
 
                     btnTerminar.Enabled = true;
 
-               
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Este producto ya existe", "Producto duplicado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error al insertar un producto ya existente", "Producto duplicado", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
+
             }
         }
 
@@ -459,7 +391,7 @@ namespace KudekateaBikeShop
         {
             ventaBindingSource.CancelEdit();
 
-  
+
             errorProvider1.Clear();
 
             consultaMaestro();
@@ -468,6 +400,7 @@ namespace KudekateaBikeShop
         private void btnAnadirLinea_Click(object sender, EventArgs e)
         {
             detalleVentaBindingSource.AddNew();
+           
 
             edicionDetalle();
         }
@@ -477,6 +410,7 @@ namespace KudekateaBikeShop
             try
             {
                 detalleVentaBindingSource.RemoveCurrent();
+            
             }
             catch (Exception)
             {
@@ -540,7 +474,7 @@ namespace KudekateaBikeShop
 
         private void ventaBindingSource_PositionChanged(object sender, EventArgs e)
         {
-            label1.Text = "Venta " + ( + 1) + " de " + ventaBindingSource.Count;
+            label1.Text = "Venta " + (+1) + " de " + ventaBindingSource.Count;
 
             if (ventaBindingSource.Position == 0)
             {
@@ -564,7 +498,7 @@ namespace KudekateaBikeShop
                 btnUltimo.Enabled = true;
             }
 
-         
+
             btnBorrar.Enabled = ventaBindingSource.Count > 0;
         }
 
@@ -582,7 +516,7 @@ namespace KudekateaBikeShop
             {
                 MessageBox.Show("Error en el DNI. Debe contener 9 dígitos", "DNI erróneo", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-               
+
                 dNI_clienteTextBox.Text = "";
             }
             else
@@ -628,7 +562,7 @@ namespace KudekateaBikeShop
                 btnUltimoLinea.Enabled = true;
             }
 
-   
+
             btnBorrarLinea.Enabled = detalleVentaBindingSource.Count > 0;
         }
 
@@ -642,9 +576,9 @@ namespace KudekateaBikeShop
 
         private void categoriaTextBox_Validating(object sender, CancelEventArgs e)
         {
-            if (categoriaTextBox.Text != "")
+            if (categoriaComboBox.Text != "")
             {
-                errorProvider1.SetError(categoriaTextBox, "");
+                errorProvider1.SetError(categoriaComboBox, "");
             }
         }
 
@@ -658,7 +592,7 @@ namespace KudekateaBikeShop
 
         private void cantidad_vendidaTextBox_Validating(object sender, CancelEventArgs e)
         {
-       
+
             float i;
             if (!float.TryParse(cantidad_vendidaTextBox.Text, out i) | (i <= 0))
             {
@@ -675,7 +609,7 @@ namespace KudekateaBikeShop
 
         private void precio_ventaTextBox_Validating(object sender, CancelEventArgs e)
         {
-           
+
             float i;
             if (!float.TryParse(precio_ventaTextBox.Text, out i) | (i <= 0))
             {
@@ -697,7 +631,7 @@ namespace KudekateaBikeShop
 
         private void descuentoTextBox_Validating(object sender, CancelEventArgs e)
         {
-          
+
             int i;
             if (!int.TryParse(descuentoTextBox.Text, out i) | (i < 0))
             {
@@ -715,7 +649,7 @@ namespace KudekateaBikeShop
         private void btnInforme_Click(object sender, EventArgs e)
         {
            
-           Properties.Settings.Default.numVenta = id_ventaLabel2.Text;
+            Properties.Settings.Default.numVenta = id_ventaLabel2.Text;
 
             Boolean abierta = false;
 
@@ -766,6 +700,108 @@ namespace KudekateaBikeShop
         private void detalleVentaDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void id_clienteComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void id_clienteComboBox_Validating_1(object sender, CancelEventArgs e) { 
+
+        }
+
+      private void id_empleadoComboBox_Validating(object sender, CancelEventArgs e)
+    {
+
+     }
+
+        private void id_empleadoComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            BBDDCiclismoDataSet.ClientesRow filaProducto;
+
+            if (id_clienteComboBox.SelectedIndex != -1)
+            {
+                filaProducto = bBDDCiclismoDataSet.Clientes[id_clienteComboBox.SelectedIndex];
+
+
+                if (filaProducto.IsDNINull())
+                    dNI_clienteTextBox.Text = "";
+                else
+                    dNI_clienteTextBox.Text = filaProducto.DNI;
+
+                if (filaProducto.IsEmailNull())
+                {
+                    email_clienteTextBox.Text = "";
+                }
+                else
+                {
+                    email_clienteTextBox.Text = filaProducto.Email;
+                }
+
+                if (filaProducto.IsNombreNull())
+                    nombre_clienteTextBox.Text = "";
+                else
+                {
+                    nombre_clienteTextBox.Text = filaProducto.Nombre;
+                }
+
+            }
+        }
+
+        private void categoriaLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bicicletasBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void id_bicicletaComboBox_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            BBDDCiclismoDataSet.BicicletasRow filaProducto;
+
+            if (id_bicicletaComboBox.SelectedIndex != -1)
+            {
+                filaProducto = bBDDCiclismoDataSet.Bicicletas[id_bicicletaComboBox.SelectedIndex];
+
+
+                if (filaProducto.IsCategoriaNull())
+                    categoriaComboBox.Text = "";
+                else
+                    categoriaComboBox.Text = filaProducto.Categoria;
+
+                if (filaProducto.IsNombreNull())
+                {
+                    nombre_bicicletaTextBox.Text = "";
+                }
+                else
+                {
+                    nombre_bicicletaTextBox.Text = filaProducto.Nombre;
+                }
+
+                if (filaProducto.IsFabricanteNull())
+                    fabricanteTextBox.Text = "";
+                else
+                {
+                    fabricanteTextBox.Text = filaProducto.Fabricante;
+                }
+
+                if (filaProducto.IsPrecioNull())
+                    precio_ventaTextBox.Text = "";
+                else
+                {
+                    precio_ventaTextBox.Text = filaProducto.Precio.ToString();
+                }
+
+            }
+        }
+
+        private void helpStripToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, helpProvider1.HelpNamespace);
         }
     }
 }

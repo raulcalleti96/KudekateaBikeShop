@@ -30,13 +30,13 @@ namespace KudekateaBikeShop
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Label fecha_ventaLabel;
             System.Windows.Forms.Label id_ventaLabel;
+            System.Windows.Forms.Label id_empleadoLabel;
             System.Windows.Forms.Label nombre_clienteLabel;
+            System.Windows.Forms.Label id_clienteLabel;
             System.Windows.Forms.Label dNI_clienteLabel;
             System.Windows.Forms.Label email_clienteLabel;
-            System.Windows.Forms.Label fecha_ventaLabel;
-            System.Windows.Forms.Label id_clienteLabel;
-            System.Windows.Forms.Label id_empleadoLabel;
             System.Windows.Forms.Label id_ventaLabel1;
             System.Windows.Forms.Label id_bicicletaLabel;
             System.Windows.Forms.Label nombre_bicicletaLabel;
@@ -46,6 +46,7 @@ namespace KudekateaBikeShop
             System.Windows.Forms.Label precio_ventaLabel;
             System.Windows.Forms.Label descuentoLabel;
             System.Windows.Forms.Label total_lineaLabel;
+            System.Windows.Forms.Label totalLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ventas));
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnTerminar = new System.Windows.Forms.Button();
@@ -55,12 +56,7 @@ namespace KudekateaBikeShop
             this.ventaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ventaTableAdapter = new KudekateaBikeShop.BBDDCiclismoDataSetTableAdapters.VentaTableAdapter();
             this.tableAdapterManager = new KudekateaBikeShop.BBDDCiclismoDataSetTableAdapters.TableAdapterManager();
-            this.nombre_clienteTextBox = new System.Windows.Forms.TextBox();
-            this.dNI_clienteTextBox = new System.Windows.Forms.TextBox();
-            this.email_clienteTextBox = new System.Windows.Forms.TextBox();
             this.fecha_ventaDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.id_clienteComboBox = new System.Windows.Forms.ComboBox();
             this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btnCancelarLinea = new System.Windows.Forms.Button();
@@ -81,26 +77,11 @@ namespace KudekateaBikeShop
             this.btnUltimo = new System.Windows.Forms.Button();
             this.btnPrimero = new System.Windows.Forms.Button();
             this.btnSiguiente = new System.Windows.Forms.Button();
-            this.detalleVentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.detalleVentaTableAdapter = new KudekateaBikeShop.BBDDCiclismoDataSetTableAdapters.DetalleVentaTableAdapter();
             this.clientesTableAdapter = new KudekateaBikeShop.BBDDCiclismoDataSetTableAdapters.ClientesTableAdapter();
-            this.id_empleadoComboBox = new System.Windows.Forms.ComboBox();
             this.empleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.empleadosTableAdapter = new KudekateaBikeShop.BBDDCiclismoDataSetTableAdapters.EmpleadosTableAdapter();
-            this.id_ventaLabel2 = new System.Windows.Forms.Label();
             this.bicicletasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bicicletasTableAdapter = new KudekateaBikeShop.BBDDCiclismoDataSetTableAdapters.BicicletasTableAdapter();
-            this.detalleComprasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.detalleComprasTableAdapter = new KudekateaBikeShop.BBDDCiclismoDataSetTableAdapters.DetalleComprasTableAdapter();
-            this.id_bicicletaComboBox = new System.Windows.Forms.ComboBox();
-            this.nombre_bicicletaTextBox = new System.Windows.Forms.TextBox();
-            this.categoriaTextBox = new System.Windows.Forms.TextBox();
-            this.fabricanteTextBox = new System.Windows.Forms.TextBox();
-            this.cantidad_vendidaTextBox = new System.Windows.Forms.TextBox();
-            this.precio_ventaTextBox = new System.Windows.Forms.TextBox();
-            this.descuentoTextBox = new System.Windows.Forms.TextBox();
-            this.total_lineaLabel1 = new System.Windows.Forms.Label();
-            this.totalLabel1 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -108,6 +89,7 @@ namespace KudekateaBikeShop
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.borrarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.informeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpStripToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -115,14 +97,44 @@ namespace KudekateaBikeShop
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.id_ventaLabel4 = new System.Windows.Forms.Label();
+            this.id_ventaLabel3 = new System.Windows.Forms.Label();
+            this.nombre_clienteTextBox = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.id_empleadoComboBox = new System.Windows.Forms.ComboBox();
+            this.email_clienteTextBox = new System.Windows.Forms.TextBox();
+            this.dNI_clienteTextBox = new System.Windows.Forms.TextBox();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+            this.id_clienteComboBox = new System.Windows.Forms.ComboBox();
+            this.detalleVentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.detalleVentaTableAdapter = new KudekateaBikeShop.BBDDCiclismoDataSetTableAdapters.DetalleVentaTableAdapter();
+            this.id_ventaLabel2 = new System.Windows.Forms.Label();
+            this.id_bicicletaComboBox = new System.Windows.Forms.ComboBox();
+            this.nombre_bicicletaTextBox = new System.Windows.Forms.TextBox();
+            this.categoriaComboBox = new System.Windows.Forms.ComboBox();
+            this.fabricanteTextBox = new System.Windows.Forms.TextBox();
+            this.cantidad_vendidaTextBox = new System.Windows.Forms.TextBox();
+            this.precio_ventaTextBox = new System.Windows.Forms.TextBox();
+            this.descuentoTextBox = new System.Windows.Forms.TextBox();
+            this.total_lineaLabel1 = new System.Windows.Forms.Label();
+            this.totalLabel1 = new System.Windows.Forms.Label();
+            this.detalleVentaDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            fecha_ventaLabel = new System.Windows.Forms.Label();
             id_ventaLabel = new System.Windows.Forms.Label();
+            id_empleadoLabel = new System.Windows.Forms.Label();
             nombre_clienteLabel = new System.Windows.Forms.Label();
+            id_clienteLabel = new System.Windows.Forms.Label();
             dNI_clienteLabel = new System.Windows.Forms.Label();
             email_clienteLabel = new System.Windows.Forms.Label();
-            fecha_ventaLabel = new System.Windows.Forms.Label();
-            id_clienteLabel = new System.Windows.Forms.Label();
-            id_empleadoLabel = new System.Windows.Forms.Label();
             id_ventaLabel1 = new System.Windows.Forms.Label();
             id_bicicletaLabel = new System.Windows.Forms.Label();
             nombre_bicicletaLabel = new System.Windows.Forms.Label();
@@ -132,193 +144,178 @@ namespace KudekateaBikeShop
             precio_ventaLabel = new System.Windows.Forms.Label();
             descuentoLabel = new System.Windows.Forms.Label();
             total_lineaLabel = new System.Windows.Forms.Label();
+            totalLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bBDDCiclismoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ventaBindingSource)).BeginInit();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.detalleVentaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bicicletasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.detalleComprasBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.detalleVentaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detalleVentaDataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // id_ventaLabel
-            // 
-            id_ventaLabel.AutoSize = true;
-            id_ventaLabel.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            id_ventaLabel.Location = new System.Drawing.Point(116, 159);
-            id_ventaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            id_ventaLabel.Name = "id_ventaLabel";
-            id_ventaLabel.Size = new System.Drawing.Size(96, 23);
-            id_ventaLabel.TabIndex = 21;
-            id_ventaLabel.Text = "Id venta:";
-            // 
-            // nombre_clienteLabel
-            // 
-            nombre_clienteLabel.AutoSize = true;
-            nombre_clienteLabel.Location = new System.Drawing.Point(21, 86);
-            nombre_clienteLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            nombre_clienteLabel.Name = "nombre_clienteLabel";
-            nombre_clienteLabel.Size = new System.Drawing.Size(168, 23);
-            nombre_clienteLabel.TabIndex = 27;
-            nombre_clienteLabel.Text = "Nombre cliente:";
-            // 
-            // dNI_clienteLabel
-            // 
-            dNI_clienteLabel.AutoSize = true;
-            dNI_clienteLabel.Location = new System.Drawing.Point(21, 123);
-            dNI_clienteLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            dNI_clienteLabel.Name = "dNI_clienteLabel";
-            dNI_clienteLabel.Size = new System.Drawing.Size(124, 23);
-            dNI_clienteLabel.TabIndex = 29;
-            dNI_clienteLabel.Text = "DNI cliente:";
-            // 
-            // email_clienteLabel
-            // 
-            email_clienteLabel.AutoSize = true;
-            email_clienteLabel.Location = new System.Drawing.Point(21, 160);
-            email_clienteLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            email_clienteLabel.Name = "email_clienteLabel";
-            email_clienteLabel.Size = new System.Drawing.Size(141, 23);
-            email_clienteLabel.TabIndex = 31;
-            email_clienteLabel.Text = "Email cliente:";
             // 
             // fecha_ventaLabel
             // 
             fecha_ventaLabel.AutoSize = true;
             fecha_ventaLabel.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fecha_ventaLabel.Location = new System.Drawing.Point(624, 162);
+            fecha_ventaLabel.Location = new System.Drawing.Point(503, 163);
             fecha_ventaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             fecha_ventaLabel.Name = "fecha_ventaLabel";
             fecha_ventaLabel.Size = new System.Drawing.Size(138, 23);
             fecha_ventaLabel.TabIndex = 33;
             fecha_ventaLabel.Text = "Fecha venta:";
             // 
-            // id_clienteLabel
+            // id_ventaLabel
             // 
-            id_clienteLabel.AutoSize = true;
-            id_clienteLabel.Location = new System.Drawing.Point(77, 43);
-            id_clienteLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            id_clienteLabel.Name = "id_clienteLabel";
-            id_clienteLabel.Size = new System.Drawing.Size(108, 23);
-            id_clienteLabel.TabIndex = 37;
-            id_clienteLabel.Text = "Id cliente:";
+            id_ventaLabel.AutoSize = true;
+            id_ventaLabel.Location = new System.Drawing.Point(142, 165);
+            id_ventaLabel.Name = "id_ventaLabel";
+            id_ventaLabel.Size = new System.Drawing.Size(96, 23);
+            id_ventaLabel.TabIndex = 67;
+            id_ventaLabel.Text = "Id venta:";
             // 
             // id_empleadoLabel
             // 
             id_empleadoLabel.AutoSize = true;
-            id_empleadoLabel.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            id_empleadoLabel.Location = new System.Drawing.Point(139, 201);
-            id_empleadoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            id_empleadoLabel.Location = new System.Drawing.Point(107, 205);
             id_empleadoLabel.Name = "id_empleadoLabel";
             id_empleadoLabel.Size = new System.Drawing.Size(143, 23);
-            id_empleadoLabel.TabIndex = 37;
+            id_empleadoLabel.TabIndex = 68;
             id_empleadoLabel.Text = "Id empleado:";
+            // 
+            // nombre_clienteLabel
+            // 
+            nombre_clienteLabel.AutoSize = true;
+            nombre_clienteLabel.Location = new System.Drawing.Point(519, 205);
+            nombre_clienteLabel.Name = "nombre_clienteLabel";
+            nombre_clienteLabel.Size = new System.Drawing.Size(168, 23);
+            nombre_clienteLabel.TabIndex = 69;
+            nombre_clienteLabel.Text = "Nombre cliente:";
+            nombre_clienteLabel.Visible = false;
+            // 
+            // id_clienteLabel
+            // 
+            id_clienteLabel.AutoSize = true;
+            id_clienteLabel.Location = new System.Drawing.Point(73, 46);
+            id_clienteLabel.Name = "id_clienteLabel";
+            id_clienteLabel.Size = new System.Drawing.Size(108, 23);
+            id_clienteLabel.TabIndex = 69;
+            id_clienteLabel.Text = "Id cliente:";
+            // 
+            // dNI_clienteLabel
+            // 
+            dNI_clienteLabel.AutoSize = true;
+            dNI_clienteLabel.Location = new System.Drawing.Point(597, 40);
+            dNI_clienteLabel.Name = "dNI_clienteLabel";
+            dNI_clienteLabel.Size = new System.Drawing.Size(124, 23);
+            dNI_clienteLabel.TabIndex = 70;
+            dNI_clienteLabel.Text = "DNI cliente:";
+            // 
+            // email_clienteLabel
+            // 
+            email_clienteLabel.AutoSize = true;
+            email_clienteLabel.Location = new System.Drawing.Point(312, 134);
+            email_clienteLabel.Name = "email_clienteLabel";
+            email_clienteLabel.Size = new System.Drawing.Size(141, 23);
+            email_clienteLabel.TabIndex = 70;
+            email_clienteLabel.Text = "Email cliente:";
             // 
             // id_ventaLabel1
             // 
             id_ventaLabel1.AutoSize = true;
-            id_ventaLabel1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            id_ventaLabel1.Location = new System.Drawing.Point(99, 564);
-            id_ventaLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            id_ventaLabel1.Location = new System.Drawing.Point(99, 596);
             id_ventaLabel1.Name = "id_ventaLabel1";
             id_ventaLabel1.Size = new System.Drawing.Size(96, 23);
-            id_ventaLabel1.TabIndex = 38;
+            id_ventaLabel1.TabIndex = 73;
             id_ventaLabel1.Text = "Id venta:";
             // 
             // id_bicicletaLabel
             // 
             id_bicicletaLabel.AutoSize = true;
-            id_bicicletaLabel.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            id_bicicletaLabel.Location = new System.Drawing.Point(68, 607);
-            id_bicicletaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            id_bicicletaLabel.Location = new System.Drawing.Point(72, 640);
             id_bicicletaLabel.Name = "id_bicicletaLabel";
             id_bicicletaLabel.Size = new System.Drawing.Size(127, 23);
-            id_bicicletaLabel.TabIndex = 47;
+            id_bicicletaLabel.TabIndex = 74;
             id_bicicletaLabel.Text = "Id bicicleta:";
             // 
             // nombre_bicicletaLabel
             // 
             nombre_bicicletaLabel.AutoSize = true;
-            nombre_bicicletaLabel.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nombre_bicicletaLabel.Location = new System.Drawing.Point(8, 656);
-            nombre_bicicletaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            nombre_bicicletaLabel.Location = new System.Drawing.Point(445, 572);
             nombre_bicicletaLabel.Name = "nombre_bicicletaLabel";
             nombre_bicicletaLabel.Size = new System.Drawing.Size(187, 23);
-            nombre_bicicletaLabel.TabIndex = 48;
+            nombre_bicicletaLabel.TabIndex = 75;
             nombre_bicicletaLabel.Text = "Nombre bicicleta:";
             // 
             // categoriaLabel
             // 
             categoriaLabel.AutoSize = true;
-            categoriaLabel.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            categoriaLabel.Location = new System.Drawing.Point(81, 708);
-            categoriaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            categoriaLabel.Location = new System.Drawing.Point(82, 689);
             categoriaLabel.Name = "categoriaLabel";
             categoriaLabel.Size = new System.Drawing.Size(114, 23);
-            categoriaLabel.TabIndex = 49;
+            categoriaLabel.TabIndex = 76;
             categoriaLabel.Text = "Categoria:";
             // 
             // fabricanteLabel
             // 
             fabricanteLabel.AutoSize = true;
-            fabricanteLabel.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fabricanteLabel.Location = new System.Drawing.Point(75, 762);
-            fabricanteLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            fabricanteLabel.Location = new System.Drawing.Point(78, 736);
             fabricanteLabel.Name = "fabricanteLabel";
             fabricanteLabel.Size = new System.Drawing.Size(120, 23);
-            fabricanteLabel.TabIndex = 50;
+            fabricanteLabel.TabIndex = 77;
             fabricanteLabel.Text = "Fabricante:";
             // 
             // cantidad_vendidaLabel
             // 
             cantidad_vendidaLabel.AutoSize = true;
-            cantidad_vendidaLabel.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            cantidad_vendidaLabel.Location = new System.Drawing.Point(546, 607);
-            cantidad_vendidaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            cantidad_vendidaLabel.Location = new System.Drawing.Point(624, 637);
             cantidad_vendidaLabel.Name = "cantidad_vendidaLabel";
             cantidad_vendidaLabel.Size = new System.Drawing.Size(193, 23);
-            cantidad_vendidaLabel.TabIndex = 51;
+            cantidad_vendidaLabel.TabIndex = 78;
             cantidad_vendidaLabel.Text = "Cantidad vendida:";
             // 
             // precio_ventaLabel
             // 
             precio_ventaLabel.AutoSize = true;
-            precio_ventaLabel.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            precio_ventaLabel.Location = new System.Drawing.Point(601, 661);
-            precio_ventaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            precio_ventaLabel.Location = new System.Drawing.Point(660, 686);
             precio_ventaLabel.Name = "precio_ventaLabel";
             precio_ventaLabel.Size = new System.Drawing.Size(138, 23);
-            precio_ventaLabel.TabIndex = 52;
+            precio_ventaLabel.TabIndex = 79;
             precio_ventaLabel.Text = "Precio venta:";
             // 
             // descuentoLabel
             // 
             descuentoLabel.AutoSize = true;
-            descuentoLabel.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            descuentoLabel.Location = new System.Drawing.Point(618, 710);
-            descuentoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            descuentoLabel.Location = new System.Drawing.Point(672, 733);
             descuentoLabel.Name = "descuentoLabel";
             descuentoLabel.Size = new System.Drawing.Size(121, 23);
-            descuentoLabel.TabIndex = 53;
+            descuentoLabel.TabIndex = 80;
             descuentoLabel.Text = "Descuento:";
             // 
             // total_lineaLabel
             // 
             total_lineaLabel.AutoSize = true;
-            total_lineaLabel.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            total_lineaLabel.Location = new System.Drawing.Point(624, 759);
-            total_lineaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            total_lineaLabel.Location = new System.Drawing.Point(672, 781);
             total_lineaLabel.Name = "total_lineaLabel";
             total_lineaLabel.Size = new System.Drawing.Size(115, 23);
-            total_lineaLabel.TabIndex = 56;
+            total_lineaLabel.TabIndex = 81;
             total_lineaLabel.Text = "Total linea:";
+            // 
+            // totalLabel
+            // 
+            totalLabel.AutoSize = true;
+            totalLabel.Location = new System.Drawing.Point(945, 830);
+            totalLabel.Name = "totalLabel";
+            totalLabel.Size = new System.Drawing.Size(61, 23);
+            totalLabel.TabIndex = 82;
+            totalLabel.Text = "Total:";
             // 
             // btnTerminar
             // 
@@ -328,7 +325,7 @@ namespace KudekateaBikeShop
             this.btnTerminar.FlatAppearance.BorderSize = 0;
             this.btnTerminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTerminar.Image = ((System.Drawing.Image)(resources.GetObject("btnTerminar.Image")));
-            this.btnTerminar.Location = new System.Drawing.Point(32, 17);
+            this.btnTerminar.Location = new System.Drawing.Point(28, 17);
             this.btnTerminar.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnTerminar.Name = "btnTerminar";
             this.btnTerminar.Size = new System.Drawing.Size(100, 83);
@@ -385,79 +382,14 @@ namespace KudekateaBikeShop
             this.tableAdapterManager.UpdateOrder = KudekateaBikeShop.BBDDCiclismoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.VentaTableAdapter = this.ventaTableAdapter;
             // 
-            // nombre_clienteTextBox
-            // 
-            this.nombre_clienteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ventaBindingSource, "Nombre_cliente", true));
-            this.nombre_clienteTextBox.Location = new System.Drawing.Point(188, 83);
-            this.nombre_clienteTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.nombre_clienteTextBox.Name = "nombre_clienteTextBox";
-            this.nombre_clienteTextBox.Size = new System.Drawing.Size(265, 32);
-            this.nombre_clienteTextBox.TabIndex = 28;
-            // 
-            // dNI_clienteTextBox
-            // 
-            this.dNI_clienteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ventaBindingSource, "DNI_cliente", true));
-            this.dNI_clienteTextBox.Location = new System.Drawing.Point(188, 120);
-            this.dNI_clienteTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.dNI_clienteTextBox.Name = "dNI_clienteTextBox";
-            this.dNI_clienteTextBox.Size = new System.Drawing.Size(265, 32);
-            this.dNI_clienteTextBox.TabIndex = 30;
-            this.dNI_clienteTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.dNI_clienteTextBox_Validating);
-            // 
-            // email_clienteTextBox
-            // 
-            this.email_clienteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ventaBindingSource, "Email_cliente", true));
-            this.email_clienteTextBox.Location = new System.Drawing.Point(188, 156);
-            this.email_clienteTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.email_clienteTextBox.Name = "email_clienteTextBox";
-            this.email_clienteTextBox.Size = new System.Drawing.Size(265, 32);
-            this.email_clienteTextBox.TabIndex = 32;
-            this.email_clienteTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.email_clienteTextBox_Validating);
-            // 
             // fecha_ventaDateTimePicker
             // 
             this.fecha_ventaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.ventaBindingSource, "Fecha_venta", true));
-            this.fecha_ventaDateTimePicker.Location = new System.Drawing.Point(844, 158);
+            this.fecha_ventaDateTimePicker.Location = new System.Drawing.Point(649, 156);
             this.fecha_ventaDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.fecha_ventaDateTimePicker.Name = "fecha_ventaDateTimePicker";
-            this.fecha_ventaDateTimePicker.Size = new System.Drawing.Size(265, 32);
+            this.fecha_ventaDateTimePicker.Size = new System.Drawing.Size(431, 32);
             this.fecha_ventaDateTimePicker.TabIndex = 34;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(id_clienteLabel);
-            this.groupBox1.Controls.Add(nombre_clienteLabel);
-            this.groupBox1.Controls.Add(this.id_clienteComboBox);
-            this.groupBox1.Controls.Add(this.nombre_clienteTextBox);
-            this.groupBox1.Controls.Add(dNI_clienteLabel);
-            this.groupBox1.Controls.Add(this.dNI_clienteTextBox);
-            this.groupBox1.Controls.Add(email_clienteLabel);
-            this.groupBox1.Controls.Add(this.email_clienteTextBox);
-            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(86, 245);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.groupBox1.Size = new System.Drawing.Size(516, 218);
-            this.groupBox1.TabIndex = 35;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Cliente";
-            // 
-            // id_clienteComboBox
-            // 
-            this.id_clienteComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ventaBindingSource, "Id_cliente", true));
-            this.id_clienteComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.ventaBindingSource, "Id_cliente", true));
-            this.id_clienteComboBox.DataSource = this.clientesBindingSource;
-            this.id_clienteComboBox.DisplayMember = "Nombre";
-            this.id_clienteComboBox.FormattingEnabled = true;
-            this.id_clienteComboBox.Location = new System.Drawing.Point(188, 39);
-            this.id_clienteComboBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.id_clienteComboBox.Name = "id_clienteComboBox";
-            this.id_clienteComboBox.Size = new System.Drawing.Size(265, 31);
-            this.id_clienteComboBox.TabIndex = 38;
-            this.id_clienteComboBox.ValueMember = "Id";
-            this.id_clienteComboBox.SelectedIndexChanged += new System.EventHandler(this.id_clienteComboBox_SelectedIndexChanged);
-            this.id_clienteComboBox.Validating += new System.ComponentModel.CancelEventHandler(this.id_clienteComboBox_Validating);
             // 
             // clientesBindingSource
             // 
@@ -698,33 +630,9 @@ namespace KudekateaBikeShop
             this.btnSiguiente.UseVisualStyleBackColor = true;
             this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
-            // detalleVentaBindingSource
-            // 
-            this.detalleVentaBindingSource.DataMember = "DetalleVenta";
-            this.detalleVentaBindingSource.DataSource = this.bBDDCiclismoDataSet;
-            this.detalleVentaBindingSource.PositionChanged += new System.EventHandler(this.detalleVentaBindingSource_PositionChanged);
-            // 
-            // detalleVentaTableAdapter
-            // 
-            this.detalleVentaTableAdapter.ClearBeforeFill = true;
-            // 
             // clientesTableAdapter
             // 
             this.clientesTableAdapter.ClearBeforeFill = true;
-            // 
-            // id_empleadoComboBox
-            // 
-            this.id_empleadoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ventaBindingSource, "Id_empleado", true));
-            this.id_empleadoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.ventaBindingSource, "Id_empleado", true));
-            this.id_empleadoComboBox.DataSource = this.empleadosBindingSource;
-            this.id_empleadoComboBox.DisplayMember = "Nombre";
-            this.id_empleadoComboBox.FormattingEnabled = true;
-            this.id_empleadoComboBox.Location = new System.Drawing.Point(335, 198);
-            this.id_empleadoComboBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.id_empleadoComboBox.Name = "id_empleadoComboBox";
-            this.id_empleadoComboBox.Size = new System.Drawing.Size(267, 31);
-            this.id_empleadoComboBox.TabIndex = 38;
-            this.id_empleadoComboBox.ValueMember = "Id";
             // 
             // empleadosBindingSource
             // 
@@ -735,128 +643,15 @@ namespace KudekateaBikeShop
             // 
             this.empleadosTableAdapter.ClearBeforeFill = true;
             // 
-            // id_ventaLabel2
-            // 
-            this.id_ventaLabel2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.detalleVentaBindingSource, "Id_venta", true));
-            this.id_ventaLabel2.Location = new System.Drawing.Point(211, 561);
-            this.id_ventaLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.id_ventaLabel2.Name = "id_ventaLabel2";
-            this.id_ventaLabel2.Size = new System.Drawing.Size(133, 26);
-            this.id_ventaLabel2.TabIndex = 39;
-            this.id_ventaLabel2.Text = "label3";
-            // 
             // bicicletasBindingSource
             // 
             this.bicicletasBindingSource.DataMember = "Bicicletas";
             this.bicicletasBindingSource.DataSource = this.bBDDCiclismoDataSet;
+            this.bicicletasBindingSource.CurrentChanged += new System.EventHandler(this.bicicletasBindingSource_CurrentChanged);
             // 
             // bicicletasTableAdapter
             // 
             this.bicicletasTableAdapter.ClearBeforeFill = true;
-            // 
-            // detalleComprasBindingSource
-            // 
-            this.detalleComprasBindingSource.DataMember = "DetalleCompras";
-            this.detalleComprasBindingSource.DataSource = this.bBDDCiclismoDataSet;
-            // 
-            // detalleComprasTableAdapter
-            // 
-            this.detalleComprasTableAdapter.ClearBeforeFill = true;
-            // 
-            // id_bicicletaComboBox
-            // 
-            this.id_bicicletaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.detalleVentaBindingSource, "Id_bicicleta", true));
-            this.id_bicicletaComboBox.DataSource = this.bicicletasBindingSource;
-            this.id_bicicletaComboBox.DisplayMember = "Nombre";
-            this.id_bicicletaComboBox.FormattingEnabled = true;
-            this.id_bicicletaComboBox.Location = new System.Drawing.Point(215, 599);
-            this.id_bicicletaComboBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.id_bicicletaComboBox.Name = "id_bicicletaComboBox";
-            this.id_bicicletaComboBox.Size = new System.Drawing.Size(232, 31);
-            this.id_bicicletaComboBox.TabIndex = 48;
-            this.id_bicicletaComboBox.SelectedIndexChanged += new System.EventHandler(this.id_bicicletaComboBox_SelectedIndexChanged);
-            this.id_bicicletaComboBox.Validating += new System.ComponentModel.CancelEventHandler(this.id_bicicletaComboBox_Validating);
-            // 
-            // nombre_bicicletaTextBox
-            // 
-            this.nombre_bicicletaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.detalleVentaBindingSource, "Nombre_bicicleta", true));
-            this.nombre_bicicletaTextBox.Location = new System.Drawing.Point(215, 652);
-            this.nombre_bicicletaTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.nombre_bicicletaTextBox.Name = "nombre_bicicletaTextBox";
-            this.nombre_bicicletaTextBox.Size = new System.Drawing.Size(232, 32);
-            this.nombre_bicicletaTextBox.TabIndex = 49;
-            // 
-            // categoriaTextBox
-            // 
-            this.categoriaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.detalleVentaBindingSource, "Categoria", true));
-            this.categoriaTextBox.Location = new System.Drawing.Point(215, 701);
-            this.categoriaTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.categoriaTextBox.Name = "categoriaTextBox";
-            this.categoriaTextBox.Size = new System.Drawing.Size(232, 32);
-            this.categoriaTextBox.TabIndex = 50;
-            this.categoriaTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.categoriaTextBox_Validating);
-            // 
-            // fabricanteTextBox
-            // 
-            this.fabricanteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.detalleVentaBindingSource, "Fabricante", true));
-            this.fabricanteTextBox.Location = new System.Drawing.Point(215, 756);
-            this.fabricanteTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.fabricanteTextBox.Name = "fabricanteTextBox";
-            this.fabricanteTextBox.Size = new System.Drawing.Size(232, 32);
-            this.fabricanteTextBox.TabIndex = 51;
-            this.fabricanteTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.fabricanteTextBox_Validating);
-            // 
-            // cantidad_vendidaTextBox
-            // 
-            this.cantidad_vendidaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.detalleVentaBindingSource, "Cantidad_vendida", true));
-            this.cantidad_vendidaTextBox.Location = new System.Drawing.Point(756, 596);
-            this.cantidad_vendidaTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.cantidad_vendidaTextBox.Name = "cantidad_vendidaTextBox";
-            this.cantidad_vendidaTextBox.Size = new System.Drawing.Size(132, 32);
-            this.cantidad_vendidaTextBox.TabIndex = 52;
-            this.cantidad_vendidaTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.cantidad_vendidaTextBox_Validating);
-            // 
-            // precio_ventaTextBox
-            // 
-            this.precio_ventaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.detalleVentaBindingSource, "Precio_venta", true));
-            this.precio_ventaTextBox.Location = new System.Drawing.Point(756, 652);
-            this.precio_ventaTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.precio_ventaTextBox.Name = "precio_ventaTextBox";
-            this.precio_ventaTextBox.Size = new System.Drawing.Size(132, 32);
-            this.precio_ventaTextBox.TabIndex = 53;
-            this.precio_ventaTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.precio_ventaTextBox_Validating);
-            // 
-            // descuentoTextBox
-            // 
-            this.descuentoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.detalleVentaBindingSource, "Descuento", true));
-            this.descuentoTextBox.Location = new System.Drawing.Point(756, 705);
-            this.descuentoTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.descuentoTextBox.Name = "descuentoTextBox";
-            this.descuentoTextBox.Size = new System.Drawing.Size(132, 32);
-            this.descuentoTextBox.TabIndex = 54;
-            this.descuentoTextBox.TextChanged += new System.EventHandler(this.descuentoTextBox_TextChanged);
-            this.descuentoTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.descuentoTextBox_Validating);
-            // 
-            // total_lineaLabel1
-            // 
-            this.total_lineaLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.detalleVentaBindingSource, "Total_linea", true));
-            this.total_lineaLabel1.Location = new System.Drawing.Point(757, 759);
-            this.total_lineaLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.total_lineaLabel1.Name = "total_lineaLabel1";
-            this.total_lineaLabel1.Size = new System.Drawing.Size(133, 26);
-            this.total_lineaLabel1.TabIndex = 57;
-            this.total_lineaLabel1.Text = "label3";
-            // 
-            // totalLabel1
-            // 
-            this.totalLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.detalleVentaBindingSource, "Total", true));
-            this.totalLabel1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalLabel1.Location = new System.Drawing.Point(951, 782);
-            this.totalLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.totalLabel1.Name = "totalLabel1";
-            this.totalLabel1.Size = new System.Drawing.Size(133, 26);
-            this.totalLabel1.TabIndex = 58;
-            this.totalLabel1.Text = "label3";
             // 
             // contextMenuStrip1
             // 
@@ -872,7 +667,7 @@ namespace KudekateaBikeShop
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(12, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1289, 35);
+            this.menuStrip1.Size = new System.Drawing.Size(1301, 35);
             this.menuStrip1.TabIndex = 60;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -882,7 +677,8 @@ namespace KudekateaBikeShop
             this.añadirToolStripMenuItem,
             this.editarToolStripMenuItem,
             this.borrarToolStripMenuItem1,
-            this.informeToolStripMenuItem});
+            this.informeToolStripMenuItem,
+            this.helpStripToolStripMenuItem});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             this.menuToolStripMenuItem.Size = new System.Drawing.Size(73, 29);
             this.menuToolStripMenuItem.Text = "Menu";
@@ -893,7 +689,7 @@ namespace KudekateaBikeShop
             this.añadirToolStripMenuItem.Image = global::KudekateaBikeShop.Properties.Resources.icons8_añadir_usuario_masculino_48;
             this.añadirToolStripMenuItem.Name = "añadirToolStripMenuItem";
             this.añadirToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.A)));
-            this.añadirToolStripMenuItem.Size = new System.Drawing.Size(228, 34);
+            this.añadirToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.añadirToolStripMenuItem.Text = "Añadir";
             // 
             // editarToolStripMenuItem
@@ -901,7 +697,7 @@ namespace KudekateaBikeShop
             this.editarToolStripMenuItem.Image = global::KudekateaBikeShop.Properties.Resources.icons8_editar_48;
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
             this.editarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.E)));
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(228, 34);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.editarToolStripMenuItem.Text = "Editar";
             this.editarToolStripMenuItem.Click += new System.EventHandler(this.btnEditar_Click);
             // 
@@ -910,7 +706,7 @@ namespace KudekateaBikeShop
             this.borrarToolStripMenuItem1.Image = global::KudekateaBikeShop.Properties.Resources.icons8_eliminar_48;
             this.borrarToolStripMenuItem1.Name = "borrarToolStripMenuItem1";
             this.borrarToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.B)));
-            this.borrarToolStripMenuItem1.Size = new System.Drawing.Size(228, 34);
+            this.borrarToolStripMenuItem1.Size = new System.Drawing.Size(270, 34);
             this.borrarToolStripMenuItem1.Text = "Borrar";
             this.borrarToolStripMenuItem1.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
@@ -919,9 +715,18 @@ namespace KudekateaBikeShop
             this.informeToolStripMenuItem.Image = global::KudekateaBikeShop.Properties.Resources.icons8_reporte_de_negocios_48;
             this.informeToolStripMenuItem.Name = "informeToolStripMenuItem";
             this.informeToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.I)));
-            this.informeToolStripMenuItem.Size = new System.Drawing.Size(228, 34);
+            this.informeToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.informeToolStripMenuItem.Text = "Informe";
             this.informeToolStripMenuItem.Click += new System.EventHandler(this.btnInforme_Click);
+            // 
+            // helpStripToolStripMenuItem
+            // 
+            this.helpStripToolStripMenuItem.Image = global::KudekateaBikeShop.Properties.Resources.icons8_ayuda_48;
+            this.helpStripToolStripMenuItem.Name = "helpStripToolStripMenuItem";
+            this.helpStripToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F11;
+            this.helpStripToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.helpStripToolStripMenuItem.Text = "Ayuda";
+            this.helpStripToolStripMenuItem.Click += new System.EventHandler(this.helpStripToolStripMenuItem_Click);
             // 
             // btnCancelar
             // 
@@ -1009,17 +814,296 @@ namespace KudekateaBikeShop
             this.panel4.Location = new System.Drawing.Point(1144, 465);
             this.panel4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(145, 382);
+            this.panel4.Size = new System.Drawing.Size(137, 382);
             this.panel4.TabIndex = 67;
             // 
-            // id_ventaLabel4
+            // id_ventaLabel3
             // 
-            this.id_ventaLabel4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ventaBindingSource, "Id_venta", true));
-            this.id_ventaLabel4.Location = new System.Drawing.Point(331, 158);
-            this.id_ventaLabel4.Name = "id_ventaLabel4";
-            this.id_ventaLabel4.Size = new System.Drawing.Size(100, 23);
-            this.id_ventaLabel4.TabIndex = 68;
-            this.id_ventaLabel4.Text = "label3";
+            this.id_ventaLabel3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ventaBindingSource, "Id_venta", true));
+            this.id_ventaLabel3.Location = new System.Drawing.Point(244, 165);
+            this.id_ventaLabel3.Name = "id_ventaLabel3";
+            this.id_ventaLabel3.Size = new System.Drawing.Size(100, 23);
+            this.id_ventaLabel3.TabIndex = 68;
+            this.id_ventaLabel3.Text = "label3";
+            // 
+            // nombre_clienteTextBox
+            // 
+            this.nombre_clienteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ventaBindingSource, "Nombre_cliente", true));
+            this.nombre_clienteTextBox.Location = new System.Drawing.Point(695, 199);
+            this.nombre_clienteTextBox.Name = "nombre_clienteTextBox";
+            this.nombre_clienteTextBox.Size = new System.Drawing.Size(265, 32);
+            this.nombre_clienteTextBox.TabIndex = 70;
+            this.nombre_clienteTextBox.Visible = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.id_empleadoComboBox);
+            this.groupBox1.Controls.Add(email_clienteLabel);
+            this.groupBox1.Controls.Add(dNI_clienteLabel);
+            this.groupBox1.Controls.Add(this.email_clienteTextBox);
+            this.groupBox1.Controls.Add(id_clienteLabel);
+            this.groupBox1.Controls.Add(this.dNI_clienteTextBox);
+            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(57, 239);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.groupBox1.Size = new System.Drawing.Size(1052, 218);
+            this.groupBox1.TabIndex = 35;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Cliente";
+            // 
+            // id_empleadoComboBox
+            // 
+            this.id_empleadoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.ventaBindingSource, "Id_cliente", true));
+            this.id_empleadoComboBox.DataSource = this.clientesBindingSource;
+            this.id_empleadoComboBox.DisplayMember = "Nombre";
+            this.id_empleadoComboBox.FormattingEnabled = true;
+            this.id_empleadoComboBox.Location = new System.Drawing.Point(187, 40);
+            this.id_empleadoComboBox.Name = "id_empleadoComboBox";
+            this.id_empleadoComboBox.Size = new System.Drawing.Size(265, 31);
+            this.id_empleadoComboBox.TabIndex = 74;
+            this.id_empleadoComboBox.ValueMember = "Id";
+            this.id_empleadoComboBox.SelectedIndexChanged += new System.EventHandler(this.id_empleadoComboBox_SelectedIndexChanged);
+            // 
+            // email_clienteTextBox
+            // 
+            this.email_clienteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ventaBindingSource, "Email_cliente", true));
+            this.email_clienteTextBox.Location = new System.Drawing.Point(459, 131);
+            this.email_clienteTextBox.Name = "email_clienteTextBox";
+            this.email_clienteTextBox.Size = new System.Drawing.Size(265, 32);
+            this.email_clienteTextBox.TabIndex = 71;
+            // 
+            // dNI_clienteTextBox
+            // 
+            this.dNI_clienteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ventaBindingSource, "DNI_cliente", true));
+            this.dNI_clienteTextBox.Location = new System.Drawing.Point(727, 37);
+            this.dNI_clienteTextBox.Name = "dNI_clienteTextBox";
+            this.dNI_clienteTextBox.Size = new System.Drawing.Size(265, 32);
+            this.dNI_clienteTextBox.TabIndex = 71;
+            // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "./Kudekatea.chm";
+            // 
+            // id_clienteComboBox
+            // 
+            this.id_clienteComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.ventaBindingSource, "Id_empleado", true));
+            this.id_clienteComboBox.DataSource = this.empleadosBindingSource;
+            this.id_clienteComboBox.DisplayMember = "Nombre";
+            this.id_clienteComboBox.FormattingEnabled = true;
+            this.id_clienteComboBox.Location = new System.Drawing.Point(274, 202);
+            this.id_clienteComboBox.Name = "id_clienteComboBox";
+            this.id_clienteComboBox.Size = new System.Drawing.Size(217, 31);
+            this.id_clienteComboBox.TabIndex = 73;
+            this.id_clienteComboBox.ValueMember = "Id";
+            // 
+            // detalleVentaBindingSource
+            // 
+            this.detalleVentaBindingSource.DataMember = "Venta_DetalleVenta";
+            this.detalleVentaBindingSource.DataSource = this.ventaBindingSource;
+            // 
+            // detalleVentaTableAdapter
+            // 
+            this.detalleVentaTableAdapter.ClearBeforeFill = true;
+            // 
+            // id_ventaLabel2
+            // 
+            this.id_ventaLabel2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.detalleVentaBindingSource, "Id_venta", true));
+            this.id_ventaLabel2.Location = new System.Drawing.Point(201, 596);
+            this.id_ventaLabel2.Name = "id_ventaLabel2";
+            this.id_ventaLabel2.Size = new System.Drawing.Size(100, 23);
+            this.id_ventaLabel2.TabIndex = 74;
+            this.id_ventaLabel2.Text = "label3";
+            // 
+            // id_bicicletaComboBox
+            // 
+            this.id_bicicletaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.detalleVentaBindingSource, "Id_bicicleta", true));
+            this.id_bicicletaComboBox.DataSource = this.bicicletasBindingSource;
+            this.id_bicicletaComboBox.DisplayMember = "Nombre";
+            this.id_bicicletaComboBox.FormattingEnabled = true;
+            this.id_bicicletaComboBox.Location = new System.Drawing.Point(205, 640);
+            this.id_bicicletaComboBox.Name = "id_bicicletaComboBox";
+            this.id_bicicletaComboBox.Size = new System.Drawing.Size(156, 31);
+            this.id_bicicletaComboBox.TabIndex = 75;
+            this.id_bicicletaComboBox.ValueMember = "Id";
+            this.id_bicicletaComboBox.SelectedIndexChanged += new System.EventHandler(this.id_bicicletaComboBox_SelectedIndexChanged_1);
+            // 
+            // nombre_bicicletaTextBox
+            // 
+            this.nombre_bicicletaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.detalleVentaBindingSource, "Nombre_bicicleta", true));
+            this.nombre_bicicletaTextBox.Enabled = false;
+            this.nombre_bicicletaTextBox.Location = new System.Drawing.Point(638, 569);
+            this.nombre_bicicletaTextBox.Name = "nombre_bicicletaTextBox";
+            this.nombre_bicicletaTextBox.Size = new System.Drawing.Size(149, 32);
+            this.nombre_bicicletaTextBox.TabIndex = 76;
+            // 
+            // categoriaComboBox
+            // 
+            this.categoriaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.detalleVentaBindingSource, "Categoria", true));
+            this.categoriaComboBox.FormattingEnabled = true;
+            this.categoriaComboBox.Items.AddRange(new object[] {
+            "Seleccionar",
+            "Carretera",
+            "BMX",
+            "Electrica"});
+            this.categoriaComboBox.Location = new System.Drawing.Point(205, 683);
+            this.categoriaComboBox.Name = "categoriaComboBox";
+            this.categoriaComboBox.Size = new System.Drawing.Size(156, 31);
+            this.categoriaComboBox.TabIndex = 77;
+            // 
+            // fabricanteTextBox
+            // 
+            this.fabricanteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.detalleVentaBindingSource, "Fabricante", true));
+            this.fabricanteTextBox.Location = new System.Drawing.Point(205, 733);
+            this.fabricanteTextBox.Name = "fabricanteTextBox";
+            this.fabricanteTextBox.Size = new System.Drawing.Size(156, 32);
+            this.fabricanteTextBox.TabIndex = 78;
+            // 
+            // cantidad_vendidaTextBox
+            // 
+            this.cantidad_vendidaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.detalleVentaBindingSource, "Cantidad_vendida", true));
+            this.cantidad_vendidaTextBox.Location = new System.Drawing.Point(823, 634);
+            this.cantidad_vendidaTextBox.Name = "cantidad_vendidaTextBox";
+            this.cantidad_vendidaTextBox.Size = new System.Drawing.Size(137, 32);
+            this.cantidad_vendidaTextBox.TabIndex = 79;
+            // 
+            // precio_ventaTextBox
+            // 
+            this.precio_ventaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.detalleVentaBindingSource, "Precio_venta", true));
+            this.precio_ventaTextBox.Location = new System.Drawing.Point(823, 685);
+            this.precio_ventaTextBox.Name = "precio_ventaTextBox";
+            this.precio_ventaTextBox.Size = new System.Drawing.Size(137, 32);
+            this.precio_ventaTextBox.TabIndex = 80;
+            // 
+            // descuentoTextBox
+            // 
+            this.descuentoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.detalleVentaBindingSource, "Descuento", true));
+            this.descuentoTextBox.Location = new System.Drawing.Point(823, 730);
+            this.descuentoTextBox.Name = "descuentoTextBox";
+            this.descuentoTextBox.Size = new System.Drawing.Size(137, 32);
+            this.descuentoTextBox.TabIndex = 81;
+            // 
+            // total_lineaLabel1
+            // 
+            this.total_lineaLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.detalleVentaBindingSource, "Total_linea", true));
+            this.total_lineaLabel1.Location = new System.Drawing.Point(819, 781);
+            this.total_lineaLabel1.Name = "total_lineaLabel1";
+            this.total_lineaLabel1.Size = new System.Drawing.Size(100, 23);
+            this.total_lineaLabel1.TabIndex = 82;
+            this.total_lineaLabel1.Text = "label3";
+            // 
+            // totalLabel1
+            // 
+            this.totalLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.detalleVentaBindingSource, "Total", true));
+            this.totalLabel1.Location = new System.Drawing.Point(1009, 830);
+            this.totalLabel1.Name = "totalLabel1";
+            this.totalLabel1.Size = new System.Drawing.Size(100, 23);
+            this.totalLabel1.TabIndex = 83;
+            this.totalLabel1.Text = "label3";
+            // 
+            // detalleVentaDataGridView
+            // 
+            this.detalleVentaDataGridView.AutoGenerateColumns = false;
+            this.detalleVentaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.detalleVentaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10});
+            this.detalleVentaDataGridView.DataSource = this.detalleVentaBindingSource;
+            this.detalleVentaDataGridView.Location = new System.Drawing.Point(0, 885);
+            this.detalleVentaDataGridView.Name = "detalleVentaDataGridView";
+            this.detalleVentaDataGridView.RowHeadersWidth = 62;
+            this.detalleVentaDataGridView.RowTemplate.Height = 28;
+            this.detalleVentaDataGridView.Size = new System.Drawing.Size(1301, 220);
+            this.detalleVentaDataGridView.TabIndex = 83;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id_venta";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id_venta";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Id_bicicleta";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Id_bicicleta";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Nombre_bicicleta";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Nombre_bicicleta";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Categoria";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Categoria";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Fabricante";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Fabricante";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Cantidad_vendida";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Cantidad_vendida";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Precio_venta";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Precio_venta";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Descuento";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Descuento";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Total_linea";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Total_linea";
+            this.dataGridViewTextBoxColumn9.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Total";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Total";
+            this.dataGridViewTextBoxColumn10.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.Width = 150;
             // 
             // Ventas
             // 
@@ -1027,12 +1111,9 @@ namespace KudekateaBikeShop
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1289, 850);
-            this.Controls.Add(this.id_ventaLabel4);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1301, 1103);
+            this.Controls.Add(this.detalleVentaDataGridView);
+            this.Controls.Add(totalLabel);
             this.Controls.Add(this.totalLabel1);
             this.Controls.Add(total_lineaLabel);
             this.Controls.Add(this.total_lineaLabel1);
@@ -1045,38 +1126,44 @@ namespace KudekateaBikeShop
             this.Controls.Add(fabricanteLabel);
             this.Controls.Add(this.fabricanteTextBox);
             this.Controls.Add(categoriaLabel);
-            this.Controls.Add(this.categoriaTextBox);
+            this.Controls.Add(this.categoriaComboBox);
             this.Controls.Add(nombre_bicicletaLabel);
             this.Controls.Add(this.nombre_bicicletaTextBox);
             this.Controls.Add(id_bicicletaLabel);
             this.Controls.Add(this.id_bicicletaComboBox);
             this.Controls.Add(id_ventaLabel1);
             this.Controls.Add(this.id_ventaLabel2);
+            this.Controls.Add(this.id_clienteComboBox);
+            this.Controls.Add(nombre_clienteLabel);
             this.Controls.Add(id_empleadoLabel);
-            this.Controls.Add(this.id_empleadoComboBox);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.nombre_clienteTextBox);
             this.Controls.Add(id_ventaLabel);
+            this.Controls.Add(this.id_ventaLabel3);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(fecha_ventaLabel);
             this.Controls.Add(this.fecha_ventaDateTimePicker);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.helpProvider1.SetHelpKeyword(this, "10");
+            this.helpProvider1.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.TopicId);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Ventas";
+            this.helpProvider1.SetShowHelp(this, true);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ventas";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Ventas_FormClosing);
             this.Load += new System.EventHandler(this.Ventas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bBDDCiclismoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ventaBindingSource)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.detalleVentaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bicicletasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.detalleComprasBindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -1086,6 +1173,10 @@ namespace KudekateaBikeShop
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.detalleVentaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detalleVentaDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1116,36 +1207,16 @@ namespace KudekateaBikeShop
         private System.Windows.Forms.BindingSource ventaBindingSource;
         private BBDDCiclismoDataSetTableAdapters.VentaTableAdapter ventaTableAdapter;
         private BBDDCiclismoDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.TextBox nombre_clienteTextBox;
-        private System.Windows.Forms.TextBox dNI_clienteTextBox;
-        private System.Windows.Forms.TextBox email_clienteTextBox;
         private System.Windows.Forms.DateTimePicker fecha_ventaDateTimePicker;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button btnCancelarLinea;
         private System.Windows.Forms.Button btnAceptarLinea;
-        private System.Windows.Forms.BindingSource detalleVentaBindingSource;
-        private BBDDCiclismoDataSetTableAdapters.DetalleVentaTableAdapter detalleVentaTableAdapter;
-        private System.Windows.Forms.ComboBox id_clienteComboBox;
         private System.Windows.Forms.BindingSource clientesBindingSource;
         private BBDDCiclismoDataSetTableAdapters.ClientesTableAdapter clientesTableAdapter;
-        private System.Windows.Forms.ComboBox id_empleadoComboBox;
         private System.Windows.Forms.BindingSource empleadosBindingSource;
         private BBDDCiclismoDataSetTableAdapters.EmpleadosTableAdapter empleadosTableAdapter;
-        private System.Windows.Forms.Label id_ventaLabel2;
         private System.Windows.Forms.BindingSource bicicletasBindingSource;
         private BBDDCiclismoDataSetTableAdapters.BicicletasTableAdapter bicicletasTableAdapter;
-        private System.Windows.Forms.BindingSource detalleComprasBindingSource;
-        private BBDDCiclismoDataSetTableAdapters.DetalleComprasTableAdapter detalleComprasTableAdapter;
-        private System.Windows.Forms.ComboBox id_bicicletaComboBox;
-        private System.Windows.Forms.TextBox nombre_bicicletaTextBox;
-        private System.Windows.Forms.TextBox categoriaTextBox;
-        private System.Windows.Forms.TextBox fabricanteTextBox;
-        private System.Windows.Forms.TextBox cantidad_vendidaTextBox;
-        private System.Windows.Forms.TextBox precio_ventaTextBox;
-        private System.Windows.Forms.TextBox descuentoTextBox;
-        private System.Windows.Forms.Label total_lineaLabel1;
-        private System.Windows.Forms.Label totalLabel1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
@@ -1161,6 +1232,37 @@ namespace KudekateaBikeShop
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label id_ventaLabel4;
+        private System.Windows.Forms.TextBox nombre_clienteTextBox;
+        private System.Windows.Forms.Label id_ventaLabel3;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox email_clienteTextBox;
+        private System.Windows.Forms.TextBox dNI_clienteTextBox;
+        private System.Windows.Forms.HelpProvider helpProvider1;
+        private System.Windows.Forms.ComboBox id_clienteComboBox;
+        private System.Windows.Forms.ComboBox id_empleadoComboBox;
+        private System.Windows.Forms.BindingSource detalleVentaBindingSource;
+        private BBDDCiclismoDataSetTableAdapters.DetalleVentaTableAdapter detalleVentaTableAdapter;
+        private System.Windows.Forms.Label id_ventaLabel2;
+        private System.Windows.Forms.Label totalLabel1;
+        private System.Windows.Forms.Label total_lineaLabel1;
+        private System.Windows.Forms.TextBox descuentoTextBox;
+        private System.Windows.Forms.TextBox precio_ventaTextBox;
+        private System.Windows.Forms.TextBox cantidad_vendidaTextBox;
+        private System.Windows.Forms.TextBox fabricanteTextBox;
+        private System.Windows.Forms.ComboBox categoriaComboBox;
+        private System.Windows.Forms.TextBox nombre_bicicletaTextBox;
+        private System.Windows.Forms.ComboBox id_bicicletaComboBox;
+        private System.Windows.Forms.DataGridView detalleVentaDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.ToolStripMenuItem helpStripToolStripMenuItem;
     }
 }

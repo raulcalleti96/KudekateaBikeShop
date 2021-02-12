@@ -30,12 +30,14 @@ namespace KudekateaBikeShop
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.BBDDCiclismoDataSet = new KudekateaBikeShop.BBDDCiclismoDataSet();
             this.DetalleVentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DetalleVentaTableAdapter = new KudekateaBikeShop.BBDDCiclismoDataSetTableAdapters.DetalleVentaTableAdapter();
             this.VentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.VentaTableAdapter = new KudekateaBikeShop.BBDDCiclismoDataSetTableAdapters.VentaTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.BBDDCiclismoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleVentaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.VentaBindingSource)).BeginInit();
@@ -43,14 +45,18 @@ namespace KudekateaBikeShop
             // 
             // reportViewer1
             // 
-            reportDataSource2.Name = "DataSet1";
-            reportDataSource2.Value = this.DetalleVentaBindingSource;
+            this.reportViewer1.DocumentMapWidth = 74;
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.DetalleVentaBindingSource;
+            reportDataSource2.Name = "DataSet2";
+            reportDataSource2.Value = this.VentaBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "KudekateaBikeShop.InformeVentas.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(-5, 1);
+            this.reportViewer1.Location = new System.Drawing.Point(-3, -2);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1424, 683);
+            this.reportViewer1.Size = new System.Drawing.Size(1419, 683);
             this.reportViewer1.TabIndex = 0;
             // 
             // BBDDCiclismoDataSet
@@ -70,6 +76,11 @@ namespace KudekateaBikeShop
             // VentaBindingSource
             // 
             this.VentaBindingSource.DataMember = "Venta";
+            this.VentaBindingSource.DataSource = this.BBDDCiclismoDataSet;
+            // 
+            // VentaTableAdapter
+            // 
+            this.VentaTableAdapter.ClearBeforeFill = true;
             // 
             // InformeVentas
             // 
@@ -92,7 +103,8 @@ namespace KudekateaBikeShop
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource DetalleVentaBindingSource;
         private BBDDCiclismoDataSet BBDDCiclismoDataSet;
-        private BBDDCiclismoDataSetTableAdapters.DetalleVentaTableAdapter DetalleVentaTableAdapter;
         private System.Windows.Forms.BindingSource VentaBindingSource;
+        private BBDDCiclismoDataSetTableAdapters.DetalleVentaTableAdapter DetalleVentaTableAdapter;
+        private BBDDCiclismoDataSetTableAdapters.VentaTableAdapter VentaTableAdapter;
     }
 }

@@ -404,7 +404,7 @@ namespace KudekateaBikeShop
 
         private void proveedorBindingSource_PositionChanged(object sender, EventArgs e)
         {
-            label2.Text = "Proveedor " + (proveedorBindingSource.Position + 1) + " de " + proveedorBindingSource.Count;
+            label1.Text = "Proveedor " + (proveedorBindingSource.Position + 1) + " de " + proveedorBindingSource.Count;
 
             if (proveedorBindingSource.Position == 0)
             {
@@ -429,6 +429,11 @@ namespace KudekateaBikeShop
             }
 
             btnBorrar.Enabled = proveedorBindingSource.Count > 0;
+        }
+
+        private void ayudatoolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, helpProvider1.HelpNamespace);
         }
     }
 }

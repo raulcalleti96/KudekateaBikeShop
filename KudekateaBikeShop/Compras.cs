@@ -119,7 +119,7 @@ namespace KudekateaBikeShop
             email_proveedorTextBox.Enabled = false;
 
 
-            btnInforme.Enabled = true;
+            
 
             btnPrimero.Enabled = true;
             btnAnterior.Enabled = true;
@@ -145,7 +145,6 @@ namespace KudekateaBikeShop
             telefono_proveedorTextBox.Enabled = true;
             email_proveedorTextBox.Enabled = true;
            
-            btnInforme.Enabled = false;
 
             btnPrimero.Enabled = false;
             btnAnterior.Enabled = false;
@@ -209,7 +208,7 @@ namespace KudekateaBikeShop
             contextMenuStrip1.Enabled = false;
             menuStrip1.Enabled = false;
 
-            btnInforme.Enabled = false;
+            
 
             btnPrimero.Enabled = false;
             btnAnterior.Enabled = false;
@@ -286,7 +285,8 @@ namespace KudekateaBikeShop
             this.Validate();
             this.comprasBindingSource.EndEdit();
             this.detalleComprasBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bBDDCiclismoDataSet);
+            comprasTableAdapter.Update(bBDDCiclismoDataSet);
+            detalleComprasTableAdapter.Update(bBDDCiclismoDataSet);
 
             MessageBox.Show("Los cambios han sido guardados correctamente", "Guardado satisfactorio", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -332,7 +332,6 @@ namespace KudekateaBikeShop
                     contextMenuStrip1.Enabled = false;
                     menuStrip1.Enabled = false;
 
-                    btnInforme.Enabled = false;
 
                     btnEditar.Enabled = false;
                     btnAnadir.Enabled = false;
@@ -430,18 +429,14 @@ namespace KudekateaBikeShop
                 try
                 {
 
-                    errorProvider1.Clear();
-
                     detalleComprasBindingSource.EndEdit();
 
-                  
                     descuento();
 
                     consultaDetalle();
 
                     btnTerminar.Enabled = true;
 
-                 
                     detalleComprasDataGridView.Refresh();
 
                 }
@@ -676,9 +671,12 @@ namespace KudekateaBikeShop
                 {
                     try
                     {
-                        comprasBindingSource.EndEdit();
-                        tableAdapterManager.UpdateAll(bBDDCiclismoDataSet);
-                        bBDDCiclismoDataSet.AcceptChanges();
+
+                        this.Validate();
+                        this.comprasBindingSource.EndEdit();
+                        this.detalleComprasBindingSource.EndEdit();
+                        this.tableAdapterManager.UpdateAll(this.bBDDCiclismoDataSet);
+                        this.bBDDCiclismoDataSet.AcceptChanges();
                         MessageBox.Show("Los cambios han sido guardados", "Guardar cambios", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch (Exception ex)
@@ -730,6 +728,16 @@ namespace KudekateaBikeShop
         private void nombre_proveedorLabel1_Validating(object sender, CancelEventArgs e)
         {
 
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void ayudatoolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, helpProvider1.HelpNamespace);
         }
     }
 }

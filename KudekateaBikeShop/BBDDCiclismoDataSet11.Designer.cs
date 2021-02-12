@@ -20,9 +20,9 @@ namespace KudekateaBikeShop {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("BBDDCiclismoDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("BBDDCiclismoDataSet1")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class BBDDCiclismoDataSet : global::System.Data.DataSet {
+    public partial class BBDDCiclismoDataSet1 : global::System.Data.DataSet {
         
         private BicicletasDataTable tableBicicletas;
         
@@ -40,15 +40,11 @@ namespace KudekateaBikeShop {
         
         private VentaDataTable tableVenta;
         
-        private global::System.Data.DataRelation relationDetalleVenta_Venta;
-        
-        private global::System.Data.DataRelation relationCompras_DetalleCompras;
-        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public BBDDCiclismoDataSet() {
+        public BBDDCiclismoDataSet1() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -59,7 +55,7 @@ namespace KudekateaBikeShop {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected BBDDCiclismoDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected BBDDCiclismoDataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -236,7 +232,7 @@ namespace KudekateaBikeShop {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            BBDDCiclismoDataSet cln = ((BBDDCiclismoDataSet)(base.Clone()));
+            BBDDCiclismoDataSet1 cln = ((BBDDCiclismoDataSet1)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -366,16 +362,14 @@ namespace KudekateaBikeShop {
                     this.tableVenta.InitVars();
                 }
             }
-            this.relationDetalleVenta_Venta = this.Relations["DetalleVenta_Venta"];
-            this.relationCompras_DetalleCompras = this.Relations["Compras_DetalleCompras"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "BBDDCiclismoDataSet";
+            this.DataSetName = "BBDDCiclismoDataSet1";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/BBDDCiclismoDataSet1.xsd";
+            this.Namespace = "http://tempuri.org/BBDDCiclismoDataSet11.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableBicicletas = new BicicletasDataTable();
@@ -394,14 +388,6 @@ namespace KudekateaBikeShop {
             base.Tables.Add(this.tableProveedor);
             this.tableVenta = new VentaDataTable();
             base.Tables.Add(this.tableVenta);
-            this.relationDetalleVenta_Venta = new global::System.Data.DataRelation("DetalleVenta_Venta", new global::System.Data.DataColumn[] {
-                        this.tableDetalleVenta.Id_ventaColumn}, new global::System.Data.DataColumn[] {
-                        this.tableVenta.Id_ventaColumn}, false);
-            this.Relations.Add(this.relationDetalleVenta_Venta);
-            this.relationCompras_DetalleCompras = new global::System.Data.DataRelation("Compras_DetalleCompras", new global::System.Data.DataColumn[] {
-                        this.tableCompras.Id_compraColumn}, new global::System.Data.DataColumn[] {
-                        this.tableDetalleCompras.Id_compraColumn}, false);
-            this.Relations.Add(this.relationCompras_DetalleCompras);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -463,7 +449,7 @@ namespace KudekateaBikeShop {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            BBDDCiclismoDataSet ds = new BBDDCiclismoDataSet();
+            BBDDCiclismoDataSet1 ds = new BBDDCiclismoDataSet1();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -688,10 +674,10 @@ namespace KudekateaBikeShop {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public BicicletasRow AddBicicletasRow(string Nombre, string Categoria, string Fabricante, int Stock, double Precio, byte[] Foto, string Descripcion) {
+            public BicicletasRow AddBicicletasRow(int Id, string Nombre, string Categoria, string Fabricante, int Stock, double Precio, byte[] Foto, string Descripcion) {
                 BicicletasRow rowBicicletasRow = ((BicicletasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
+                        Id,
                         Nombre,
                         Categoria,
                         Fabricante,
@@ -759,8 +745,6 @@ namespace KudekateaBikeShop {
                 base.Columns.Add(this.columnDescripcion);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
-                this.columnId.AutoIncrement = true;
-                this.columnId.AutoIncrementSeed = 1;
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
                 this.columnNombre.MaxLength = 50;
@@ -834,7 +818,7 @@ namespace KudekateaBikeShop {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BBDDCiclismoDataSet ds = new BBDDCiclismoDataSet();
+                BBDDCiclismoDataSet1 ds = new BBDDCiclismoDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1050,10 +1034,10 @@ namespace KudekateaBikeShop {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ClientesRow AddClientesRow(string Nombre, string DNI, string Email, string Telefono, string Direccion, string Provincia, string Codigo_postal) {
+            public ClientesRow AddClientesRow(int Id, string Nombre, string DNI, string Email, string Telefono, string Direccion, string Provincia, string Codigo_postal) {
                 ClientesRow rowClientesRow = ((ClientesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
+                        Id,
                         Nombre,
                         DNI,
                         Email,
@@ -1121,8 +1105,6 @@ namespace KudekateaBikeShop {
                 base.Columns.Add(this.columnCodigo_postal);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
-                this.columnId.AutoIncrement = true;
-                this.columnId.AutoIncrementSeed = 1;
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
                 this.columnNombre.MaxLength = 50;
@@ -1199,7 +1181,7 @@ namespace KudekateaBikeShop {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BBDDCiclismoDataSet ds = new BBDDCiclismoDataSet();
+                BBDDCiclismoDataSet1 ds = new BBDDCiclismoDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1405,10 +1387,10 @@ namespace KudekateaBikeShop {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ComprasRow AddComprasRow(int Id_proveedor, int Id_empleado, string Nombre_proveedor, string Telefono_proveedor, string Email_proveedor, System.DateTime Fecha_compra) {
+            public ComprasRow AddComprasRow(int Id_compra, int Id_proveedor, int Id_empleado, string Nombre_proveedor, string Telefono_proveedor, string Email_proveedor, System.DateTime Fecha_compra) {
                 ComprasRow rowComprasRow = ((ComprasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
+                        Id_compra,
                         Id_proveedor,
                         Id_empleado,
                         Nombre_proveedor,
@@ -1472,8 +1454,6 @@ namespace KudekateaBikeShop {
                 base.Columns.Add(this.columnFecha_compra);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId_compra}, true));
-                this.columnId_compra.AutoIncrement = true;
-                this.columnId_compra.AutoIncrementSeed = 1;
                 this.columnId_compra.AllowDBNull = false;
                 this.columnId_compra.Unique = true;
                 this.columnId_proveedor.AllowDBNull = false;
@@ -1547,7 +1527,7 @@ namespace KudekateaBikeShop {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BBDDCiclismoDataSet ds = new BBDDCiclismoDataSet();
+                BBDDCiclismoDataSet1 ds = new BBDDCiclismoDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1783,11 +1763,11 @@ namespace KudekateaBikeShop {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DetalleComprasRow AddDetalleComprasRow(ComprasRow parentComprasRowByCompras_DetalleCompras, string Nombre_bicicleta, string Categoria, string Fabricante, int Cantidad_comprada, double Precio_compra, int Descuento, double Total_linea, double total) {
+            public DetalleComprasRow AddDetalleComprasRow(int Id_compra, int Id_bicicleta, string Nombre_bicicleta, string Categoria, string Fabricante, int Cantidad_comprada, double Precio_compra, int Descuento, double Total_linea, double total) {
                 DetalleComprasRow rowDetalleComprasRow = ((DetalleComprasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
-                        null,
+                        Id_compra,
+                        Id_bicicleta,
                         Nombre_bicicleta,
                         Categoria,
                         Fabricante,
@@ -1796,9 +1776,6 @@ namespace KudekateaBikeShop {
                         Descuento,
                         Total_linea,
                         total};
-                if ((parentComprasRowByCompras_DetalleCompras != null)) {
-                    columnValuesArray[0] = parentComprasRowByCompras_DetalleCompras[0];
-                }
                 rowDetalleComprasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDetalleComprasRow);
                 return rowDetalleComprasRow;
@@ -1868,8 +1845,6 @@ namespace KudekateaBikeShop {
                                 this.columnId_compra,
                                 this.columnId_bicicleta}, true));
                 this.columnId_compra.AllowDBNull = false;
-                this.columnId_bicicleta.AutoIncrement = true;
-                this.columnId_bicicleta.AutoIncrementSeed = 1;
                 this.columnId_bicicleta.AllowDBNull = false;
                 this.columnNombre_bicicleta.MaxLength = 50;
                 this.columnCategoria.MaxLength = 50;
@@ -1941,7 +1916,7 @@ namespace KudekateaBikeShop {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BBDDCiclismoDataSet ds = new BBDDCiclismoDataSet();
+                BBDDCiclismoDataSet1 ds = new BBDDCiclismoDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2177,11 +2152,11 @@ namespace KudekateaBikeShop {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DetalleVentaRow AddDetalleVentaRow(int Id_venta, string Nombre_bicicleta, string Categoria, string Fabricante, int Cantidad_vendida, double Precio_venta, int Descuento, double Total_linea, double Total) {
+            public DetalleVentaRow AddDetalleVentaRow(int Id_venta, int Id_bicicleta, string Nombre_bicicleta, string Categoria, string Fabricante, int Cantidad_vendida, double Precio_venta, int Descuento, double Total_linea, double Total) {
                 DetalleVentaRow rowDetalleVentaRow = ((DetalleVentaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Id_venta,
-                        null,
+                        Id_bicicleta,
                         Nombre_bicicleta,
                         Categoria,
                         Fabricante,
@@ -2259,8 +2234,6 @@ namespace KudekateaBikeShop {
                                 this.columnId_venta,
                                 this.columnId_bicicleta}, true));
                 this.columnId_venta.AllowDBNull = false;
-                this.columnId_bicicleta.AutoIncrement = true;
-                this.columnId_bicicleta.AutoIncrementSeed = 1;
                 this.columnId_bicicleta.AllowDBNull = false;
                 this.columnNombre_bicicleta.MaxLength = 50;
                 this.columnCategoria.MaxLength = 50;
@@ -2332,7 +2305,7 @@ namespace KudekateaBikeShop {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BBDDCiclismoDataSet ds = new BBDDCiclismoDataSet();
+                BBDDCiclismoDataSet1 ds = new BBDDCiclismoDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2558,10 +2531,10 @@ namespace KudekateaBikeShop {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public EmpleadosRow AddEmpleadosRow(string Nombre, string DNI, string Direccion, string Telefono, string Usuario, string Password, string Rol, byte[] Foto) {
+            public EmpleadosRow AddEmpleadosRow(int Id, string Nombre, string DNI, string Direccion, string Telefono, string Usuario, string Password, string Rol, byte[] Foto) {
                 EmpleadosRow rowEmpleadosRow = ((EmpleadosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
+                        Id,
                         Nombre,
                         DNI,
                         Direccion,
@@ -2633,8 +2606,6 @@ namespace KudekateaBikeShop {
                 base.Columns.Add(this.columnFoto);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
-                this.columnId.AutoIncrement = true;
-                this.columnId.AutoIncrementSeed = 1;
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
                 this.columnNombre.MaxLength = 50;
@@ -2711,7 +2682,7 @@ namespace KudekateaBikeShop {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BBDDCiclismoDataSet ds = new BBDDCiclismoDataSet();
+                BBDDCiclismoDataSet1 ds = new BBDDCiclismoDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2927,10 +2898,10 @@ namespace KudekateaBikeShop {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ProveedorRow AddProveedorRow(string Nombre, string Telefono, string Email, string Provincia, string Direccion, string Cod_postal, string Pais) {
+            public ProveedorRow AddProveedorRow(int Id, string Nombre, string Telefono, string Email, string Provincia, string Direccion, string Cod_postal, string Pais) {
                 ProveedorRow rowProveedorRow = ((ProveedorRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
+                        Id,
                         Nombre,
                         Telefono,
                         Email,
@@ -2998,8 +2969,6 @@ namespace KudekateaBikeShop {
                 base.Columns.Add(this.columnPais);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
-                this.columnId.AutoIncrement = true;
-                this.columnId.AutoIncrementSeed = 1;
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
                 this.columnNombre.MaxLength = 50;
@@ -3076,7 +3045,7 @@ namespace KudekateaBikeShop {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BBDDCiclismoDataSet ds = new BBDDCiclismoDataSet();
+                BBDDCiclismoDataSet1 ds = new BBDDCiclismoDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3282,10 +3251,10 @@ namespace KudekateaBikeShop {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public VentaRow AddVentaRow(int Id_cliente, int Id_empleado, string Nombre_cliente, string DNI_cliente, string Email_cliente, System.DateTime Fecha_venta) {
+            public VentaRow AddVentaRow(int Id_venta, int Id_cliente, int Id_empleado, string Nombre_cliente, string DNI_cliente, string Email_cliente, System.DateTime Fecha_venta) {
                 VentaRow rowVentaRow = ((VentaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
+                        Id_venta,
                         Id_cliente,
                         Id_empleado,
                         Nombre_cliente,
@@ -3349,8 +3318,6 @@ namespace KudekateaBikeShop {
                 base.Columns.Add(this.columnFecha_venta);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId_venta}, true));
-                this.columnId_venta.AutoIncrement = true;
-                this.columnId_venta.AutoIncrementSeed = 1;
                 this.columnId_venta.AllowDBNull = false;
                 this.columnId_venta.Unique = true;
                 this.columnId_cliente.AllowDBNull = false;
@@ -3424,7 +3391,7 @@ namespace KudekateaBikeShop {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BBDDCiclismoDataSet ds = new BBDDCiclismoDataSet();
+                BBDDCiclismoDataSet1 ds = new BBDDCiclismoDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4102,17 +4069,6 @@ namespace KudekateaBikeShop {
             public void SetFecha_compraNull() {
                 this[this.tableCompras.Fecha_compraColumn] = global::System.Convert.DBNull;
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DetalleComprasRow[] GetDetalleComprasRows() {
-                if ((this.Table.ChildRelations["Compras_DetalleCompras"] == null)) {
-                    return new DetalleComprasRow[0];
-                }
-                else {
-                    return ((DetalleComprasRow[])(base.GetChildRows(this.Table.ChildRelations["Compras_DetalleCompras"])));
-                }
-            }
         }
         
         /// <summary>
@@ -4278,17 +4234,6 @@ namespace KudekateaBikeShop {
                 }
                 set {
                     this[this.tableDetalleCompras.totalColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ComprasRow ComprasRow {
-                get {
-                    return ((ComprasRow)(this.GetParentRow(this.Table.ParentRelations["Compras_DetalleCompras"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["Compras_DetalleCompras"]);
                 }
             }
             
@@ -4647,17 +4592,6 @@ namespace KudekateaBikeShop {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetTotalNull() {
                 this[this.tableDetalleVenta.TotalColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public VentaRow[] GetVentaRows() {
-                if ((this.Table.ChildRelations["DetalleVenta_Venta"] == null)) {
-                    return new VentaRow[0];
-                }
-                else {
-                    return ((VentaRow[])(base.GetChildRows(this.Table.ChildRelations["DetalleVenta_Venta"])));
-                }
             }
         }
         
@@ -5251,17 +5185,6 @@ namespace KudekateaBikeShop {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DetalleVentaRow DetalleVentaRow {
-                get {
-                    return ((DetalleVentaRow)(this.GetParentRow(this.Table.ParentRelations["DetalleVenta_Venta"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["DetalleVenta_Venta"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsId_empleadoNull() {
                 return this.IsNull(this.tableVenta.Id_empleadoColumn);
             }
@@ -5594,7 +5517,7 @@ namespace KudekateaBikeShop {
         }
     }
 }
-namespace KudekateaBikeShop.BBDDCiclismoDataSetTableAdapters {
+namespace KudekateaBikeShop.BBDDCiclismoDataSet1TableAdapters {
     
     
     /// <summary>
@@ -5807,7 +5730,7 @@ SELECT Id, Nombre, Categoria, Fabricante, Stock, Precio, Foto, Descripcion FROM 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BBDDCiclismoDataSet.BicicletasDataTable dataTable) {
+        public virtual int Fill(BBDDCiclismoDataSet1.BicicletasDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5820,9 +5743,9 @@ SELECT Id, Nombre, Categoria, Fabricante, Stock, Precio, Foto, Descripcion FROM 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BBDDCiclismoDataSet.BicicletasDataTable GetData() {
+        public virtual BBDDCiclismoDataSet1.BicicletasDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            BBDDCiclismoDataSet.BicicletasDataTable dataTable = new BBDDCiclismoDataSet.BicicletasDataTable();
+            BBDDCiclismoDataSet1.BicicletasDataTable dataTable = new BBDDCiclismoDataSet1.BicicletasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5830,14 +5753,14 @@ SELECT Id, Nombre, Categoria, Fabricante, Stock, Precio, Foto, Descripcion FROM 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BBDDCiclismoDataSet.BicicletasDataTable dataTable) {
+        public virtual int Update(BBDDCiclismoDataSet1.BicicletasDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BBDDCiclismoDataSet dataSet) {
+        public virtual int Update(BBDDCiclismoDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Bicicletas");
         }
         
@@ -6326,7 +6249,7 @@ SELECT Id, Nombre, DNI, Email, Telefono, Direccion, Provincia, Codigo_postal FRO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BBDDCiclismoDataSet.ClientesDataTable dataTable) {
+        public virtual int Fill(BBDDCiclismoDataSet1.ClientesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -6339,9 +6262,9 @@ SELECT Id, Nombre, DNI, Email, Telefono, Direccion, Provincia, Codigo_postal FRO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BBDDCiclismoDataSet.ClientesDataTable GetData() {
+        public virtual BBDDCiclismoDataSet1.ClientesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            BBDDCiclismoDataSet.ClientesDataTable dataTable = new BBDDCiclismoDataSet.ClientesDataTable();
+            BBDDCiclismoDataSet1.ClientesDataTable dataTable = new BBDDCiclismoDataSet1.ClientesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -6349,14 +6272,14 @@ SELECT Id, Nombre, DNI, Email, Telefono, Direccion, Provincia, Codigo_postal FRO
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BBDDCiclismoDataSet.ClientesDataTable dataTable) {
+        public virtual int Update(BBDDCiclismoDataSet1.ClientesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BBDDCiclismoDataSet dataSet) {
+        public virtual int Update(BBDDCiclismoDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Clientes");
         }
         
@@ -6868,7 +6791,7 @@ SELECT Id_compra, Id_proveedor, Id_empleado, Nombre_proveedor, Telefono_proveedo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BBDDCiclismoDataSet.ComprasDataTable dataTable) {
+        public virtual int Fill(BBDDCiclismoDataSet1.ComprasDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -6881,9 +6804,9 @@ SELECT Id_compra, Id_proveedor, Id_empleado, Nombre_proveedor, Telefono_proveedo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BBDDCiclismoDataSet.ComprasDataTable GetData() {
+        public virtual BBDDCiclismoDataSet1.ComprasDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            BBDDCiclismoDataSet.ComprasDataTable dataTable = new BBDDCiclismoDataSet.ComprasDataTable();
+            BBDDCiclismoDataSet1.ComprasDataTable dataTable = new BBDDCiclismoDataSet1.ComprasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -6891,14 +6814,14 @@ SELECT Id_compra, Id_proveedor, Id_empleado, Nombre_proveedor, Telefono_proveedo
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BBDDCiclismoDataSet.ComprasDataTable dataTable) {
+        public virtual int Update(BBDDCiclismoDataSet1.ComprasDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BBDDCiclismoDataSet dataSet) {
+        public virtual int Update(BBDDCiclismoDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Compras");
         }
         
@@ -7363,7 +7286,7 @@ SELECT Id_compra, Id_bicicleta, Nombre_bicicleta, Categoria, Fabricante, Cantida
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BBDDCiclismoDataSet.DetalleComprasDataTable dataTable) {
+        public virtual int Fill(BBDDCiclismoDataSet1.DetalleComprasDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7376,9 +7299,9 @@ SELECT Id_compra, Id_bicicleta, Nombre_bicicleta, Categoria, Fabricante, Cantida
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BBDDCiclismoDataSet.DetalleComprasDataTable GetData() {
+        public virtual BBDDCiclismoDataSet1.DetalleComprasDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            BBDDCiclismoDataSet.DetalleComprasDataTable dataTable = new BBDDCiclismoDataSet.DetalleComprasDataTable();
+            BBDDCiclismoDataSet1.DetalleComprasDataTable dataTable = new BBDDCiclismoDataSet1.DetalleComprasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -7386,14 +7309,14 @@ SELECT Id_compra, Id_bicicleta, Nombre_bicicleta, Categoria, Fabricante, Cantida
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BBDDCiclismoDataSet.DetalleComprasDataTable dataTable) {
+        public virtual int Update(BBDDCiclismoDataSet1.DetalleComprasDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BBDDCiclismoDataSet dataSet) {
+        public virtual int Update(BBDDCiclismoDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "DetalleCompras");
         }
         
@@ -7980,7 +7903,7 @@ SELECT Id_venta, Id_bicicleta, Nombre_bicicleta, Categoria, Fabricante, Cantidad
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BBDDCiclismoDataSet.DetalleVentaDataTable dataTable) {
+        public virtual int Fill(BBDDCiclismoDataSet1.DetalleVentaDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7993,9 +7916,9 @@ SELECT Id_venta, Id_bicicleta, Nombre_bicicleta, Categoria, Fabricante, Cantidad
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BBDDCiclismoDataSet.DetalleVentaDataTable GetData() {
+        public virtual BBDDCiclismoDataSet1.DetalleVentaDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            BBDDCiclismoDataSet.DetalleVentaDataTable dataTable = new BBDDCiclismoDataSet.DetalleVentaDataTable();
+            BBDDCiclismoDataSet1.DetalleVentaDataTable dataTable = new BBDDCiclismoDataSet1.DetalleVentaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -8003,14 +7926,14 @@ SELECT Id_venta, Id_bicicleta, Nombre_bicicleta, Categoria, Fabricante, Cantidad
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BBDDCiclismoDataSet.DetalleVentaDataTable dataTable) {
+        public virtual int Update(BBDDCiclismoDataSet1.DetalleVentaDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BBDDCiclismoDataSet dataSet) {
+        public virtual int Update(BBDDCiclismoDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "DetalleVenta");
         }
         
@@ -8588,7 +8511,7 @@ SELECT Id, Nombre, DNI, Direccion, Telefono, Usuario, Password, Rol, Foto FROM E
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BBDDCiclismoDataSet.EmpleadosDataTable dataTable) {
+        public virtual int Fill(BBDDCiclismoDataSet1.EmpleadosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -8601,9 +8524,9 @@ SELECT Id, Nombre, DNI, Direccion, Telefono, Usuario, Password, Rol, Foto FROM E
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BBDDCiclismoDataSet.EmpleadosDataTable GetData() {
+        public virtual BBDDCiclismoDataSet1.EmpleadosDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            BBDDCiclismoDataSet.EmpleadosDataTable dataTable = new BBDDCiclismoDataSet.EmpleadosDataTable();
+            BBDDCiclismoDataSet1.EmpleadosDataTable dataTable = new BBDDCiclismoDataSet1.EmpleadosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -8611,14 +8534,14 @@ SELECT Id, Nombre, DNI, Direccion, Telefono, Usuario, Password, Rol, Foto FROM E
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BBDDCiclismoDataSet.EmpleadosDataTable dataTable) {
+        public virtual int Update(BBDDCiclismoDataSet1.EmpleadosDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BBDDCiclismoDataSet dataSet) {
+        public virtual int Update(BBDDCiclismoDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Empleados");
         }
         
@@ -9168,7 +9091,7 @@ SELECT Id, Nombre, Telefono, Email, Provincia, Direccion, Cod_postal, Pais FROM 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BBDDCiclismoDataSet.ProveedorDataTable dataTable) {
+        public virtual int Fill(BBDDCiclismoDataSet1.ProveedorDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -9181,9 +9104,9 @@ SELECT Id, Nombre, Telefono, Email, Provincia, Direccion, Cod_postal, Pais FROM 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BBDDCiclismoDataSet.ProveedorDataTable GetData() {
+        public virtual BBDDCiclismoDataSet1.ProveedorDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            BBDDCiclismoDataSet.ProveedorDataTable dataTable = new BBDDCiclismoDataSet.ProveedorDataTable();
+            BBDDCiclismoDataSet1.ProveedorDataTable dataTable = new BBDDCiclismoDataSet1.ProveedorDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -9191,14 +9114,14 @@ SELECT Id, Nombre, Telefono, Email, Provincia, Direccion, Cod_postal, Pais FROM 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BBDDCiclismoDataSet.ProveedorDataTable dataTable) {
+        public virtual int Update(BBDDCiclismoDataSet1.ProveedorDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BBDDCiclismoDataSet dataSet) {
+        public virtual int Update(BBDDCiclismoDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Proveedor");
         }
         
@@ -9710,7 +9633,7 @@ SELECT Id_venta, Id_cliente, Id_empleado, Nombre_cliente, DNI_cliente, Email_cli
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BBDDCiclismoDataSet.VentaDataTable dataTable) {
+        public virtual int Fill(BBDDCiclismoDataSet1.VentaDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -9723,9 +9646,9 @@ SELECT Id_venta, Id_cliente, Id_empleado, Nombre_cliente, DNI_cliente, Email_cli
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BBDDCiclismoDataSet.VentaDataTable GetData() {
+        public virtual BBDDCiclismoDataSet1.VentaDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            BBDDCiclismoDataSet.VentaDataTable dataTable = new BBDDCiclismoDataSet.VentaDataTable();
+            BBDDCiclismoDataSet1.VentaDataTable dataTable = new BBDDCiclismoDataSet1.VentaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -9733,14 +9656,14 @@ SELECT Id_venta, Id_cliente, Id_empleado, Nombre_cliente, DNI_cliente, Email_cli
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BBDDCiclismoDataSet.VentaDataTable dataTable) {
+        public virtual int Update(BBDDCiclismoDataSet1.VentaDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BBDDCiclismoDataSet dataSet) {
+        public virtual int Update(BBDDCiclismoDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Venta");
         }
         
@@ -10231,26 +10154,8 @@ SELECT Id_venta, Id_cliente, Id_empleado, Nombre_cliente, DNI_cliente, Email_cli
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(BBDDCiclismoDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(BBDDCiclismoDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._comprasTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Compras.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._comprasTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._detalleVentaTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.DetalleVenta.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._detalleVentaTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._bicicletasTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Bicicletas.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -10269,12 +10174,30 @@ SELECT Id_venta, Id_cliente, Id_empleado, Nombre_cliente, DNI_cliente, Email_cli
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._comprasTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Compras.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._comprasTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._detalleComprasTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.DetalleCompras.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._detalleComprasTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._detalleVentaTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.DetalleVenta.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._detalleVentaTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -10313,24 +10236,8 @@ SELECT Id_venta, Id_cliente, Id_empleado, Nombre_cliente, DNI_cliente, Email_cli
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(BBDDCiclismoDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(BBDDCiclismoDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._comprasTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Compras.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._comprasTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._detalleVentaTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.DetalleVenta.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._detalleVentaTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._bicicletasTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Bicicletas.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -10347,11 +10254,27 @@ SELECT Id_venta, Id_cliente, Id_empleado, Nombre_cliente, DNI_cliente, Email_cli
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._comprasTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Compras.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._comprasTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._detalleComprasTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.DetalleCompras.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._detalleComprasTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._detalleVentaTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.DetalleVenta.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._detalleVentaTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -10387,7 +10310,7 @@ SELECT Id_venta, Id_cliente, Id_empleado, Nombre_cliente, DNI_cliente, Email_cli
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(BBDDCiclismoDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(BBDDCiclismoDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._ventaTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Venta.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -10413,11 +10336,27 @@ SELECT Id_venta, Id_cliente, Id_empleado, Nombre_cliente, DNI_cliente, Email_cli
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._detalleVentaTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.DetalleVenta.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._detalleVentaTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._detalleComprasTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.DetalleCompras.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._detalleComprasTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._comprasTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Compras.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._comprasTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -10434,22 +10373,6 @@ SELECT Id_venta, Id_cliente, Id_empleado, Nombre_cliente, DNI_cliente, Email_cli
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._bicicletasTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._detalleVentaTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.DetalleVenta.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._detalleVentaTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._comprasTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Compras.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._comprasTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -10485,7 +10408,7 @@ SELECT Id_venta, Id_cliente, Id_empleado, Nombre_cliente, DNI_cliente, Email_cli
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(BBDDCiclismoDataSet dataSet) {
+        public virtual int UpdateAll(BBDDCiclismoDataSet1 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

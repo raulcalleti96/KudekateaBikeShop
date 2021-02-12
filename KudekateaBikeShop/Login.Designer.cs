@@ -41,6 +41,7 @@ namespace ProyectoFinal
             this.tableAdapterManager = new KudekateaBikeShop.BBDDCiclismoDataSetTableAdapters.TableAdapterManager();
             this.usuarioTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -136,6 +137,10 @@ namespace ProyectoFinal
             this.passwordTextBox.UseSystemPasswordChar = true;
             this.passwordTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passwordTextBox_KeyDown);
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "./Kudekatea.chm";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -149,8 +154,11 @@ namespace ProyectoFinal
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.HelpButton = true;
+            this.helpProvider1.SetHelpKeyword(this, "1");
+            this.helpProvider1.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.TopicId);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
+            this.helpProvider1.SetShowHelp(this, true);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load_1);
@@ -176,6 +184,7 @@ namespace ProyectoFinal
         private KudekateaBikeShop.BBDDCiclismoDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.TextBox usuarioTextBox;
         private System.Windows.Forms.TextBox passwordTextBox;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }
 

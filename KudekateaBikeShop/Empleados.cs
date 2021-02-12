@@ -444,5 +444,10 @@ namespace KudekateaBikeShop
         {
 
         }
+
+        private void ayudatoolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, helpProvider1.HelpNamespace);
+        }
     }
 }
