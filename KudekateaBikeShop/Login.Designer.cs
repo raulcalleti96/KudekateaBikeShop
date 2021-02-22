@@ -53,18 +53,20 @@ namespace ProyectoFinal
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(231, 38);
+            this.label1.Location = new System.Drawing.Point(154, 25);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(368, 38);
+            this.label1.Size = new System.Drawing.Size(249, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "KUDAKATEA BIKE SHOP";
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::KudekateaBikeShop.Properties.Resources.icons8_login_48;
-            this.pictureBox3.Location = new System.Drawing.Point(380, 415);
+            this.pictureBox3.Location = new System.Drawing.Point(226, 252);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(83, 83);
+            this.pictureBox3.Size = new System.Drawing.Size(82, 72);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 8;
             this.pictureBox3.TabStop = false;
@@ -73,9 +75,10 @@ namespace ProyectoFinal
             // pictureBox2
             // 
             this.pictureBox2.Image = global::KudekateaBikeShop.Properties.Resources.icons8_forgot_password_48;
-            this.pictureBox2.Location = new System.Drawing.Point(158, 269);
+            this.pictureBox2.Location = new System.Drawing.Point(105, 175);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(83, 83);
+            this.pictureBox2.Size = new System.Drawing.Size(55, 54);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
@@ -83,9 +86,10 @@ namespace ProyectoFinal
             // pictureBox1
             // 
             this.pictureBox1.Image = global::KudekateaBikeShop.Properties.Resources.icons8_member_skin_type_7_48;
-            this.pictureBox1.Location = new System.Drawing.Point(158, 132);
+            this.pictureBox1.Location = new System.Drawing.Point(105, 86);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(83, 80);
+            this.pictureBox1.Size = new System.Drawing.Size(55, 52);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -121,18 +125,20 @@ namespace ProyectoFinal
             // 
             this.usuarioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.empleadosBindingSource, "Usuario", true));
             this.usuarioTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usuarioTextBox.Location = new System.Drawing.Point(277, 168);
+            this.usuarioTextBox.Location = new System.Drawing.Point(185, 109);
+            this.usuarioTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.usuarioTextBox.Name = "usuarioTextBox";
-            this.usuarioTextBox.Size = new System.Drawing.Size(248, 44);
+            this.usuarioTextBox.Size = new System.Drawing.Size(167, 32);
             this.usuarioTextBox.TabIndex = 10;
             // 
             // passwordTextBox
             // 
             this.passwordTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.empleadosBindingSource, "Password", true));
             this.passwordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordTextBox.Location = new System.Drawing.Point(277, 308);
+            this.passwordTextBox.Location = new System.Drawing.Point(185, 200);
+            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(248, 44);
+            this.passwordTextBox.Size = new System.Drawing.Size(167, 32);
             this.passwordTextBox.TabIndex = 11;
             this.passwordTextBox.UseSystemPasswordChar = true;
             this.passwordTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passwordTextBox_KeyDown);
@@ -143,10 +149,10 @@ namespace ProyectoFinal
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(788, 555);
+            this.ClientSize = new System.Drawing.Size(525, 361);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.usuarioTextBox);
             this.Controls.Add(this.pictureBox3);
@@ -157,6 +163,7 @@ namespace ProyectoFinal
             this.helpProvider1.SetHelpKeyword(this, "1");
             this.helpProvider1.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.TopicId);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Login";
             this.helpProvider1.SetShowHelp(this, true);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
